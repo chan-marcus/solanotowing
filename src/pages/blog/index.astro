@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Base
+  title="Roadside Guides for Solano County Drivers | Solano Towing"
+  description="Local guides on breakdowns, towing costs, and roadside safety for Fairfield, Suisun City and Vacaville drivers."
+  path="/blog/"
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Local knowledge</p>
+      <h1>Roadside guides</h1>
+      <p class="muted" style="max-width:38em; margin-top:1em;">
+        Written for this corridor specifically: the Cordelia Junction, Highway 12, and the I-80 grade,
+        not generic advice recycled for every city in America.
+      </p>
+      <div class="card-grid" style="margin-top:2rem;">
+        {posts.map((p) => (
+          <a class="card" href={`/blog/${p.id.replace(/\.md$/, '')}/`}>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

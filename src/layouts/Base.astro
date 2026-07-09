@@ -1,0 +1,362 @@
+---
+import { SITE } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+}
+const { title, description, path = '/' } = Astro.props;
+const canonical = new URL(path, SITE.url).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AutomotiveBusiness',
+  name: SITE.brand,
+  url: SITE.url,
+  telephone: SITE.phone,
+  description:
+    '24/7 towing and roadside assistance dispatch serving Fairfield, Suisun City, Vacaville and the I-80 corridor in Solano County, CA.',
+  areaServed: ['Fairfield CA', 'Suisun City CA', 'Vacaville CA', 'Cordelia CA', 'Solano County CA'],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59'
+  },
+  priceRange: '$$'
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#ffb020" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <div class="topline" aria-hidden="true"></div>
+    <header class="site-header">
+      <a href="/" class="brand" aria-label={`${SITE.brand} home`}>
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h2m6 0h4m4 0h2"/><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M3 17V9h8l3 4h5l2 2v2"/><path d="M11 9V6l7 7"/></svg>
+        </span>
+        <span class="brand-name">Solano<em>Towing</em></span>
+      </a>
+      <nav aria-label="Main">
+        <a href="/#services">Services</a>
+        <a href="/#areas">Coverage</a>
+        <a href="/blog/">Guides</a>
+        <a href="/about/">About</a>
+      </nav>
+      <a class="header-call" href={`tel:${SITE.phone}`}>
+        <span class="hc-pulse" aria-hidden="true"></span>
+        <span class="hc-text">
+          <span class="hc-label">24/7 Dispatch</span>
+          <span class="hc-num">{SITE.phoneDisplay}</span>
+        </span>
+      </a>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="site-footer">
+      <div class="foot-grid">
+        <div>
+          <p class="foot-brand">Solano<em>Towing</em></p>
+          <p class="foot-tag">{SITE.hoursLine} · {SITE.serviceAreaLine}</p>
+          <a class="foot-call" href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a>
+        </div>
+        <div>
+          <p class="foot-h">Service area ZIP codes</p>
+          <p class="foot-zips">{SITE.zips.join(' · ')}</p>
+          <p class="foot-h">Corridors covered</p>
+          <p class="foot-zips">{SITE.corridors.join(' · ')}</p>
+        </div>
+      </div>
+      <p class="foot-legal">{SITE.legalLine}</p>
+      <p class="foot-legal">© {new Date().getFullYear()} {SITE.brand} · {SITE.city}, {SITE.state}</p>
+    </footer>
+
+    <a class="callbar" href={`tel:${SITE.phone}`} aria-label={`Call ${SITE.brand} now at ${SITE.phoneDisplay}`}>
+      <span class="callbar-stripe" aria-hidden="true"></span>
+      <span class="callbar-inner">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        <span class="callbar-cta">Stranded? Tap to call</span>
+        <span class="callbar-num">{SITE.phoneDisplay}</span>
+      </span>
+    </a>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --night: #0c0e13;
+    --asphalt: #12151c;
+    --panel: #191d26;
+    --panel-2: #1f2430;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.14);
+    --amber: #ffb020;
+    --amber-hot: #ffc247;
+    --amber-dim: rgba(255, 176, 32, 0.14);
+    --white: #f7f6f1;
+    --steel: #a7adba;
+    --steel-dim: #7d8494;
+    --display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --body: 'Barlow', system-ui, sans-serif;
+    --radius: 14px;
+    --radius-sm: 10px;
+    --shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+    --glow: 0 0 0 1px rgba(255, 176, 32, 0.35), 0 10px 34px rgba(255, 176, 32, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  body {
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(255, 176, 32, 0.07), transparent 60%),
+      radial-gradient(900px 600px at -15% 15%, rgba(70, 100, 180, 0.08), transparent 55%),
+      var(--night);
+    color: var(--white);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    padding-bottom: 80px;
+  }
+  a { color: var(--amber); }
+  a:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.02;
+    letter-spacing: 0.01em;
+  }
+  h1 { font-size: clamp(2.7rem, 8.5vw, 5rem); font-weight: 800; }
+  h2 { font-size: clamp(1.8rem, 5vw, 2.7rem); margin-bottom: 0.55em; }
+  h3 { font-size: 1.32rem; }
+  p + p { margin-top: 1em; }
+
+  .topline {
+    height: 4px;
+    background: repeating-linear-gradient(-55deg, var(--amber) 0 14px, transparent 14px 30px);
+    opacity: 0.9;
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 40;
+    display: flex; align-items: center; gap: 1.4rem;
+    padding: 0.75rem clamp(1rem, 4vw, 2.6rem);
+    background: rgba(12, 14, 19, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; color: var(--white); }
+  .brand-mark {
+    display: grid; place-items: center; width: 40px; height: 40px;
+    color: #131313;
+    background: linear-gradient(160deg, var(--amber-hot), var(--amber) 55%, #e19412);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 6px 18px rgba(255, 176, 32, 0.35);
+  }
+  .brand-name {
+    font-family: var(--display); font-weight: 700; font-size: 1.35rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .brand-name em { font-style: normal; color: var(--amber); }
+  .site-header nav { display: flex; gap: 1.4rem; margin-left: auto; }
+  .site-header nav a {
+    color: var(--steel); text-decoration: none; font-weight: 500; font-size: 0.96rem;
+    transition: color 0.15s ease;
+  }
+  .site-header nav a:hover { color: var(--white); }
+  .header-call {
+    display: flex; align-items: center; gap: 0.6rem;
+    text-decoration: none;
+    background: var(--panel);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 0.4rem 1rem 0.4rem 0.75rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .header-call:hover { border-color: var(--amber); box-shadow: var(--glow); }
+  .hc-pulse {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55);
+    animation: pulse 2.2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+    70% { box-shadow: 0 0 0 9px rgba(74, 222, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+  }
+  .hc-text { line-height: 1.05; text-align: left; }
+  .hc-label {
+    display: block; font-size: 0.62rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--steel-dim);
+  }
+  .hc-num { font-family: var(--display); font-weight: 700; font-size: 1.28rem; color: var(--amber); }
+  @media (max-width: 780px) {
+    .site-header nav { display: none; }
+    .header-call { margin-left: auto; }
+  }
+
+  /* ---------- Shared ---------- */
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2.6rem); }
+  section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
+  .band { background: linear-gradient(180deg, var(--asphalt), var(--night)); border-block: 1px solid var(--line); }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    font-family: var(--display); font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.22em; font-size: 0.82rem; color: var(--amber); margin-bottom: 1rem;
+  }
+  .eyebrow::before {
+    content: ''; width: 26px; height: 2px; background: var(--amber); border-radius: 2px;
+  }
+  .muted { color: var(--steel); }
+  .lead { color: var(--steel); font-size: 1.14rem; max-width: 36em; }
+
+  .btn-call {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    background: linear-gradient(160deg, var(--amber-hot), var(--amber) 60%, #eb9c0e);
+    color: #161006;
+    font-family: var(--display); font-weight: 700; font-size: 1.45rem;
+    text-transform: uppercase; letter-spacing: 0.045em; text-decoration: none;
+    padding: 0.78rem 1.8rem; margin-top: 1.6rem;
+    border-radius: 999px;
+    box-shadow: 0 12px 30px rgba(255, 176, 32, 0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-call:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(255, 176, 32, 0.42); }
+  .btn-call svg { flex: none; }
+
+  .card-grid { display: grid; gap: 1rem; }
+  @media (min-width: 640px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 980px) { .card-grid.cols3 { grid-template-columns: 1fr 1fr 1fr; } }
+  .card {
+    position: relative;
+    background: linear-gradient(170deg, var(--panel-2), var(--panel) 70%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.4rem 1.45rem;
+    text-decoration: none; color: var(--white); display: block;
+    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 176, 32, 0.55);
+    box-shadow: var(--shadow);
+  }
+  .card h3 { margin-bottom: 0.45rem; letter-spacing: 0.03em; }
+  .card p { color: var(--steel); font-size: 0.97rem; line-height: 1.55; }
+  .card .icon {
+    display: grid; place-items: center;
+    width: 44px; height: 44px; margin-bottom: 0.9rem;
+    border-radius: var(--radius-sm);
+    background: var(--amber-dim);
+    color: var(--amber);
+    border: 1px solid rgba(255, 176, 32, 0.25);
+  }
+  .card .go {
+    position: absolute; top: 1.3rem; right: 1.25rem;
+    color: var(--steel-dim); font-size: 1.1rem; transition: color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover .go { color: var(--amber); transform: translateX(3px); }
+
+  .faq-item {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 1.15rem 1.3rem;
+  }
+  .faq-item + .faq-item { margin-top: 0.8rem; }
+  .faq-item h3 { font-family: var(--body); font-weight: 600; text-transform: none; font-size: 1.08rem; letter-spacing: 0; }
+  .faq-item p { color: var(--steel); margin-top: 0.45rem; font-size: 0.99rem; }
+
+  .spec-list { list-style: none; padding: 0; display: grid; gap: 0.85rem; margin: 1.6rem 0; }
+  @media (min-width: 760px) { .spec-list.split { grid-template-columns: 1fr 1fr; } }
+  .spec-list li {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: var(--radius-sm);
+    padding: 0.95rem 1.1rem;
+  }
+  .spec-list strong {
+    font-family: var(--display); text-transform: uppercase; letter-spacing: 0.05em; font-size: 1.08rem;
+  }
+  .spec-list span { display: block; color: var(--steel); font-size: 0.97rem; margin-top: 0.15rem; }
+
+  /* ---------- Call bar ---------- */
+  .callbar {
+    position: fixed; inset: auto 0 0 0; z-index: 50;
+    display: block; text-decoration: none;
+    filter: drop-shadow(0 -8px 24px rgba(0, 0, 0, 0.5));
+  }
+  .callbar-stripe {
+    display: block; height: 9px;
+    background: repeating-linear-gradient(-45deg, var(--amber) 0 16px, #0e0f13 16px 32px);
+  }
+  .callbar-inner {
+    display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+    padding: 0.62rem 1rem 0.75rem;
+    background: linear-gradient(180deg, var(--amber-hot), var(--amber));
+    color: #161006;
+  }
+  .callbar-cta { font-weight: 600; color: #59410a; font-size: 0.95rem; }
+  .callbar-num {
+    font-family: var(--display); font-weight: 800; font-size: 1.6rem;
+    letter-spacing: 0.02em;
+  }
+  @media (min-width: 900px) {
+    body { padding-bottom: 0; }
+    .callbar { display: none; }
+  }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    background: var(--asphalt);
+    padding: 2.8rem clamp(1.1rem, 4vw, 2.6rem) 2.2rem;
+  }
+  .foot-grid { display: grid; gap: 2rem; max-width: 1120px; margin: 0 auto; }
+  @media (min-width: 720px) { .foot-grid { grid-template-columns: 1.2fr 1fr; } }
+  .foot-brand { font-family: var(--display); font-weight: 700; font-size: 1.5rem; text-transform: uppercase; }
+  .foot-brand em { font-style: normal; color: var(--amber); }
+  .foot-tag { color: var(--steel); font-size: 0.96rem; margin-top: 0.25rem; }
+  .foot-call {
+    display: inline-block; margin-top: 0.7rem; font-family: var(--display);
+    font-weight: 700; font-size: 1.55rem; text-decoration: none;
+  }
+  .foot-h {
+    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--steel-dim); margin-top: 1rem;
+  }
+  .foot-h:first-child { margin-top: 0; }
+  .foot-zips { font-size: 0.96rem; color: var(--steel); }
+  .foot-legal {
+    max-width: 1120px; margin: 1.7rem auto 0; color: #626977; font-size: 0.82rem; line-height: 1.55;
+  }
+</style>

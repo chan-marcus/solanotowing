@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+---
+
+<Base
+  title="About Solano Towing | Local 24/7 Dispatch in Fairfield, CA"
+  description="Solano Towing is a local 24/7 towing dispatch serving Fairfield, Suisun City, Vacaville and the Cordelia Junction with licensed independent operators."
+  path="/about/"
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Who answers when you call</p>
+      <h1>Local dispatch, local trucks</h1>
+      <p style="max-width:42em; margin-top:1em;">
+        Solano Towing exists because of a gap every local driver has hit: it's 1am, you're on the
+        I-80 shoulder near the Cordelia Junction, and half the numbers you call ring to voicemail.
+        We run a single 24/7 dispatch line for Fairfield, Suisun City, Vacaville, and the
+        surrounding corridor, and route every job to licensed, insured independent operators based
+        right here in Solano County.
+      </p>
+      <p style="max-width:42em;">
+        We are not a national call center, and we don't route your job to whichever truck bids
+        lowest three counties away. The operators we work with drive this corridor daily, know the
+        difference between the Green Valley exit and Suisun Valley Road, and quote one firm price
+        before they roll.
+      </p>
+      <p style="max-width:42em;">{SITE.legalLine}</p>
+      <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Our standard</p>
+      <ul class="spec-list">
+        <li><strong>Answered 24/7</strong><span>A person, not a voicemail box, at any hour.</span></li>
+        <li><strong>One firm price</strong><span>Quoted before dispatch. The number on the phone is the number on the receipt.</span></li>
+        <li><strong>Licensed & insured operators</strong><span>Every truck in the network carries commercial coverage.</span></li>
+        <li><strong>Local only</strong><span>Solano County trucks for Solano County calls.</span></li>
+      </ul>
+    </div>
+  </section>
+</Base>

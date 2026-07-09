@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+---
+
+<Base
+  title="Contact Solano Towing | 24/7 Dispatch (707) 555-0134"
+  description="Reach Solano Towing dispatch 24/7 at (707) 555-0134 for towing and roadside assistance in Fairfield, Suisun City and Vacaville, CA."
+  path="/contact/"
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Fastest way: call</p>
+      <h1>Dispatch is one tap away</h1>
+      <p style="max-width:40em; margin-top:1em;">
+        Towing is a phone business. Forms sit in inboxes; calls get trucks moving. Dispatch answers
+        around the clock, every day of the year.
+      </p>
+      <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+
+      <h2 style="margin-top:3rem;">Have this ready when you call</h2>
+      <ul class="spec-list">
+        <li><strong>Where you are</strong><span>Nearest exit, cross street, or landmark. Direction of travel if you're on the freeway.</span></li>
+        <li><strong>What you drive</strong><span>Year, make, model. Mention AWD, EV, or lowered so the right truck rolls first.</span></li>
+        <li><strong>What happened</strong><span>Won't start, flat, accident, stuck. Thirty seconds of detail saves thirty minutes.</span></li>
+        <li><strong>Where it's going</strong><span>Shop, home, or dealer. Address gets you an exact price on the spot.</span></li>
+      </ul>
+
+      <p class="muted" style="font-size:0.95rem;">
+        Service area: {SITE.serviceAreaLine} · ZIPs {SITE.zips.join(', ')}
+      </p>
+    </div>
+  </section>
+</Base>

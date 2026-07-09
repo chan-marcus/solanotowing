@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../config/site';
+import { AREAS } from '../../data/cities';
+import { SERVICES } from '../../data/services';
+
+export function getStaticPaths() {
+  return AREAS.map((a) => ({ params: { slug: a.slug }, props: { a } }));
+}
+const { a } = Astro.props;
+const topServices = SERVICES.slice(0, 6);
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Coverage', item: SITE.url + '/#areas' },
+    { '@type': 'ListItem', position: 3, name: a.name, item: `${SITE.url}/areas/${a.slug}/` }
+  ]
+};
+---
+
+<Base title={a.metaTitle} description={a.metaDesc} path={`/areas/${a.slug}/`}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">{SITE.hoursLine}</p>
+      <h1>{a.h1}</h1>
+      {a.intro.map((p) => <p style="max-width:42em; margin-top:1em;">{p}</p>)}
+      <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+      <p class="muted" style="margin-top:1.2rem; font-size:0.95rem;">
+        Covering {a.landmarks.join(', ')} · ZIP {a.zips.join(', ')}
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Available in {a.name}</p>
+      <h2>Towing & roadside services</h2>
+      <div class="card-grid cols3">
+        {topServices.map((s) => (
+          <a class="card" href={`/services/${s.slug}/`}>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

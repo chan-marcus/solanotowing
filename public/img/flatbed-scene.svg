@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" width="420" height="300" role="img" aria-label="A flatbed tow truck loading a car at night">
+  <defs>
+    <linearGradient id="fsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161c2b"/>
+      <stop offset="0.65" stop-color="#181b25"/>
+      <stop offset="1" stop-color="#0e1017"/>
+    </linearGradient>
+    <linearGradient id="fbeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb020" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ffb020" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="300" rx="16" fill="url(#fsky)"/>
+  <ellipse cx="210" cy="150" rx="200" ry="60" fill="url(#fbeam)" opacity="0.35"/>
+  <g fill="#dfe3ee" opacity="0.5">
+    <circle cx="54" cy="42" r="1.1"/><circle cx="130" cy="30" r="0.9"/><circle cx="300" cy="40" r="1.2"/>
+    <circle cx="360" cy="66" r="1"/><circle cx="250" cy="26" r="0.9"/><circle cx="88" cy="74" r="0.8"/>
+  </g>
+  <path d="M0 232 Q120 214 220 226 T420 220 V300 H0 Z" fill="#141824"/>
+  <line x1="0" y1="250" x2="420" y2="250" stroke="#2a2f3d" stroke-width="2"/>
+  <g stroke="#ffb020" stroke-width="3" stroke-linecap="round" opacity="0.6" stroke-dasharray="14 18">
+    <line x1="0" y1="268" x2="420" y2="268"/>
+  </g>
+  <g>
+    <rect x="196" y="150" width="150" height="60" rx="6" fill="#242a38" stroke="#39404f" stroke-width="2"/>
+    <rect x="330" y="120" width="34" height="42" rx="5" fill="#2c3446" stroke="#39404f" stroke-width="2"/>
+    <rect x="336" y="126" width="22" height="16" rx="3" fill="#0f1420"/>
+    <path d="M196 210 L150 210 L150 176 L196 176 Z" fill="#1f2634" stroke="#39404f" stroke-width="2"/>
+    <path d="M150 210 L146 176 L196 176" fill="none" stroke="#ffb020" stroke-width="2.5"/>
+    <g transform="translate(70 176)">
+      <path d="M0 26 L14 4 L54 2 L74 20 L88 24 L88 34 L0 34 Z" fill="#31394b" stroke="#454e63" stroke-width="2"/>
+      <path d="M18 8 L50 6 L66 20 L20 20 Z" fill="#0f1420" fill-opacity="0"/>
+      <path d="M18 8 L50 6 L66 20 L20 20 Z" fill="#0f1420"/>
+      <circle cx="24" cy="34" r="9" fill="#0e1119" stroke="#5a6580" stroke-width="3"/>
+      <circle cx="66" cy="34" r="9" fill="#0e1119" stroke="#5a6580" stroke-width="3"/>
+    </g>
+    <circle cx="236" cy="210" r="13" fill="#0e1119" stroke="#5a6580" stroke-width="4"/>
+    <circle cx="312" cy="210" r="13" fill="#0e1119" stroke="#5a6580" stroke-width="4"/>
+    <g transform="translate(347 108)">
+      <rect x="-11" y="0" width="22" height="9" rx="2" fill="#ffb020"/>
+      <ellipse cx="0" cy="4" rx="20" ry="7" fill="#ffb020" opacity="0.18"/>
+    </g>
+    <rect x="330" y="150" width="8" height="14" fill="#fff3d6" opacity="0.85"/>
+  </g>
+  <text x="210" y="288" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" letter-spacing="1.5" fill="#7d8494">DAMAGE-FREE FLATBED LOADING</text>
+</svg>

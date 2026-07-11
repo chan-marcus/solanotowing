@@ -23,7 +23,7 @@ const breadcrumbSchema = {
 
 <Base title={a.metaTitle} description={a.metaDesc} path={`/areas/${a.slug}/`}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  <section>
+  <section class="s-ink">
     <div class="wrap">
       <p class="eyebrow">{SITE.hoursLine}</p>
       <h1>{a.h1}</h1>
@@ -35,11 +35,11 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <section>
+  <section class="s-ink">
     <div class="wrap">
       <p class="eyebrow">Available in {a.name}</p>
       <h2>Towing & roadside services</h2>
-      <div class="card-grid cols3">
+      <div class="grid c3">
         {topServices.map((s) => (
           <a class="card" href={`/services/${s.slug}/`}>
             <h3>{s.name}</h3>

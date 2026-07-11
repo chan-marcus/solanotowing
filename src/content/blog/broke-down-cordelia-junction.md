@@ -36,4 +36,4 @@ The California Highway Patrol patrols this interchange heavily. If an officer st
 
 Local tows from the junction into Fairfield, Suisun City, or Vacaville are a hook fee plus a few miles, quoted before dispatch. Longer hauls toward the Bay Area or Sacramento are priced per mile. There's no legitimate reason for the price to change between the phone call and the drop-off.
 
-Stuck at the junction right now? Solano Towing dispatch answers 24/7 at (707) 555-0134.
+Stuck at the junction right now? Solano Towing dispatch answers 24/7 at (707) 356-ROAD.

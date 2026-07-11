@@ -39,4 +39,4 @@ California law gives you the right to know the price and destination before your
 
 If CHP orders a rotation tow to clear the roadway, the car usually goes to a storage yard. Move it out of that yard and to your body shop as soon as possible, because storage runs daily and insurers grumble about weeks of it. A second short tow from yard to shop almost always costs less than the storage it prevents.
 
-Need a firm number right now? Solano Towing dispatch answers 24/7 at (707) 555-0134 and quotes every job as one price before the truck moves.
+Need a firm number right now? Solano Towing dispatch answers 24/7 at (707) 356-ROAD and quotes every job as one price before the truck moves.

@@ -17,7 +17,7 @@ export const SERVICES: Service[] = [
     short: 'Broken down or in an accident? A truck is dispatched the moment you call, day or night.',
     metaTitle: '24/7 Emergency Towing in Fairfield, CA | Solano Towing',
     metaDesc:
-      'Emergency towing in Fairfield, Suisun City & Vacaville. 24/7 dispatch, average 25-minute response on the I-80 corridor. Call (707) 555-0134.',
+      'Emergency towing in Fairfield, Suisun City & Vacaville. 24/7 dispatch, average 25-minute response on the I-80 corridor. Call (707) 356-7623.',
     h1: 'Emergency Towing in Fairfield, CA',
     intro: [
       'When your car dies on I-80 near the Cordelia Junction or won\u2019t restart in a parking lot off Travis Boulevard, you don\u2019t want a call center in another state. You want a truck that\u2019s already in Solano County. We dispatch local operators 24 hours a day, and most calls in Fairfield, Suisun City, and Vacaville see a truck in about 25 minutes.',
@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
     short: 'Damage-free transport for AWD vehicles, low cars, EVs, and anything you don\u2019t want dragged.',
     metaTitle: 'Flatbed Towing in Fairfield & Vacaville, CA | Solano Towing',
     metaDesc:
-      'Flatbed tow trucks in Fairfield, Suisun City & Vacaville for AWD, EVs, lowered and luxury vehicles. 24/7. Call (707) 555-0134 for a quote.',
+      'Flatbed tow trucks in Fairfield, Suisun City & Vacaville for AWD, EVs, lowered and luxury vehicles. 24/7. Call (707) 356-7623 for a quote.',
     h1: 'Flatbed Towing in Fairfield & Vacaville',
     intro: [
       'All-wheel-drive SUVs, Teslas and other EVs, lowered cars, and anything with damaged wheels should ride on a flatbed, not behind a wheel lift. Our dispatch network runs modern rollbacks across Solano County, so the right truck shows up the first time.',
@@ -77,7 +77,7 @@ export const SERVICES: Service[] = [
     short: 'Dead battery in a driveway, parking garage, or the Solano Town Center lot. Usually under 30 minutes.',
     metaTitle: 'Car Jump Start Service in Fairfield, CA | Solano Towing',
     metaDesc:
-      'Dead battery? Mobile jump start service in Fairfield, Suisun City & Vacaville, 24/7. Call (707) 555-0134 and get moving in about 25 minutes.',
+      'Dead battery? Mobile jump start service in Fairfield, Suisun City & Vacaville, 24/7. Call (707) 356-7623 and get moving in about 25 minutes.',
     h1: 'Jump Start Service in Fairfield, CA',
     intro: [
       'Cold snap mornings in Suisun Valley and 100-degree summer afternoons both kill batteries, and it always happens in the worst spot: the Solano Town Center garage, the commuter lot at the Fairfield Transportation Center, or your own driveway before a shift at Travis.',
@@ -105,7 +105,7 @@ export const SERVICES: Service[] = [
     short: 'Keys locked in the car? Damage-free entry, no broken windows, day or night.',
     metaTitle: 'Car Lockout Service in Fairfield, CA | Solano Towing',
     metaDesc:
-      'Locked out of your car in Fairfield, Suisun City or Vacaville? 24/7 damage-free lockout service. Call (707) 555-0134.',
+      'Locked out of your car in Fairfield, Suisun City or Vacaville? 24/7 damage-free lockout service. Call (707) 356-7623.',
     h1: 'Car Lockout Service in Fairfield',
     intro: [
       'Keys sitting on the seat at a gas station on North Texas Street, or locked in the trunk at the Suisun Waterfront: it happens to everyone once. Operators open vehicles with professional wedge-and-reach tools, the same equipment roadside clubs use, without drilling locks or breaking glass.',
@@ -133,7 +133,7 @@ export const SERVICES: Service[] = [
     short: 'Stuck in mud, a ditch, or off the shoulder along Highway 12 or Suisun Valley Road.',
     metaTitle: 'Winch-Out & Off-Road Recovery in Solano County | Solano Towing',
     metaDesc:
-      'Stuck in a ditch or mud in Fairfield, Suisun Valley or along Hwy 12? 24/7 winch-out and recovery. Call (707) 555-0134.',
+      'Stuck in a ditch or mud in Fairfield, Suisun Valley or along Hwy 12? 24/7 winch-out and recovery. Call (707) 356-7623.',
     h1: 'Winch-Out & Recovery in Solano County',
     intro: [
       'Winter rain turns the shoulders along Suisun Valley Road and Highway 12 to soup, and every year plenty of drivers find out how soft that ground is. Whether you slid off the pavement, dropped a wheel into a ditch on Rockville Road, or buried an axle at the edge of a vineyard, a recovery truck with a winch gets you back on solid ground.',
@@ -161,7 +161,7 @@ export const SERVICES: Service[] = [
     short: 'Flat tires, fuel delivery, and small fixes that get you rolling without a tow.',
     metaTitle: '24/7 Roadside Assistance in Fairfield, CA | Solano Towing',
     metaDesc:
-      'Flat tire change, gas delivery and roadside help in Fairfield, Suisun City & Vacaville, 24/7. Call (707) 555-0134.',
+      'Flat tire change, gas delivery and roadside help in Fairfield, Suisun City & Vacaville, 24/7. Call (707) 356-7623.',
     h1: 'Roadside Assistance in Fairfield, CA',
     intro: [
       'Not every breakdown needs a tow. A flat on the I-80 shoulder near the Air Base Parkway exit, an empty tank two miles short of the Cordelia gas stations, a battery that just needs a boost: a service truck handles these on the spot for a flat call-out fee.',
@@ -189,7 +189,7 @@ export const SERVICES: Service[] = [
     short: 'Chock-and-strap flatbed transport for bikes. No dragged wheels, no dropped bikes.',
     metaTitle: 'Motorcycle Towing in Fairfield & Solano County | Solano Towing',
     metaDesc:
-      'Motorcycle towing in Fairfield, Suisun City & Vacaville with wheel chocks and soft straps. 24/7. Call (707) 555-0134.',
+      'Motorcycle towing in Fairfield, Suisun City & Vacaville with wheel chocks and soft straps. 24/7. Call (707) 356-7623.',
     h1: 'Motorcycle Towing in Solano County',
     intro: [
       'Bikes break down on the best roads: Highway 12 toward Rio Vista, the twisties out past Rockville Hills, or just the daily I-80 slog. A motorcycle needs a flatbed with a wheel chock and soft-loop straps, not a wheel-lift and hope.',
@@ -213,7 +213,7 @@ export const SERVICES: Service[] = [
     short: 'Box trucks, RVs, buses, and equipment along the I-80 and I-680 freight corridor.',
     metaTitle: 'Heavy Duty Towing on the I-80 Corridor | Solano Towing',
     metaDesc:
-      'Heavy duty and medium duty towing for box trucks, RVs and commercial vehicles in Fairfield & Solano County. 24/7 dispatch: (707) 555-0134.',
+      'Heavy duty and medium duty towing for box trucks, RVs and commercial vehicles in Fairfield & Solano County. 24/7 dispatch: (707) 356-7623.',
     h1: 'Heavy Duty Towing on the I-80 Corridor',
     intro: [
       'The I-80/I-680/Highway 12 junction moves a constant stream of freight, and when a box truck loses an axle or an RV overheats on the Vaca grade, it takes more than a one-ton wrecker to move it. We dispatch medium and heavy duty units for commercial vehicles across Solano County.',
@@ -237,7 +237,7 @@ export const SERVICES: Service[] = [
     short: 'Post-collision tows, secure transport to the shop of your choice, and help with the insurance steps.',
     metaTitle: 'Accident Towing & Recovery in Fairfield, CA | Solano Towing',
     metaDesc:
-      'Accident recovery and collision towing in Fairfield, Suisun City & Vacaville. Your choice of body shop. 24/7: (707) 555-0134.',
+      'Accident recovery and collision towing in Fairfield, Suisun City & Vacaville. Your choice of body shop. 24/7: (707) 356-7623.',
     h1: 'Accident Recovery in Fairfield, CA',
     intro: [
       'After a collision on I-80 or at one of Fairfield\u2019s big intersections, you have more choices than the moment suggests. Unless CHP has ordered a rotation tow to clear the road, you choose who tows your car and where it goes, and taking it straight to a body shop you trust avoids daily storage fees at a yard you didn\u2019t pick.',
@@ -261,7 +261,7 @@ export const SERVICES: Service[] = [
     short: 'Fairfield to Sacramento, the Bay Area, or anywhere in Northern California at a flat per-mile rate.',
     metaTitle: 'Long Distance Towing from Fairfield, CA | Solano Towing',
     metaDesc:
-      'Long distance towing from Fairfield & Solano County to Sacramento, San Francisco, and Northern California. Flat rates: (707) 555-0134.',
+      'Long distance towing from Fairfield & Solano County to Sacramento, San Francisco, and Northern California. Flat rates: (707) 356-7623.',
     h1: 'Long Distance Towing from Fairfield',
     intro: [
       'Fairfield sits halfway between the Bay Area and Sacramento, which means half the breakdowns here belong to cars that live somewhere else. Getting your vehicle back to a home shop in Concord, Davis, or San Jose is a flat hook fee plus a per-mile rate, quoted to the dollar before dispatch.',
@@ -285,7 +285,7 @@ export const SERVICES: Service[] = [
     short: 'Full-lift flatbed transport for electric vehicles, the way manufacturers require.',
     metaTitle: 'EV & Tesla Towing in Fairfield, CA | Solano Towing',
     metaDesc:
-      'Electric vehicle and Tesla towing in Fairfield, Suisun City & Vacaville. Manufacturer-correct flatbed transport, 24/7. Call (707) 555-0134.',
+      'Electric vehicle and Tesla towing in Fairfield, Suisun City & Vacaville. Manufacturer-correct flatbed transport, 24/7. Call (707) 356-7623.',
     h1: 'EV & Tesla Towing in Fairfield',
     intro: [
       'Electric vehicles can\u2019t be flat-towed or lifted by two wheels the way a gas car sometimes can. Tesla, Rivian, and most EV makers require full-lift flatbed transport, because dragging the drive wheels can damage the motor and regenerative braking system. Every EV call we dispatch goes out on a flatbed, no exceptions.',
@@ -313,7 +313,7 @@ export const SERVICES: Service[] = [
     short: 'Get your car out of a storage yard and to your shop before daily fees pile up.',
     metaTitle: 'Impound & Storage Yard Towing in Solano County | Solano Towing',
     metaDesc:
-      'Move your vehicle out of an impound or storage yard in Fairfield & Solano County to your shop or home. Stop daily fees. Call (707) 555-0134.',
+      'Move your vehicle out of an impound or storage yard in Fairfield & Solano County to your shop or home. Stop daily fees. Call (707) 356-7623.',
     h1: 'Impound & Storage Yard Tows',
     intro: [
       'After an accident or a CHP rotation tow, your car often ends up in a storage yard charging daily fees that climb fast. Once you\u2019ve cleared the release paperwork, we\u2019ll pick the vehicle up from the yard and deliver it to your body shop, mechanic, or home, which stops the storage clock as soon as possible.',

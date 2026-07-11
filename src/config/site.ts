@@ -10,9 +10,10 @@ export const SITE = {
   domain: 'solanotowing.com',
   url: 'https://solanotowing.com',
 
-  // TODO: replace with live Twilio tracking number before launch
-  phone: '+17075550134',
-  phoneDisplay: '(707) 555-0134',
+  // Real Twilio number. tel: links + schema use pure digits; humans see the vanity.
+  phone: '+17073567623',
+  phoneDisplay: '(707) 356-ROAD',
+  phoneDigits: '(707) 356-7623',
 
   city: 'Fairfield',
   county: 'Solano County',

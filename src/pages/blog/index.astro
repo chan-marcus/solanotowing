@@ -12,7 +12,7 @@ const posts = (await getCollection('blog')).sort(
   description="Local guides on breakdowns, towing costs, and roadside safety for Fairfield, Suisun City and Vacaville drivers."
   path="/blog/"
 >
-  <section>
+  <section class="s-ink">
     <div class="wrap">
       <p class="eyebrow">Local knowledge</p>
       <h1>Roadside guides</h1>
@@ -20,7 +20,7 @@ const posts = (await getCollection('blog')).sort(
         Written for this corridor specifically: the Cordelia Junction, Highway 12, and the I-80 grade,
         not generic advice recycled for every city in America.
       </p>
-      <div class="card-grid" style="margin-top:2rem;">
+      <div class="grid c4" style="margin-top:2rem;">
         {posts.map((p) => (
           <a class="card" href={`/blog/${p.id.replace(/\.md$/, '')}/`}>
             <h3>{p.data.title}</h3>

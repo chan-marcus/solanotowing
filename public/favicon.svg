@@ -1,15 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffc247"/>
-      <stop offset="0.55" stop-color="#ffb020"/>
-      <stop offset="1" stop-color="#e19412"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="#12151c"/>
-  <rect x="6" y="6" width="52" height="52" rx="11" fill="url(#g)"/>
-  <text x="32" y="44" text-anchor="middle"
-        font-family="'Barlow Condensed','Arial Narrow',sans-serif"
-        font-weight="800" font-size="34" fill="#161006"
-        letter-spacing="0.5">ST</text>
+  <rect width="64" height="64" rx="14" fill="#0f1722"/>
+  <rect x="6" y="6" width="52" height="52" rx="12" fill="#e8a33d"/>
+  <g transform="translate(9.5 9.5) scale(1.87)" fill="none" stroke="#0f1722" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 17h1.5m5.5 0h4m4.5 0H21"/>
+    <circle cx="7" cy="17" r="2"/>
+    <circle cx="17" cy="17" r="2"/>
+    <path d="M5 17V9h7l3 4h4l1 1v3"/>
+    <path d="M12 9V6l6 7"/>
+  </g>
 </svg>

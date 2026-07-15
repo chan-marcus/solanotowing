@@ -25,10 +25,9 @@ export const SITE = {
   etaLine: 'Average 25-minute response across the I-80 corridor',
   hoursLine: 'Open 24 hours, 7 days a week',
 
-  gtag: '', // TODO: GA4 / call tracking snippet id
+  gtag: '' // TODO: GA4 / call tracking snippet id
 
-  // Google Maps Embed API key. Leave '' to use the free keyless embed.
-  // Paste a key here to switch to the official Maps Embed API. Restrict the key
-  // in Google Cloud Console to the "Maps Embed API" + your domain (solanotowing.com).
-  mapsApiKey: 'AIzaSyDB6_Xtqt3dcTAlm4UzydxkqOXbxeJmYz8'
+  // Google Maps key comes from the PUBLIC_GOOGLE_MAPS_API_KEY environment
+  // variable (set in Cloudflare Pages / a local .env), not from this file.
+  // See src/components/MapEmbed.astro.
 };

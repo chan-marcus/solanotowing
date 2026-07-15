@@ -7,7 +7,8 @@ export interface Area {
   intro: string[];
   landmarks: string[];
   zips: string[];
-  mapQuery: string; // place or "lat,lng" used to center the Google map on this area
+  mapLat: number; // center latitude for the Google map on this area
+  mapLng: number; // center longitude
 }
 
 export const AREAS: Area[] = [
@@ -24,7 +25,8 @@ export const AREAS: Area[] = [
     ],
     landmarks: ['I-80 corridor', 'Solano Town Center', 'Travis Boulevard', 'West Texas Street', 'North Texas Street', 'Air Base Parkway'],
     zips: ['94533', '94534', '94535'],
-    mapQuery: 'Fairfield, CA'
+    mapLat: 38.2494,
+    mapLng: -122.0400
   },
   {
     slug: 'suisun-city',
@@ -39,7 +41,8 @@ export const AREAS: Area[] = [
     ],
     landmarks: ['Suisun Waterfront', 'Highway 12', 'Sunset Avenue', 'Amtrak Depot', 'Lawler Ranch'],
     zips: ['94585'],
-    mapQuery: 'Suisun City, CA'
+    mapLat: 38.2382,
+    mapLng: -122.0402
   },
   {
     slug: 'vacaville',
@@ -54,7 +57,8 @@ export const AREAS: Area[] = [
     ],
     landmarks: ['Vacaville Premium Outlets', 'Nut Tree', 'I-80 & I-505 interchange', 'Alamo Drive', 'Peabody Road'],
     zips: ['95687', '95688'],
-    mapQuery: 'Vacaville, CA'
+    mapLat: 38.3566,
+    mapLng: -121.9877
   },
   {
     slug: 'cordelia',
@@ -69,7 +73,8 @@ export const AREAS: Area[] = [
     ],
     landmarks: ['I-80/I-680 interchange', 'Highway 12 West', 'Green Valley', 'Central Way truck stops', 'Rodriguez High School area'],
     zips: ['94534'],
-    mapQuery: 'Cordelia, Fairfield, CA'
+    mapLat: 38.2172,
+    mapLng: -122.1350
   },
   {
     slug: 'dixon',
@@ -84,7 +89,8 @@ export const AREAS: Area[] = [
     ],
     landmarks: ['I-80 corridor', 'Pedrick Road', 'Pitt School Road', 'Downtown Dixon', 'West A Street'],
     zips: ['95620'],
-    mapQuery: 'Dixon, CA'
+    mapLat: 38.4455,
+    mapLng: -121.8233
   },
   {
     slug: 'rio-vista',
@@ -99,6 +105,7 @@ export const AREAS: Area[] = [
     ],
     landmarks: ['Highway 12', 'Rio Vista Bridge', 'River Road', 'Downtown Rio Vista', 'Sandy Beach'],
     zips: ['94571'],
-    mapQuery: 'Rio Vista, CA'
+    mapLat: 38.1557,
+    mapLng: -121.6913
   }
 ];

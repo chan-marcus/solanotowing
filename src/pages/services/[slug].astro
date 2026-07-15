@@ -73,6 +73,21 @@ const others = SERVICES.filter((x) => x.slug !== s.slug).slice(0, 3);
     </div>
   </section>
 
+  {s.body && s.body.length > 0 && (
+    <section class="s-paper">
+      <div class="wrap">
+        <div class="prose">
+          {s.body.map((sec) => (
+            <div class="prose-block">
+              <h2>{sec.h}</h2>
+              {sec.p.map((para) => <p>{para}</p>)}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="s-ink-2">
     <div class="wrap">
       <p class="eyebrow">Why call us</p>
@@ -129,4 +144,10 @@ const others = SERVICES.filter((x) => x.slug !== s.slug).slice(0, 3);
   .crumb a:hover { color: var(--brass); }
   .crumb span[aria-hidden] { color: var(--slate-deep); }
   .crumb span[aria-current] { color: var(--slate); }
+
+  .prose { max-width: 46em; }
+  .prose-block + .prose-block { margin-top: 2.4rem; }
+  .prose h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+  .prose p { margin-top: 0.9rem; }
+  .prose p:first-of-type { margin-top: 1rem; }
 </style>

@@ -26,6 +26,11 @@ const { Content } = await render(post);
       </p>
       <article class="post">
         <h1>{post.data.title}</h1>
+        {post.data.hero && (
+          <figure class="post-hero">
+            <img src={post.data.hero} alt={post.data.heroAlt ?? ''} width="1200" height="480" loading="eager" />
+          </figure>
+        )}
         <Content />
       </article>
       <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
@@ -35,6 +40,15 @@ const { Content } = await render(post);
 
 <style>
   .post { max-width: 44em; }
+  .post-hero {
+    margin: 1.6rem 0 0.4rem;
+    border-radius: var(--r);
+    overflow: hidden;
+    border: 1px solid var(--ink-line);
+    box-shadow: var(--shadow-lg);
+    background: var(--ink-2);
+  }
+  .post-hero img { display: block; width: 100%; height: auto; }
   .post :global(h2) { margin-top: 1.8em; }
   .post :global(ul), .post :global(ol) { padding-left: 1.3em; margin-top: 0.8em; }
   .post :global(li) { margin-top: 0.4em; color: var(--white); }

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import MapEmbed from '../components/MapEmbed.astro';
 import { SITE } from '../config/site';
 ---
 
@@ -29,6 +30,19 @@ import { SITE } from '../config/site';
       <p class="muted" style="font-size:0.95rem;">
         Service area: {SITE.serviceAreaLine} · ZIPs {SITE.zips.join(', ')}
       </p>
+    </div>
+  </section>
+
+  <section class="s-ink-2">
+    <div class="wrap">
+      <p class="eyebrow">Service area</p>
+      <h2 style="margin-bottom:1.6rem;">Covering the I-80 corridor & Solano County</h2>
+      <MapEmbed
+        query="Fairfield, CA"
+        zoom={11}
+        title="Map of the Solano Towing service area centered on Fairfield, CA"
+        caption={SITE.serviceAreaLine}
+      />
     </div>
   </section>
 </Base>

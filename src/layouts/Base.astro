@@ -26,6 +26,14 @@ const schema = {
   },
   priceRange: '$$'
 };
+
+const navLinks = [
+  { href: '/#services', label: 'Services' },
+  { href: '/#areas', label: 'Coverage' },
+  { href: '/blog/', label: 'Guides' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' }
+];
 ---
 
 <!doctype html>
@@ -58,11 +66,8 @@ const schema = {
           </span>
           <span class="brand-name">Solano <span>Towing</span></span>
         </a>
-        <nav aria-label="Main">
-          <a href="/#services">Services</a>
-          <a href="/#areas">Coverage</a>
-          <a href="/blog/">Guides</a>
-          <a href="/about/">About</a>
+        <nav class="nav-desktop" aria-label="Main">
+          {navLinks.map((l) => <a href={l.href}>{l.label}</a>)}
         </nav>
         <a class="header-call" href={`tel:${SITE.phone}`}>
           <span class="hc-status" aria-hidden="true"></span>
@@ -71,6 +76,16 @@ const schema = {
             <span class="hc-digits">{SITE.phoneDigits}</span>
           </span>
         </a>
+        <details class="nav-mobile">
+          <summary aria-label="Toggle navigation menu">
+            <svg class="icon-open" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <svg class="icon-close" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </summary>
+          <nav class="nav-mobile-panel" aria-label="Mobile">
+            {navLinks.map((l) => <a href={l.href}>{l.label}</a>)}
+            <a class="nav-mobile-call" href={`tel:${SITE.phone}`}>Call dispatch · {SITE.phoneDisplay}</a>
+          </nav>
+        </details>
       </div>
     </header>
 
@@ -215,9 +230,9 @@ const schema = {
   .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; color: var(--ink); background: var(--brass); border-radius: 9px; }
   .brand-name { font-family: var(--display); font-weight: 600; font-size: 1.28rem; letter-spacing: -0.01em; }
   .brand-name span { color: var(--brass); }
-  .site-header nav { display: flex; gap: 1.5rem; margin-left: auto; }
-  .site-header nav a { color: var(--slate); font-weight: 500; font-size: 0.95rem; transition: color 0.15s; }
-  .site-header nav a:hover { color: var(--ivory); }
+  .nav-desktop { display: flex; gap: 1.5rem; margin-left: auto; }
+  .nav-desktop a { color: var(--slate); font-weight: 500; font-size: 0.95rem; transition: color 0.15s; }
+  .nav-desktop a:hover { color: var(--ivory); }
   .header-call { display: flex; align-items: center; gap: 0.55rem; color: var(--ivory); padding: 0.4rem 0.9rem; border: 1px solid var(--ink-line-2); border-radius: 999px; transition: border-color 0.15s; }
   .header-call:hover { border-color: var(--brass); }
   .hc-nums { display: flex; flex-direction: column; line-height: 1.05; }
@@ -225,7 +240,49 @@ const schema = {
   .hc-digits { font-family: var(--mono); font-size: 0.66rem; color: var(--slate-deep); letter-spacing: 0.02em; }
   .hc-status { width: 8px; height: 8px; border-radius: 50%; background: #56d364; box-shadow: 0 0 0 0 rgba(86,211,100,0.5); animation: pulse 2.4s infinite; }
   @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(86,211,100,0.45);} 70%{ box-shadow:0 0 0 7px rgba(86,211,100,0);} 100%{ box-shadow:0 0 0 0 rgba(86,211,100,0);} }
-  @media (max-width: 800px) { .site-header nav { display: none; } .header-call { margin-left: auto; } }
+
+  /* Mobile hamburger menu (JS-free, native <details>) */
+  .nav-mobile { display: none; }
+  .nav-mobile summary {
+    list-style: none; display: grid; place-items: center;
+    width: 42px; height: 42px; border: 1px solid var(--ink-line-2);
+    border-radius: 10px; color: var(--ivory); cursor: pointer;
+    -webkit-tap-highlight-color: transparent; transition: border-color 0.15s;
+  }
+  .nav-mobile summary::-webkit-details-marker { display: none; }
+  .nav-mobile summary:hover { border-color: var(--brass); }
+  .nav-mobile summary:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+  .nav-mobile .icon-close { display: none; }
+  .nav-mobile[open] .icon-open { display: none; }
+  .nav-mobile[open] .icon-close { display: block; }
+  .nav-mobile-panel {
+    position: absolute; top: 100%; left: 0; right: 0;
+    display: flex; flex-direction: column;
+    background: var(--ink-2); border-bottom: 1px solid var(--ink-line);
+    box-shadow: var(--shadow-lg); padding: 0.4rem clamp(1.2rem, 4vw, 3rem) 1rem;
+  }
+  .nav-mobile-panel a {
+    color: var(--ivory); font-family: var(--display); font-weight: 500;
+    font-size: 1.2rem; padding: 0.9rem 0.2rem; border-bottom: 1px solid var(--ink-line);
+  }
+  .nav-mobile-panel a:hover { color: var(--brass); }
+  .nav-mobile-call {
+    margin-top: 0.5rem; color: var(--brass) !important;
+    font-family: var(--mono) !important; font-size: 0.95rem !important;
+    border-bottom: none !important;
+  }
+
+  @media (max-width: 800px) {
+    .nav-desktop { display: none; }
+    .header-call { margin-left: auto; }
+    .nav-mobile { display: block; }
+  }
+  /* On narrow phones the fixed bottom call bar and the in-menu call link cover
+     calling, so drop the redundant top-bar call button to give the header room. */
+  @media (max-width: 560px) {
+    .header-call { display: none; }
+    .nav-mobile { margin-left: auto; }
+  }
 
   /* Cards */
   .grid { display: grid; gap: 1.1rem; }

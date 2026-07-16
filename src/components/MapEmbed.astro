@@ -15,8 +15,11 @@ interface Props {
   zoom?: number;
   title: string; // accessible label + marker tooltip
   caption?: string;
+  // When provided, highlight every point (marker + coverage circle) and fit the
+  // map to them instead of showing a single centered marker.
+  points?: { name: string; lat: number; lng: number }[];
 }
-const { lat, lng, zoom = 12, title, caption } = Astro.props;
+const { lat, lng, zoom = 12, title, caption, points } = Astro.props;
 
 const apiKey =
   import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
@@ -53,7 +56,7 @@ const openLink = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
 </figure>
 
 {apiKey && (
-  <script define:vars={{ apiKey, mapId, lat, lng, zoom, title }}>
+  <script define:vars={{ apiKey, mapId, lat, lng, zoom, title, points: points || [] }}>
     (function () {
       var DARK_STYLE = [
         { elementType: 'geometry', stylers: [{ color: '#17263a' }] },
@@ -90,19 +93,42 @@ const openLink = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
           fullscreenControl: true,
           gestureHandling: 'cooperative'
         });
-        new google.maps.Marker({
-          position: center,
-          map: map,
-          title: title,
-          icon: {
-            path: google.maps.SymbolPath.CIRCLE,
-            scale: 8,
+
+        var DOT = {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 7,
+          fillColor: '#e8a33d',
+          fillOpacity: 1,
+          strokeColor: '#201404',
+          strokeWeight: 2
+        };
+
+        function highlight(pos, label) {
+          new google.maps.Circle({
+            map: map,
+            center: pos,
+            radius: 6000,
             fillColor: '#e8a33d',
-            fillOpacity: 1,
-            strokeColor: '#201404',
-            strokeWeight: 2
-          }
-        });
+            fillOpacity: 0.12,
+            strokeColor: '#e8a33d',
+            strokeOpacity: 0.65,
+            strokeWeight: 1.5,
+            clickable: false
+          });
+          new google.maps.Marker({ position: pos, map: map, title: label, icon: DOT });
+        }
+
+        if (points && points.length) {
+          var bounds = new google.maps.LatLngBounds();
+          points.forEach(function (p) {
+            var pos = { lat: p.lat, lng: p.lng };
+            highlight(pos, p.name);
+            bounds.extend(pos);
+          });
+          map.fitBounds(bounds, 48);
+        } else {
+          highlight(center, title);
+        }
       }
 
       // Load the Maps JS SDK once, then init every map on the page.

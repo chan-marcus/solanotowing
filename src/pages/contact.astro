@@ -2,6 +2,9 @@
 import Base from '../layouts/Base.astro';
 import MapEmbed from '../components/MapEmbed.astro';
 import { SITE } from '../config/site';
+import { AREAS } from '../data/cities';
+
+const coveragePoints = AREAS.map((a) => ({ name: a.name, lat: a.mapLat, lng: a.mapLng }));
 ---
 
 <Base
@@ -40,8 +43,9 @@ import { SITE } from '../config/site';
       <MapEmbed
         lat={38.2494}
         lng={-122.0400}
-        zoom={11}
-        title="Map of the Solano Towing service area centered on Fairfield, CA"
+        zoom={10}
+        points={coveragePoints}
+        title="Map highlighting the Solano Towing service area across Solano County, CA"
         caption={SITE.serviceAreaLine}
       />
     </div>

@@ -5,9 +5,20 @@ interface Props {
   title: string;
   description: string;
   path?: string;
+  ogType?: string;
 }
-const { title, description, path = '/' } = Astro.props;
+const { title, description, path = '/', ogType = 'website' } = Astro.props;
 const canonical = new URL(path, SITE.url).href;
+const ogImage = new URL('/apple-touch-icon.png', SITE.url).href;
+
+// Tells Google the site's name so search results show "Solano Towing"
+// instead of falling back to the bare domain. https://developers.google.com/search/docs/appearance/site-names
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.brand,
+  url: SITE.url
+};
 
 const schema = {
   '@context': 'https://schema.org',
@@ -44,6 +55,19 @@ const navLinks = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / social — og:site_name gives Google the site name -->
+    <meta property="og:site_name" content={SITE.brand} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -55,6 +79,7 @@ const navLinks = [
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500;600&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>

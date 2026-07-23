@@ -268,11 +268,16 @@ const schema = {
   .site-header nav { display: flex; gap: 1.5rem; margin-left: auto; }
   .site-header nav a { color: var(--slate); font-weight: 500; font-size: 0.95rem; transition: color 0.15s; }
   .site-header nav a:hover { color: var(--ivory); }
-  .header-call { display: flex; align-items: center; gap: 0.55rem; color: var(--ivory); padding: 0.4rem 0.9rem; border: 1px solid var(--ink-line-2); border-radius: 999px; transition: border-color 0.15s; }
+  .header-call { display: flex; align-items: center; gap: 0.55rem; color: var(--ivory); padding: 0.4rem 0.9rem; border: 1px solid var(--ink-line-2); border-radius: 999px; transition: border-color 0.15s; white-space: nowrap; }
   .header-call:hover { border-color: var(--brass); }
   .hc-nums { display: flex; flex-direction: column; line-height: 1.05; }
-  .hc-num { font-family: var(--mono); font-weight: 600; font-size: 1rem; }
+  .hc-num { font-family: var(--mono); font-weight: 600; font-size: 1rem; white-space: nowrap; }
   .hc-digits { font-family: var(--mono); font-size: 0.66rem; color: var(--slate-deep); letter-spacing: 0.02em; }
+  @media (max-width: 800px) {
+    .hc-digits { display: none; }
+    .hc-num { font-size: 0.88rem; }
+    .header-call { padding: 0.35rem 0.7rem; }
+  }
   .hc-status { width: 8px; height: 8px; border-radius: 50%; background: #56d364; box-shadow: 0 0 0 0 rgba(86,211,100,0.5); animation: pulse 2.4s infinite; }
   @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(86,211,100,0.45);} 70%{ box-shadow:0 0 0 7px rgba(86,211,100,0);} 100%{ box-shadow:0 0 0 0 rgba(86,211,100,0);} }
   @media (max-width: 800px) {

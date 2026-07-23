@@ -1,55 +1,24 @@
 ---
 import Base from '../../layouts/Base.astro';
+import CtaBand from '../../components/CtaBand.astro';
 import { SITE } from '../../config/site';
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map((post) => ({
-    params: { slug: post.id.replace(/\.md$/, '') },
-    props: { post }
-  }));
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
 }
+
 const { post } = Astro.props;
-const { Content } = await render(post);
-const slug = post.id.replace(/\.md$/, '');
-
-const postSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: post.data.title,
-  description: post.data.description,
-  datePublished: post.data.date.toISOString(),
-  dateModified: post.data.date.toISOString(),
-  mainEntityOfPage: `${SITE.url}/blog/${slug}/`,
-  image: `${SITE.url}/og-image.png`,
-  author: { '@type': 'Organization', name: SITE.brand, url: SITE.url },
-  publisher: { '@type': 'Organization', name: SITE.brand, url: SITE.url }
-};
-
-const crumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Guides', item: SITE.url + '/blog/' },
-    { '@type': 'ListItem', position: 3, name: post.data.title, item: `${SITE.url}/blog/${slug}/` }
-  ]
-};
+const { Content } = await post.render();
 ---
-
-<Base
-  title={`${post.data.title} | Solano Towing`}
-  description={post.data.description}
-  path={`/blog/${post.id.replace(/\.md$/, '')}/`}
->
-  <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(crumbSchema)} />
-  <section class="s-ink">
+<Base title={`209 Restoration | ${post.data.title}`} description={post.data.description}>
+  <section>
     <div class="wrap">
-      <p class="eyebrow">
-        {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-      </p>
+      <nav class="crumbs mono" aria-label="Breadcrumb">
+        <a href="/">HOME</a> / <a href="/blog/">GUIDES</a>
+      </nav>
+      <p class="mono post-date">{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase()}</p>
       <article class="post">
         <h1>{post.data.title}</h1>
         <Content />
@@ -57,18 +26,20 @@ const crumbSchema = {
       <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
     </div>
   </section>
+  <CtaBand />
 </Base>
 
 <style>
-  .post { max-width: 44em; }
-  .post :global(h2) { margin-top: 1.8em; }
+  .crumbs { font-size: 0.68rem; color: var(--silt); margin-bottom: 1.5rem; display: block; }
+  .crumbs a { color: var(--silt); text-decoration: none; }
+  .crumbs a:hover { color: var(--cyan); }
+  .post-date { font-size: 0.65rem; margin-bottom: 0.8rem; }
+  .post { max-width: 44em; margin-bottom: 2.5rem; }
+  .post h1 { text-transform: none; font-stretch: 95%; font-size: clamp(1.9rem, 4.5vw, 2.8rem); }
+  .post :global(h2) { margin-top: 1.9em; margin-bottom: 0.5em; text-transform: none; font-stretch: 100%; font-size: 1.45rem; }
+  .post :global(p) { margin-top: 1em; color: #33454f; font-size: 1.04rem; line-height: 1.8; }
   .post :global(ul), .post :global(ol) { padding-left: 1.3em; margin-top: 0.8em; }
-  .post :global(li) { margin-top: 0.4em; color: var(--white); }
-  .post :global(li strong) { color: var(--white); }
-  .post :global(p) { margin-top: 1em; color: #d6d5cf; }
-  .post :global(img) {
-    width: 100%; height: auto; display: block;
-    margin: 1.8em 0; border-radius: 16px;
-    border: 1px solid var(--ink-line); box-shadow: var(--shadow-sm);
-  }
+  .post :global(li) { margin-top: 0.5em; color: #33454f; line-height: 1.75; }
+  .post :global(li strong), .post :global(p strong) { color: var(--paper); }
+  .post :global(a) { color: var(--cyan); }
 </style>

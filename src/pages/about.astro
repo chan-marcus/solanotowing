@@ -1,44 +1,35 @@
 ---
 import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
 import { SITE } from '../config/site';
 ---
-
 <Base
-  title="About Solano Towing | Local 24/7 Dispatch in Fairfield, CA"
-  description="Solano Towing is a local 24/7 towing dispatch serving Fairfield, Suisun City, Vacaville and the Cordelia Junction with licensed independent operators."
-  path="/about/"
+  title="209 Restoration | About"
+  description="209 Restoration is a local 24/7 water damage dispatch service connecting Central Valley homeowners with licensed restoration crews in San Joaquin and Stanislaus Counties."
 >
-  <section class="s-ink">
-    <div class="wrap">
-      <p class="eyebrow">Who answers when you call</p>
-      <h1>Local dispatch, local trucks</h1>
-      <p style="max-width:42em; margin-top:1em;">
-        Solano Towing exists because of a gap every local driver has hit: it's 1am, you're on the
-        I-80 shoulder near the Cordelia Junction, and half the numbers you call ring to voicemail.
-        We run a single 24/7 dispatch line for Fairfield, Suisun City, Vacaville, and the
-        surrounding corridor, and route every job to licensed, insured independent operators based
-        right here in Solano County.
-      </p>
-      <p style="max-width:42em;">
-        We are not a national call center, and we don't route your job to whichever truck bids
-        lowest three counties away. The operators we work with drive this corridor daily, know the
-        difference between the Green Valley exit and Suisun Valley Road, and quote one firm price
-        before they roll.
-      </p>
-      <p style="max-width:42em;">{SITE.legalLine}</p>
-      <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+  <section>
+    <div class="wrap about-wrap">
+      <span class="eyebrow">Who picks up when you call</span>
+      <h1>Built for the worst night your house has</h1>
+      <p>Water damage has a cruel schedule. Pipes burst at midnight, water heaters fail over long weekends, and storms do not check business hours. Meanwhile half the restoration numbers you find at 2am ring to an out-of-state call center or a voicemail box that promises a callback.</p>
+      <p>209 Restoration exists to shortcut that. One local number, answered by a live dispatcher around the clock, connected to a network of licensed, insured restoration crews stationed across San Joaquin and Stanislaus Counties. You describe the problem, the dispatcher tells you what to shut off, and a crew from your side of the Valley rolls with extraction and drying equipment on the truck.</p>
+      <h2>How the network works</h2>
+      <p>{SITE.legalLine} Every crew in the network carries proper licensing and insurance, works to industry drying standards with documented moisture readings, and knows how to write a scope that insurance adjusters accept. The dispatch model means someone answers even when an individual shop is already out on a job, which matters most during storm weeks when the whole Valley is calling at once.</p>
+      <h2>Why local matters here</h2>
+      <p>The Central Valley gets wet in ways that outside crews misread. Delta groundwater under Stockton crawl spaces. Tuolumne floodplain edges in Modesto and Ceres. Hard-water pinhole leaks under Tracy and Manteca slabs. Whole subdivisions hitting water heater failure age in the same year. Crews who work these cities daily know where to point the moisture meter first, and that shows up in how fast your house gets dry.</p>
+      <div class="about-cta">
+        <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
+        <p class="mono"><span class="open-dot" aria-hidden="true"></span> OPEN NOW &middot; 24/7/365</p>
+      </div>
     </div>
   </section>
-
-  <section class="s-ink">
-    <div class="wrap">
-      <p class="eyebrow">Our standard</p>
-      <ul class="spec">
-        <li><strong>Answered 24/7</strong><span>A person, not a voicemail box, at any hour.</span></li>
-        <li><strong>One firm price</strong><span>Quoted before dispatch. The number on the phone is the number on the receipt.</span></li>
-        <li><strong>Licensed & insured operators</strong><span>Every truck in the network carries commercial coverage.</span></li>
-        <li><strong>Local only</strong><span>Solano County trucks for Solano County calls.</span></li>
-      </ul>
-    </div>
-  </section>
+  <CtaBand />
 </Base>
+
+<style>
+  .about-wrap { max-width: 46em; }
+  .about-wrap p { margin-top: 1.1rem; }
+  .about-wrap h2 { margin-top: 2.4rem; }
+  .about-cta { margin-top: 2.4rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+  .about-cta p { display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; margin: 0; }
+</style>

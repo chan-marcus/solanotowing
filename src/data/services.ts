@@ -1,338 +1,280 @@
+// 12 services -> 12 pages at /services/[slug]/
+// icon = key into the SVG icon set in src/components/ServiceIcon.astro
+
 export interface Service {
   slug: string;
   name: string;
-  short: string; // card blurb on home page
-  metaTitle: string;
-  metaDesc: string;
+  short: string;        // card blurb
+  icon: string;
   h1: string;
-  intro: string[]; // paragraphs, locally written
-  bullets: { label: string; text: string }[];
+  intro: string[];      // paragraphs
+  bullets: { title: string; body: string }[];
   faq: { q: string; a: string }[];
 }
 
 export const SERVICES: Service[] = [
   {
-    slug: 'emergency-towing',
-    name: 'Emergency Towing',
-    short: 'Broken down or in an accident? A truck is dispatched the moment you call, day or night.',
-    metaTitle: '24/7 Emergency Towing in Fairfield, CA | Solano Towing',
-    metaDesc:
-      'Emergency towing in Fairfield, Suisun City & Vacaville. 24/7 dispatch, average 25-minute response on the I-80 corridor. Call (707) 356-7623.',
-    h1: 'Emergency Towing in Fairfield, CA',
+    slug: 'emergency-water-removal',
+    name: 'Emergency Water Removal',
+    short: 'Truck-mounted extraction gets standing water out fast, before it soaks into subfloor and drywall.',
+    icon: 'extract',
+    h1: 'Emergency Water Removal in the 209',
     intro: [
-      'When your car dies on I-80 near the Cordelia Junction or won\u2019t restart in a parking lot off Travis Boulevard, you don\u2019t want a call center in another state. You want a truck that\u2019s already in Solano County. We dispatch local operators 24 hours a day, and most calls in Fairfield, Suisun City, and Vacaville see a truck in about 25 minutes.',
-      'Every tow is handled by a licensed, insured local operator with flatbed and wheel-lift equipment. Whether you\u2019re heading to a shop in Fairfield, your driveway in Vacaville, or a dealership in the Bay Area, you get a firm price before the truck rolls.'
+      'Standing water does its worst damage in the first 24 hours. Drywall wicks it up like a sponge, laminate swells, and the pad under your carpet turns into a reservoir that never dries on its own. The single most important thing you can do is get the water out fast, and that is a pump-and-extractor job, not a shop vac job.',
+      'Call and a dispatcher connects you with a local crew running truck-mounted extraction. They pull standing water from floors, carpet, and pad, then map the moisture that you cannot see with meters and thermal imaging so nothing wet gets sealed up behind a wall.'
     ],
     bullets: [
-      { label: '24/7 dispatch', text: 'Nights, weekends, holidays. Someone always answers.' },
-      { label: 'Local trucks', text: 'Operators based in Fairfield and Vacaville, not routed from Sacramento.' },
-      { label: 'Up-front pricing', text: 'Hook fee and per-mile rate quoted on the phone before dispatch.' }
+      { title: 'Truck-mounted extraction', body: 'Hundreds of gallons per hour, far beyond what rental equipment or a wet vac can move.' },
+      { title: 'Moisture mapping', body: 'Meters and thermal cameras find water inside walls, under cabinets, and below flooring.' },
+      { title: 'Immediate mitigation', body: 'Crews set drying equipment on the first visit so damage stops getting worse tonight.' },
+      { title: 'Documentation for your claim', body: 'Photos, moisture readings, and a scope of work your insurance adjuster can use.' }
     ],
     faq: [
-      {
-        q: 'How fast can a tow truck reach me in Fairfield?',
-        a: 'Most calls inside Fairfield, Suisun City, and Cordelia see a truck in 20 to 30 minutes. Rush hour at the I-80/I-680 interchange can add a few minutes.'
-      },
-      {
-        q: 'Can you tow my car if I was in an accident?',
-        a: 'Yes. If CHP is on scene and has already called a rotation tow, that truck takes the vehicle. Otherwise, call us and we\u2019ll dispatch directly to you.'
-      },
-      {
-        q: 'Do you tow at night?',
-        a: 'Around the clock. A large share of our calls come between 10pm and 4am, when many local yards stop answering.'
-      }
+      { q: 'How fast can someone get here?', a: 'Dispatch is 24/7 and crews are local to San Joaquin and Stanislaus Counties. Typical emergency response in Stockton, Modesto, Lodi, Tracy, and Manteca is a matter of hours, not next-day.' },
+      { q: 'Should I try to remove the water myself first?', a: 'If it is safe, remove small items and mop what you can, but do not delay the call. Consumer equipment cannot extract water from pad, subfloor, or wall cavities, and that is where mold starts.' },
+      { q: 'Is the water dangerous?', a: 'It depends on the source. Clean supply-line water is category 1, but water from drains, appliances, or outside flooding can carry contamination and should be handled with protective equipment.' }
     ]
   },
   {
-    slug: 'flatbed-towing',
-    name: 'Flatbed Towing',
-    short: 'Damage-free transport for AWD vehicles, low cars, EVs, and anything you don\u2019t want dragged.',
-    metaTitle: 'Flatbed Towing in Fairfield & Vacaville, CA | Solano Towing',
-    metaDesc:
-      'Flatbed tow trucks in Fairfield, Suisun City & Vacaville for AWD, EVs, lowered and luxury vehicles. 24/7. Call (707) 356-7623 for a quote.',
-    h1: 'Flatbed Towing in Fairfield & Vacaville',
+    slug: 'flood-damage-cleanup',
+    name: 'Flood Damage Cleanup',
+    short: 'Storm and levee-country flooding cleanup for Delta-adjacent homes and Central Valley low spots.',
+    icon: 'flood',
+    h1: 'Flood Damage Cleanup in the Central Valley',
     intro: [
-      'All-wheel-drive SUVs, Teslas and other EVs, lowered cars, and anything with damaged wheels should ride on a flatbed, not behind a wheel lift. Our dispatch network runs modern rollbacks across Solano County, so the right truck shows up the first time.',
-      'Flatbeds are also the answer for non-running project cars, motorcycles strapped on deck, and dealership transfers between Fairfield and the greater Bay Area.'
+      'This is levee country. Between the Delta, the San Joaquin, the Calaveras, the Mokelumne, and the Tuolumne, homes across the 209 sit closer to water than most of California, and the atmospheric river storms of recent winters proved how fast a low spot, a failed sump, or an overwhelmed storm drain can put inches of water in a living room.',
+      'Flood water counts as category 3, which means it can carry silt, sewage, fuel, and bacteria. Cleanup is more than drying: affected porous materials get removed, the structure gets cleaned and disinfected, and everything gets dried and verified with meter readings before rebuild starts.'
     ],
     bullets: [
-      { label: 'EV-safe', text: 'Full-lift transport, required by most EV manufacturers including Tesla.' },
-      { label: 'Low-clearance boards', text: 'Extended ramps for lowered and sports cars.' },
-      { label: 'Long-distance', text: 'Flat per-mile rates for tows to Sacramento, Napa, or the Bay Area.' }
+      { title: 'Category 3 protocols', body: 'Outside flood water is treated as contaminated. Crews wear PPE, remove unsalvageable porous materials, and disinfect the structure.' },
+      { title: 'Silt and debris removal', body: 'Valley flood water leaves sediment behind. It gets shoveled, extracted, and hauled out, not just dried in place.' },
+      { title: 'Structural drying', body: 'Commercial air movers and dehumidifiers run until wood framing and slab hit dry-standard readings.' },
+      { title: 'Rebuild coordination', body: 'Once dry, the same network can handle drywall, insulation, flooring, and paint.' }
     ],
     faq: [
-      {
-        q: 'Does my AWD vehicle need a flatbed?',
-        a: 'Yes. Towing an AWD vehicle with two wheels on the ground can damage the drivetrain. We dispatch flatbeds for AWD by default.'
-      },
-      {
-        q: 'Can you move a car that doesn\u2019t run or steer?',
-        a: 'Yes. Operators carry skates and winches for vehicles that don\u2019t roll, steer, or go into neutral.'
-      }
+      { q: 'My street floods every big storm. Can you help before it happens?', a: 'The crews we dispatch handle response, not levee work, but if water has entered your home even once, a call is worth it. Prior intrusions often leave hidden moisture and mold that shows up later.' },
+      { q: 'Does insurance cover flood damage?', a: 'Standard homeowners policies usually exclude rising water from outside; that is separate flood insurance (NFIP or private). Water from a burst pipe or roof leak is typically covered. Crews document everything either way so you can pursue whatever coverage applies.' },
+      { q: 'How long does flood cleanup take?', a: 'Extraction and demo of wet materials usually happens in the first day or two. Structural drying typically runs 3 to 5 days, verified daily with moisture readings.' }
     ]
   },
   {
-    slug: 'jump-start',
-    name: 'Jump Starts',
-    short: 'Dead battery in a driveway, parking garage, or the Solano Town Center lot. Usually under 30 minutes.',
-    metaTitle: 'Car Jump Start Service in Fairfield, CA | Solano Towing',
-    metaDesc:
-      'Dead battery? Mobile jump start service in Fairfield, Suisun City & Vacaville, 24/7. Call (707) 356-7623 and get moving in about 25 minutes.',
-    h1: 'Jump Start Service in Fairfield, CA',
+    slug: 'sewage-cleanup',
+    name: 'Sewage & Black Water Cleanup',
+    short: 'Backed-up mains, overflowed toilets, and failed lines cleaned to biohazard standards.',
+    icon: 'sewage',
+    h1: 'Sewage Cleanup in Stockton, Modesto & the 209',
     intro: [
-      'Cold snap mornings in Suisun Valley and 100-degree summer afternoons both kill batteries, and it always happens in the worst spot: the Solano Town Center garage, the commuter lot at the Fairfield Transportation Center, or your own driveway before a shift at Travis.',
-      'A service truck comes to you with a professional jump pack, checks that the alternator is charging, and if the battery is done for, can tow you straight to a parts store or your shop instead of leaving you to stall at the next light.'
+      'A sewage backup is not a mess, it is a biohazard. Black water carries bacteria, viruses, and parasites, and anything porous it touches, carpet, pad, drywall, particleboard cabinets, generally cannot be saved. Older neighborhoods across Stockton, Lodi, and Modesto run on aging clay and Orangeburg laterals, and root intrusion backups are one of the most common emergency calls in the Valley.',
+      'Dispatched crews contain the affected area, extract sewage, remove contaminated materials, then clean, disinfect, and deodorize before drying the structure. Kids and pets stay out of the area until clearance.'
     ],
     bullets: [
-      { label: 'Comes to you', text: 'Driveways, garages, parking lots, roadside.' },
-      { label: 'System check', text: 'Quick verify that the alternator is charging before we leave.' },
-      { label: 'Plan B included', text: 'If a jump won\u2019t hold, we quote a tow on the spot.' }
+      { title: 'Containment first', body: 'The affected area gets sealed off so contamination does not track through the rest of the house.' },
+      { title: 'Safe removal and disposal', body: 'Contaminated porous materials are bagged and disposed of properly, not aired out and reinstalled.' },
+      { title: 'Hospital-grade disinfection', body: 'Hard surfaces are cleaned and treated with antimicrobial products rated for category 3 water.' },
+      { title: 'Odor elimination', body: 'HEPA air scrubbing and deodorization, because a house that smells like sewage is not done.' }
     ],
     faq: [
-      {
-        q: 'How much does a jump start cost in Fairfield?',
-        a: 'Most jump starts in Fairfield, Suisun City, and Vacaville run a flat service-call fee, quoted before dispatch. After-hours calls are the same flat rate.'
-      },
-      {
-        q: 'My car clicks but won\u2019t turn over. Will a jump work?',
-        a: 'Usually yes, that\u2019s the classic dead-battery sound. If it\u2019s the starter instead, the operator will know within a minute and can tow you to a shop.'
-      }
+      { q: 'The toilet overflowed but it looks like mostly water. Is that still sewage?', a: 'Any water that has passed a toilet trap or come up a drain is treated as contaminated. Category 2 at best, category 3 if it contains waste. It is not a mop-and-forget situation.' },
+      { q: 'Who fixes the actual pipe?', a: 'A plumber clears or repairs the line; restoration crews handle everything the sewage touched. Many callers need both, and dispatch can point you in the right direction.' },
+      { q: 'Is sewage damage covered by insurance?', a: 'Many policies exclude sewer backup unless you carry a specific rider. Check for "water backup" coverage on your declarations page. Crews document the loss thoroughly either way.' }
     ]
   },
   {
-    slug: 'lockout-service',
-    name: 'Car Lockouts',
-    short: 'Keys locked in the car? Damage-free entry, no broken windows, day or night.',
-    metaTitle: 'Car Lockout Service in Fairfield, CA | Solano Towing',
-    metaDesc:
-      'Locked out of your car in Fairfield, Suisun City or Vacaville? 24/7 damage-free lockout service. Call (707) 356-7623.',
-    h1: 'Car Lockout Service in Fairfield',
+    slug: 'burst-pipe-cleanup',
+    name: 'Burst & Leaking Pipe Cleanup',
+    short: 'Supply line failures, slab leaks, and pinhole leaks: extraction, drying, and damage repair.',
+    icon: 'pipe',
+    h1: 'Burst Pipe & Slab Leak Cleanup',
     intro: [
-      'Keys sitting on the seat at a gas station on North Texas Street, or locked in the trunk at the Suisun Waterfront: it happens to everyone once. Operators open vehicles with professional wedge-and-reach tools, the same equipment roadside clubs use, without drilling locks or breaking glass.',
-      'Kids or pets locked inside? Say so when you call and your job jumps the queue. If it\u2019s an emergency, call 911 first; Fairfield PD and Suisun Fire will break a window when seconds matter, and we\u2019ll handle the situations that aren\u2019t life-threatening.'
+      'Central Valley water is hard, and hard water eats copper. Pinhole leaks in slab-built homes across Tracy, Manteca, and Lathrop can run for weeks before a warm spot on the floor or a spiking water bill gives them away. When a supply line lets go outright, a 1/2-inch pipe can put 50 gallons a minute into your house.',
+      'First move: shut off water at the main. Then call. Crews extract, open up what has to be opened, and dry the structure. If the leak is under slab, they work alongside your plumber so leak detection, repair, and drying happen in the right order.'
     ],
     bullets: [
-      { label: 'Damage-free entry', text: 'Wedge and long-reach tools, no drilled locks.' },
-      { label: 'All makes', text: 'Domestic, import, and most modern keyless vehicles.' },
-      { label: 'Priority for kids & pets', text: 'These calls move to the front of the line.' }
+      { title: 'Fast extraction', body: 'Supply line water is clean but relentless. Getting it out fast is what saves floors and drywall.' },
+      { title: 'Slab leak experience', body: 'Moisture mapping tells you how far water traveled under flooring before anyone starts cutting.' },
+      { title: 'Targeted demolition', body: 'Only what is wet comes out. Flood cuts at the right height, not walls torn open on a guess.' },
+      { title: 'Works with your plumber', body: 'Restoration and repair sequenced correctly so nothing gets sealed up wet.' }
     ],
     faq: [
-      {
-        q: 'Can you unlock a car with the engine running?',
-        a: 'Yes, that\u2019s one of the most common calls we get, especially on cold mornings when people warm the car up and the door locks behind them.'
-      },
-      {
-        q: 'What if my key fob battery died?',
-        a: 'Most fobs hide a physical key inside, and most keyless cars have a hidden lock cylinder. The operator can show you, or simply open the car.'
-      }
+      { q: 'Where is my water shutoff?', a: 'Usually at the front hose bib area, in the garage, or at the meter box near the sidewalk. Every adult in the house should know where it is. If you cannot find it, dispatch can talk you through it while a crew heads over.' },
+      { q: 'The leak was small. Do I really need drying equipment?', a: 'Small leaks that ran for a long time are often worse than big dramatic ones, because water spread slowly through materials. A moisture reading costs you nothing to be sure.' },
+      { q: 'Will insurance cover a burst pipe?', a: 'Sudden and accidental discharge is one of the most commonly covered water losses. Long-term leaks can be trickier, which is why crew documentation of the source and timeline matters.' }
     ]
   },
   {
-    slug: 'winch-out',
-    name: 'Winch-Outs & Recovery',
-    short: 'Stuck in mud, a ditch, or off the shoulder along Highway 12 or Suisun Valley Road.',
-    metaTitle: 'Winch-Out & Off-Road Recovery in Solano County | Solano Towing',
-    metaDesc:
-      'Stuck in a ditch or mud in Fairfield, Suisun Valley or along Hwy 12? 24/7 winch-out and recovery. Call (707) 356-7623.',
-    h1: 'Winch-Out & Recovery in Solano County',
+    slug: 'structural-drying',
+    name: 'Structural Drying & Dehumidification',
+    short: 'Commercial air movers, LGR dehumidifiers, and daily meter readings until dry-standard is verified.',
+    icon: 'drying',
+    h1: 'Structural Drying & Dehumidification',
     intro: [
-      'Winter rain turns the shoulders along Suisun Valley Road and Highway 12 to soup, and every year plenty of drivers find out how soft that ground is. Whether you slid off the pavement, dropped a wheel into a ditch on Rockville Road, or buried an axle at the edge of a vineyard, a recovery truck with a winch gets you back on solid ground.',
-      'Operators assess the angle and ground before pulling, use tree savers and proper rigging, and check the vehicle for damage before you drive off. If it isn\u2019t drivable, the same truck tows it.'
+      'Extraction gets the water you can see. Drying gets the water you cannot: moisture inside framing, subfloor, drywall, and insulation. Skip it or shortcut it and the Valley\u2019s hot summers turn a wet wall cavity into a mold farm behind fresh paint.',
+      'Crews set commercial air movers and low-grain refrigerant dehumidifiers sized to the space, then return daily to take meter readings and adjust equipment. Drying is done when the numbers say it is done, not when the carpet feels dry.'
     ],
     bullets: [
-      { label: 'Mud, ditch & sand', text: 'Recovery from soft shoulders, fields, and embankments.' },
-      { label: 'Proper rigging', text: 'Controlled pulls that don\u2019t bend what the ditch didn\u2019t.' },
-      { label: 'Tow if needed', text: 'Recovery and tow handled in one visit, one price.' }
+      { title: 'Engineered drying plans', body: 'Equipment counts calculated from affected square footage and materials, not guesswork.' },
+      { title: 'LGR dehumidification', body: 'Low-grain refrigerant units pull moisture out of dense materials that household dehumidifiers cannot touch.' },
+      { title: 'Daily monitoring', body: 'Moisture readings logged every visit until materials hit dry standard.' },
+      { title: 'Documentation', body: 'A drying log your insurance company and your future buyer\u2019s inspector will both appreciate.' }
     ],
     faq: [
-      {
-        q: 'How much does a winch-out cost?',
-        a: 'Simple pulls near the pavement are usually a flat fee. Long pulls, steep angles, or deep mud are quoted after a quick description over the phone, always before the truck rolls.'
-      },
-      {
-        q: 'Will winching damage my car?',
-        a: 'Operators attach to designated recovery points and pull in line with the vehicle. It\u2019s far gentler than spinning your tires until something breaks.'
-      }
+      { q: 'How long does structural drying take?', a: 'Typically 3 to 5 days for common losses. Dense materials like hardwood and plaster can take longer. Daily readings tell you exactly where things stand.' },
+      { q: 'Can I just run fans and open windows?', a: 'Airflow without dehumidification often just moves moisture around, and Valley summer air conditions can slow evaporation. Wall cavities and subfloor need directed airflow plus dehumidification.' },
+      { q: 'The equipment is loud. Can it be turned off at night?', a: 'Every hour off extends the dry time and the window for mold growth. Crews will place equipment to minimize disruption, but continuous operation is what gets you done in days instead of weeks.' }
     ]
   },
   {
-    slug: 'roadside-assistance',
-    name: 'Roadside Assistance',
-    short: 'Flat tires, fuel delivery, and small fixes that get you rolling without a tow.',
-    metaTitle: '24/7 Roadside Assistance in Fairfield, CA | Solano Towing',
-    metaDesc:
-      'Flat tire change, gas delivery and roadside help in Fairfield, Suisun City & Vacaville, 24/7. Call (707) 356-7623.',
-    h1: 'Roadside Assistance in Fairfield, CA',
+    slug: 'mold-remediation',
+    name: 'Mold Remediation',
+    short: 'Containment, HEPA filtration, removal, and treatment when water damage was found too late.',
+    icon: 'mold',
+    h1: 'Mold Remediation in the 209',
     intro: [
-      'Not every breakdown needs a tow. A flat on the I-80 shoulder near the Air Base Parkway exit, an empty tank two miles short of the Cordelia gas stations, a battery that just needs a boost: a service truck handles these on the spot for a flat call-out fee.',
-      'If the problem turns out to be bigger than roadside tools can fix, the tow is dispatched immediately with no second wait in the queue.'
+      'Mold needs about 48 hours of moisture to get started, which is why it shows up after slow leaks, old flood damage, and drying jobs that never really finished. Musty smell, dark spotting on drywall, or allergy symptoms that clear up when you leave the house are the usual tells.',
+      'Proper remediation is not spraying bleach on a wall. Crews build containment with negative air pressure so spores do not spread, remove affected materials under HEPA filtration, treat the structure, and fix the moisture source, because mold always comes back if the water problem stays.'
     ],
     bullets: [
-      { label: 'Tire changes', text: 'Your spare installed safely, away from traffic.' },
-      { label: 'Fuel delivery', text: 'Enough gas or diesel to reach the nearest station.' },
-      { label: 'One call escalation', text: 'If it needs a tow after all, the truck is already moving.' }
+      { title: 'Containment and negative air', body: 'Plastic containment and HEPA-filtered negative air machines keep spores out of the rest of the house.' },
+      { title: 'Source correction', body: 'Remediation includes finding and addressing the moisture source, or the mold returns.' },
+      { title: 'Safe removal', body: 'Affected porous materials removed and bagged inside containment, not carried through the hallway.' },
+      { title: 'Verification', body: 'Post-remediation the area is HEPA vacuumed, treated, and can be cleared with third-party testing if desired.' }
     ],
     faq: [
-      {
-        q: 'What if I don\u2019t have a spare tire?',
-        a: 'Many newer cars don\u2019t. We tow you to the nearest open tire shop in Fairfield or Vacaville, and can tell you on the phone which ones are open.'
-      },
-      {
-        q: 'Do you bring diesel?',
-        a: 'Yes, both gasoline and diesel delivery are available across the service area.'
-      }
+      { q: 'Is bleach enough for mold on drywall?', a: 'No. Bleach does not penetrate porous materials, so it kills surface growth while roots survive inside the material. Moldy drywall generally needs to be removed.' },
+      { q: 'Is the mold in my house dangerous?', a: 'Reactions vary by person and species. People with asthma, allergies, or immune issues are most affected. Regardless of species, indoor mold growth means a moisture problem that needs fixing.' },
+      { q: 'Does insurance pay for mold remediation?', a: 'Often only when the mold resulted from a covered water loss, and many policies cap mold coverage. Fast response to water damage is the best way to keep mold out of the claim entirely.' }
     ]
   },
   {
-    slug: 'motorcycle-towing',
-    name: 'Motorcycle Towing',
-    short: 'Chock-and-strap flatbed transport for bikes. No dragged wheels, no dropped bikes.',
-    metaTitle: 'Motorcycle Towing in Fairfield & Solano County | Solano Towing',
-    metaDesc:
-      'Motorcycle towing in Fairfield, Suisun City & Vacaville with wheel chocks and soft straps. 24/7. Call (707) 356-7623.',
-    h1: 'Motorcycle Towing in Solano County',
+    slug: 'storm-damage-repair',
+    name: 'Storm & Roof Leak Response',
+    short: 'Emergency tarping, roof leak intrusion drying, and wind damage cleanup during Valley storm season.',
+    icon: 'storm',
+    h1: 'Storm Damage & Roof Leak Response',
     intro: [
-      'Bikes break down on the best roads: Highway 12 toward Rio Vista, the twisties out past Rockville Hills, or just the daily I-80 slog. A motorcycle needs a flatbed with a wheel chock and soft-loop straps, not a wheel-lift and hope.',
-      'Operators secure the bike at the triple clamp and frame, never the bars alone, and deliver it to your garage or shop standing exactly as it left.'
+      'When an atmospheric river parks over the Valley, dispatch boards light up: roof leaks over bedroom ceilings, wind-lifted shingles, fences into windows, and water finding every unsealed penetration. The 2023 storm runs showed how much damage back-to-back systems can do to housing stock that mostly sees dry weather.',
+      'Crews respond with emergency tarping and board-up to stop active intrusion, then extract and dry what got wet inside. Ceiling drywall that has taken on water gets opened before it comes down on its own.'
     ],
     bullets: [
-      { label: 'Wheel chock equipped', text: 'Front wheel locked in a chock for the whole ride.' },
-      { label: 'Soft-loop straps', text: 'No scratched tanks, no crushed lines.' },
-      { label: 'All bikes', text: 'Cruisers, sport bikes, dual-sports, and trikes.' }
+      { title: 'Emergency tarping', body: 'Roof tarps installed to stop active leaks until permanent roof repair can happen in dry weather.' },
+      { title: 'Ceiling and attic drying', body: 'Insulation and ceiling drywall assessed and dried or removed before sagging and collapse.' },
+      { title: 'Board-up service', body: 'Broken windows and openings secured against the next band of weather.' },
+      { title: 'Storm-season capacity', body: 'A dispatch network means multiple crews during peak demand, when single shops stop answering.' }
     ],
     faq: [
-      {
-        q: 'Can you tow a motorcycle that won\u2019t roll?',
-        a: 'Yes. With a seized wheel the operator uses skates or a winch-assisted load. Mention it when you call so the right gear is on the truck.'
-      }
+      { q: 'Water is dripping through a light fixture. What do I do?', a: 'Kill the breaker to that circuit before anything else, then place containers and call. Water in electrical fixtures is a shock and fire risk.' },
+      { q: 'Should I poke a hole in my bulging ceiling?', a: 'A small relief hole into a bucket can prevent a larger collapse, but only if you are confident about what is above it. Crews would rather you wait the short time it takes them to arrive.' },
+      { q: 'Do you repair the roof too?', a: 'Emergency tarping is part of the response. Permanent roof repair is a roofing contractor job, and crews can hand off with photos and documentation of the damage.' }
     ]
   },
   {
-    slug: 'heavy-duty-towing',
-    name: 'Heavy Duty Towing',
-    short: 'Box trucks, RVs, buses, and equipment along the I-80 and I-680 freight corridor.',
-    metaTitle: 'Heavy Duty Towing on the I-80 Corridor | Solano Towing',
-    metaDesc:
-      'Heavy duty and medium duty towing for box trucks, RVs and commercial vehicles in Fairfield & Solano County. 24/7 dispatch: (707) 356-7623.',
-    h1: 'Heavy Duty Towing on the I-80 Corridor',
+    slug: 'crawl-space-water-removal',
+    name: 'Crawl Space & Under-Home Water',
+    short: 'Standing water, saturated soil, and wet insulation under raised-foundation Valley homes.',
+    icon: 'crawl',
+    h1: 'Crawl Space Water Removal',
     intro: [
-      'The I-80/I-680/Highway 12 junction moves a constant stream of freight, and when a box truck loses an axle or an RV overheats on the Vaca grade, it takes more than a one-ton wrecker to move it. We dispatch medium and heavy duty units for commercial vehicles across Solano County.',
-      'Fleet managers: after-hours breakdowns between the Bay Area and Sacramento are the exact gap we cover. One number, any hour, and your driver isn\u2019t stranded at a truck stop until morning.'
+      'Older homes across central Stockton, Lodi, and Modesto sit on raised foundations, and the crawl space under them is where water problems hide. High water tables near the Delta, broken supply lines, and failed drainage all end up in the same place: standing water under your floor that you might not find for months.',
+      'The tell is usually a musty smell, cupping hardwood, or a sagging floor. Crews pump out standing water, remove soaked insulation, dry the framing, and can install vapor barriers so the space stays dry.'
     ],
     bullets: [
-      { label: 'Medium & heavy units', text: 'Box trucks, buses, RVs, and equipment.' },
-      { label: 'Load-aware', text: 'Operators experienced with loaded vehicles and weight limits.' },
-      { label: 'Fleet friendly', text: 'Direct billing available for repeat commercial accounts.' }
+      { title: 'Pump-out and extraction', body: 'Standing water removed from crawl spaces, even tight ones under older Valley homes.' },
+      { title: 'Wet insulation removal', body: 'Saturated fiberglass under your floor never dries in place. It comes out.' },
+      { title: 'Framing and subfloor drying', body: 'Directed airflow and dehumidification under the house until wood hits safe moisture content.' },
+      { title: 'Vapor barrier installation', body: 'Ground moisture sealed off so the space stays dry after the emergency is over.' }
     ],
     faq: [
-      {
-        q: 'Can you tow a loaded box truck?',
-        a: 'Yes, within equipment ratings. Have the GVWR and rough load weight ready when you call and dispatch will send the right class of truck the first time.'
-      }
+      { q: 'How do I know if there is water under my house?', a: 'Musty odors, cupped or buckling wood floors, cold damp-feeling floors, and increased pest activity are common signs. A crew can inspect and take moisture readings quickly.' },
+      { q: 'Is crawl space water really an emergency?', a: 'It is rarely as dramatic as a burst pipe, but standing water under a home rots framing, feeds mold, and attracts pests. The bill grows the longer it sits.' },
+      { q: 'Where does the water come from?', a: 'Common sources in the 209: supply or drain line leaks under the house, poor exterior drainage during storms, irrigation, and seasonal high water tables near rivers and the Delta.' }
     ]
   },
   {
-    slug: 'accident-recovery',
-    name: 'Accident Recovery',
-    short: 'Post-collision tows, secure transport to the shop of your choice, and help with the insurance steps.',
-    metaTitle: 'Accident Towing & Recovery in Fairfield, CA | Solano Towing',
-    metaDesc:
-      'Accident recovery and collision towing in Fairfield, Suisun City & Vacaville. Your choice of body shop. 24/7: (707) 356-7623.',
-    h1: 'Accident Recovery in Fairfield, CA',
+    slug: 'appliance-leak-cleanup',
+    name: 'Appliance & Water Heater Leaks',
+    short: 'Failed water heaters, washer hoses, dishwasher lines, and fridge lines, cleaned up and dried.',
+    icon: 'appliance',
+    h1: 'Appliance & Water Heater Leak Cleanup',
     intro: [
-      'After a collision on I-80 or at one of Fairfield\u2019s big intersections, you have more choices than the moment suggests. Unless CHP has ordered a rotation tow to clear the road, you choose who tows your car and where it goes, and taking it straight to a body shop you trust avoids daily storage fees at a yard you didn\u2019t pick.',
-      'Operators secure loose panels, sweep debris where safe, photograph the vehicle at pickup, and deliver to the shop or your home. Keep the tow receipt; your insurer reimburses towing on most collision claims.'
+      'The most common water loss in the Valley is not a flood, it is a $12 part. Washing machine supply hoses, dishwasher lines, ice maker lines, and water heaters all fail on a schedule, and most of them fail while nobody is home. A water heater in a Manteca garage lets go and the first sign is water running under the wall into the hallway carpet.',
+      'Crews extract, pull back flooring where needed, dry cabinets and walls, and document the failed component for your insurance claim.'
     ],
     bullets: [
-      { label: 'Your shop, your choice', text: 'Direct delivery to the body shop you pick.' },
-      { label: 'Documented handling', text: 'Photos at hookup and drop-off.' },
-      { label: 'Insurance-ready receipt', text: 'Itemized for your claim.' }
+      { title: 'Kitchen and laundry losses', body: 'Cabinet toe-kicks, under-sink cavities, and adjacent rooms checked with meters, since water travels farther than it looks.' },
+      { title: 'Water heater failures', body: 'Garage and closet water heater floods extracted and dried, including drywall behind the unit.' },
+      { title: 'Hidden slow leaks', body: 'Fridge and dishwasher lines that dripped for months, with the floor damage and mold that comes with them.' },
+      { title: 'Evidence preservation', body: 'The failed part and photos preserved, which insurers ask about more than people expect.' }
     ],
     faq: [
-      {
-        q: 'The police already called a tow. Can I still use you?',
-        a: 'If CHP ordered a rotation tow to clear the roadway, that truck takes the car, usually to a storage yard. You can then have us move it from the yard to your body shop, which stops the daily storage fees.'
-      }
+      { q: 'The dishwasher leaked but the floor looks fine now. Should I worry?', a: 'Water under flooring and inside toe-kicks does not evaporate on its own. A quick moisture check now is much cheaper than a warped floor and moldy cabinet later.' },
+      { q: 'My water heater is 12 years old. Is that a problem?', a: 'Tank water heaters commonly fail between 8 and 12 years, and Valley hard water shortens that. If yours is in that range, know where your shutoff is and consider proactive replacement.' },
+      { q: 'Does insurance cover appliance leaks?', a: 'Sudden failures usually yes, for the resulting damage (not the appliance itself). Long-term slow leaks can be disputed as maintenance, which is why documentation matters.' }
     ]
   },
   {
-    slug: 'long-distance-towing',
-    name: 'Long Distance Towing',
-    short: 'Fairfield to Sacramento, the Bay Area, or anywhere in Northern California at a flat per-mile rate.',
-    metaTitle: 'Long Distance Towing from Fairfield, CA | Solano Towing',
-    metaDesc:
-      'Long distance towing from Fairfield & Solano County to Sacramento, San Francisco, and Northern California. Flat rates: (707) 356-7623.',
-    h1: 'Long Distance Towing from Fairfield',
+    slug: 'fire-smoke-damage',
+    name: 'Fire & Smoke Damage Restoration',
+    short: 'Smoke, soot, and the water damage firefighting leaves behind, restored together.',
+    icon: 'fire',
+    h1: 'Fire & Smoke Damage Restoration',
     intro: [
-      'Fairfield sits halfway between the Bay Area and Sacramento, which means half the breakdowns here belong to cars that live somewhere else. Getting your vehicle back to a home shop in Concord, Davis, or San Jose is a flat hook fee plus a per-mile rate, quoted to the dollar before dispatch.',
-      'Flatbed transport is standard for long hauls, and you can ride along in most trucks. Buying a car in Solano County or shipping one to a buyer? Scheduled transport runs at a lower rate than emergency calls.'
+      'After a fire, you are dealing with three problems at once: burned materials, smoke and soot through the whole structure, and everything the fire hoses soaked. Kitchen fires are the most common call, and even a small one can push soot through the HVAC into every room in the house.',
+      'Crews board up and secure the structure, extract firefighting water, remove burned materials, clean soot from surfaces and contents, and run air scrubbing and deodorization so the house stops smelling like the worst day you had in it.'
     ],
     bullets: [
-      { label: 'Quoted to the dollar', text: 'Hook fee plus per-mile, agreed before the truck rolls.' },
-      { label: 'Flatbed standard', text: 'No drivetrain wear across a hundred miles.' },
-      { label: 'Scheduled discounts', text: 'Non-emergency transport costs less. Book ahead.' }
+      { title: 'Board-up and securing', body: 'Openings secured immediately, which most insurance policies require you to do to prevent further loss.' },
+      { title: 'Water extraction', body: 'Firefighting water is a full water-damage loss on top of the fire and gets treated like one.' },
+      { title: 'Soot and smoke cleaning', body: 'Different soot types need different cleaning methods. Wrong method sets the stain permanently.' },
+      { title: 'Odor removal', body: 'HEPA scrubbing, deodorization, and HVAC attention, because smoke odor hides everywhere air moves.' }
     ],
     faq: [
-      {
-        q: 'How much is a tow from Fairfield to Sacramento?',
-        a: 'It depends on the exact pickup and drop, but it\u2019s a simple hook fee plus mileage. Call with both addresses and you\u2019ll have an exact number in two minutes.'
-      }
+      { q: 'The fire was small. Do I really need professional cleaning?', a: 'Soot is acidic and keeps damaging finishes for days after the fire. Small fire, small job, but the clock is the same.' },
+      { q: 'Can we stay in the house?', a: 'Depends on the extent of smoke, soot, and water. Crews can assess air quality concerns and containment options honestly on arrival.' },
+      { q: 'What should I do before the crew arrives?', a: 'Do not wipe soot off walls (wrong technique smears it in), do not run the HVAC, and start a list of damaged items for your claim.' }
     ]
   },
   {
-    slug: 'ev-towing',
-    name: 'EV & Tesla Towing',
-    short: 'Full-lift flatbed transport for electric vehicles, the way manufacturers require.',
-    metaTitle: 'EV & Tesla Towing in Fairfield, CA | Solano Towing',
-    metaDesc:
-      'Electric vehicle and Tesla towing in Fairfield, Suisun City & Vacaville. Manufacturer-correct flatbed transport, 24/7. Call (707) 356-7623.',
-    h1: 'EV & Tesla Towing in Fairfield',
+    slug: 'commercial-water-damage',
+    name: 'Commercial Water Damage',
+    short: 'Restaurants, offices, retail, and warehouses along the 99 corridor, dried with downtime in mind.',
+    icon: 'commercial',
+    h1: 'Commercial Water Damage in the 209',
     intro: [
-      'Electric vehicles can\u2019t be flat-towed or lifted by two wheels the way a gas car sometimes can. Tesla, Rivian, and most EV makers require full-lift flatbed transport, because dragging the drive wheels can damage the motor and regenerative braking system. Every EV call we dispatch goes out on a flatbed, no exceptions.',
-      'Whether your battery hit zero on the I-80 grade, a charging session failed at the Vacaville outlets, or the car simply won\u2019t wake up in your driveway, operators know the tow-mode and transport-mode steps for the major EV brands and can walk you through them on the phone before the truck arrives.'
+      'For a business, water damage has a second bill attached: every day closed. A sprinkler head failure in a Stockton warehouse or a supply line break above a Modesto restaurant kitchen is a race against lost revenue, spoiled inventory, and employees you still have to pay.',
+      'Commercial crews scale up: more extraction, more drying equipment, after-hours work, and phased plans that keep parts of the operation running while affected areas dry. Documentation supports both your property claim and business interruption claim.'
     ],
     bullets: [
-      { label: 'Flatbed only', text: 'Full-lift transport, as Tesla and other EV makers require.' },
-      { label: 'Tow-mode guidance', text: 'We talk you through putting the car in transport mode on the phone.' },
-      { label: 'Dead-battery ready', text: 'Skates and winch for an EV that won\u2019t roll or shift.' }
+      { title: 'Priority commercial dispatch', body: 'Losses measured in revenue per day get treated with that urgency.' },
+      { title: 'Scaled equipment', body: 'Desiccant and LGR dehumidification and enough air movement for warehouse and open-plan spaces.' },
+      { title: 'After-hours work', body: 'Crews can work nights and weekends to keep your doors open during business hours.' },
+      { title: 'Claim-grade documentation', body: 'Moisture logs, photos, and scope suitable for property and business interruption claims.' }
     ],
     faq: [
-      {
-        q: 'Can you tow a Tesla that has no charge?',
-        a: 'Yes. A fully depleted Tesla won\u2019t shift to neutral on its own, so operators use skates or a winch to load it onto the flatbed without dragging the wheels.'
-      },
-      {
-        q: 'Is flatbed really necessary for my EV?',
-        a: 'For nearly all EVs, yes. Towing with drive wheels on the ground can damage the motor. A flatbed is the safe, manufacturer-approved method, and it\u2019s what we send by default.'
-      }
+      { q: 'Can you work around our business hours?', a: 'Yes. Phased and after-hours drying plans are standard for retail, restaurants, and offices that cannot fully close.' },
+      { q: 'We rent our space. Who calls, us or the landlord?', a: 'Whoever discovers the loss should call first, then sort out the lease responsibilities. Delay costs both parties. Crews are used to coordinating between tenants, landlords, and both insurers.' },
+      { q: 'How big a loss can you handle?', a: 'The dispatch network covers everything from a single office suite to warehouse-scale losses. Large losses just mean more crews and equipment on site.' }
     ]
   },
   {
-    slug: 'impound-retrieval',
-    name: 'Impound & Storage Tows',
-    short: 'Get your car out of a storage yard and to your shop before daily fees pile up.',
-    metaTitle: 'Impound & Storage Yard Towing in Solano County | Solano Towing',
-    metaDesc:
-      'Move your vehicle out of an impound or storage yard in Fairfield & Solano County to your shop or home. Stop daily fees. Call (707) 356-7623.',
-    h1: 'Impound & Storage Yard Tows',
+    slug: 'insurance-claim-help',
+    name: 'Insurance Claim Assistance',
+    short: 'Documentation, scope, and direct billing so your water damage claim actually gets paid.',
+    icon: 'claim',
+    h1: 'Water Damage Insurance Claim Help',
     intro: [
-      'After an accident or a CHP rotation tow, your car often ends up in a storage yard charging daily fees that climb fast. Once you\u2019ve cleared the release paperwork, we\u2019ll pick the vehicle up from the yard and deliver it to your body shop, mechanic, or home, which stops the storage clock as soon as possible.',
-      'This is one of the most overlooked ways to save money after a collision in Solano County. A short second tow from the yard to your chosen shop almost always costs less than the storage fees it prevents from stacking up.'
+      'The difference between a smooth claim and a nightmare claim is usually documentation from day one. Adjusters want to see the source of the loss, moisture readings, photos before demo, and a scope of work in the format they use. Homeowners guessing at this alone leave money on the table or get delayed for months.',
+      'The crews dispatched through this line document to insurance standards as they work: cause of loss, moisture maps, drying logs, and itemized scope. Many can bill your insurer directly so you are only out your deductible.'
     ],
     bullets: [
-      { label: 'Stops the fee clock', text: 'The sooner the car leaves the yard, the less you pay in storage.' },
-      { label: 'Yard-to-shop', text: 'Direct delivery to the mechanic or body shop you choose.' },
-      { label: 'Paperwork-ready', text: 'We coordinate pickup once your release is cleared.' }
+      { title: 'Day-one documentation', body: 'Photos and readings captured before anything is moved or removed, which is exactly when adjusters want them.' },
+      { title: 'Industry-standard scope', body: 'Estimates written in the same format insurance adjusters use, which shortens the negotiation.' },
+      { title: 'Direct insurance billing', body: 'Many crews bill the carrier directly. You handle your deductible, not the whole invoice.' },
+      { title: 'Straight answers', body: 'If a loss is unlikely to be covered, you hear that early, not after the work is done.' }
     ],
     faq: [
-      {
-        q: 'How do I get my car out of impound in Fairfield?',
-        a: 'First get a release from whoever authorized the tow (often CHP or the yard itself), settle any required fees, then call us to move the vehicle to your shop or home. We handle the transport once the release is in hand.'
-      },
-      {
-        q: 'Why not just leave it at the storage yard?',
-        a: 'Storage yards charge by the day, and the total grows quickly. Moving the car to your own shop or driveway stops those daily charges, which usually saves far more than the short tow costs.'
-      }
+      { q: 'Should I call insurance or the restoration crew first?', a: 'Stop the water, then call here. Mitigation cannot wait for an adjuster, and policies actually require you to prevent further damage. Then report the claim; crews will coordinate with the adjuster from there.' },
+      { q: 'Will filing a claim raise my rates?', a: 'Possibly, and that is a real consideration for small losses close to your deductible. Crews can give you a scope first so you can decide whether to file with real numbers in hand.' },
+      { q: 'The adjuster offered less than the damage costs. Now what?', a: 'A documented scope with moisture logs and photos is your negotiating position. Supplements are a normal part of the process when the initial estimate missed damage.' }
     ]
   }
 ];

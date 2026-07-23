@@ -4,32 +4,26 @@
 // ============================================================
 
 export const SITE = {
-  brand: '209 Restoration',
-  domain: 'https://209restoration.com',
-  tagline: 'Water damage response for the Central Valley',
-
-  // TODO: replace with the real Twilio tracking number before launch
-  // tel: links + schema + meta use pure digits; humans see the vanity.
-  phone: '+12099802782',
-  phoneDisplay: '(209) 980-AQUA',
-  phoneDigits: '(209) 980-2782',
-
-  email: 'help@209restoration.com',
-
-  serviceRegion: 'San Joaquin and Stanislaus Counties',
-  anchorCity: 'Stockton',
-  anchorState: 'CA',
-
-  hoursNote: 'Open now. Crews answer 24 hours a day, 7 days a week, including holidays.',
-
+  brand: 'Solano Towing',
   legalLine:
-    '209 Restoration is a local dispatch and referral service. Water damage, cleanup, and restoration work is performed by licensed, insured independent restoration contractors serving San Joaquin and Stanislaus Counties.',
+    'Solano Towing is a local dispatch and referral service. Towing and roadside services are performed by licensed independent operators in Solano County.',
+  domain: 'solanotowing.com',
+  url: 'https://solanotowing.com',
 
-  // Geo center used in LocalBusiness schema (downtown Stockton)
-  geo: { lat: 37.9577, lng: -121.2908 },
+  // Real Twilio number. tel: links + schema use pure digits; humans see the vanity.
+  phone: '+17073567623',
+  phoneDisplay: '(707) 356-ROAD',
+  phoneDigits: '(707) 356-7623',
 
-  social: {
-    instagram: 'https://instagram.com/209restoration',
-    facebook: 'https://facebook.com/209restoration'
-  }
+  city: 'Fairfield',
+  county: 'Solano County',
+  state: 'CA',
+  serviceAreaLine: 'Fairfield, Suisun City, Vacaville, Cordelia, Dixon, Rio Vista & Travis AFB',
+  zips: ['94533', '94534', '94535', '94585', '95687', '95688', '95620', '94571'],
+  corridors: ['I-80', 'I-680', 'Highway 12', 'the Cordelia Junction'],
+
+  etaLine: 'Average 25-minute response across the I-80 corridor',
+  hoursLine: 'Open 24 hours, 7 days a week',
+
+  gtag: '' // TODO: GA4 / call tracking snippet id
 };

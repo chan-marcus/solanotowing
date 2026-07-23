@@ -1,300 +1,240 @@
 ---
 import Base from '../layouts/Base.astro';
-import HeroScene from '../components/HeroScene.astro';
-import DryScene from '../components/DryScene.astro';
-import ServiceIcon from '../components/ServiceIcon.astro';
-import CtaBand from '../components/CtaBand.astro';
 import { SITE } from '../config/site';
 import { SERVICES } from '../data/services';
-import { CITIES } from '../data/cities';
+import { AREAS } from '../data/cities';
+import { TRUST, REVIEWS } from '../data/trust';
 
-const faq = [
-  { q: 'How fast can a crew get to me?', a: 'Dispatch answers 24/7 and crews are local to San Joaquin and Stanislaus Counties. Emergency response across Stockton, Modesto, Lodi, Tracy, and Manteca is typically a matter of hours, day or night.' },
-  { q: 'What should I do while I wait?', a: 'If it is safe: shut off the water at the main, kill power to affected rooms at the breaker, move what you can to dry ground, and do not run the HVAC. The dispatcher can walk you through it on the phone.' },
-  { q: 'Will my insurance cover this?', a: 'Sudden losses like burst pipes and appliance failures are commonly covered; rising outside flood water usually requires separate flood insurance. Crews document everything from the first visit so whatever coverage you have actually pays.' },
-  { q: 'Do you charge to come out?', a: 'Calling costs nothing and the dispatcher will give you straight answers about the situation. For covered losses, many crews bill your insurer directly so you are only out your deductible.' },
-  { q: 'Is it really an emergency if the water already stopped?', a: 'Yes. The water you can see is not the problem; the water inside walls, pad, and subfloor is. Mold starts in about 48 hours, so the drying clock is running whether or not the leak is.' }
+const homeFaq = [
+  { q: 'How fast can you get to me?', a: 'Most calls in Fairfield, Suisun City, Cordelia, and Vacaville see a truck in 20 to 30 minutes. The I-80/I-680 junction often runs faster because trucks stage nearby.' },
+  { q: 'How much does a tow cost in Solano County?', a: 'Local tows are a hook fee plus mileage, quoted as one firm number on the phone before dispatch. No after-hours surcharge, no surprise line items at drop-off.' },
+  { q: 'Are you available at 3am?', a: 'Yes. Dispatch answers 24/7, every day of the year. Late-night I-80 breakdowns are a large share of what we handle.' },
+  { q: 'What should I do while I wait on the freeway shoulder?', a: 'Pull as far right as possible, hazards on, and stay in the vehicle with your seatbelt fastened unless you can exit away from traffic behind a barrier. Give dispatch your direction of travel and nearest exit.' }
 ];
 
 const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faq.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a }
-  }))
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: homeFaq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+};
+
+const ICONS: Record<string, string> = {
+  'emergency-towing': '<path d="M12 3 2.5 19.5h19L12 3z"/><path d="M12 10v4"/><path d="M12 17.2v.1"/>',
+  'flatbed-towing': '<path d="M2 14h13l5-4h2v6H2z"/><circle cx="7" cy="18.5" r="1.6"/><circle cx="16" cy="18.5" r="1.6"/><path d="M4 14V9l9 3"/>',
+  'jump-start': '<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/>',
+  'lockout-service': '<circle cx="8" cy="9" r="4"/><path d="M11 12l9 9"/><path d="M16 17l2-2m1 5 2-2"/>',
+  'winch-out': '<circle cx="7" cy="7" r="3.5"/><path d="M7 10.5V14c0 2 1.5 3.5 3.5 3.5H14"/><path d="M14 15v5m0 0-2.5-2.5M14 20l2.5-2.5"/>',
+  'roadside-assistance': '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/><path d="M12 3.5v5M12 15.5v5M3.5 12h5M15.5 12h5"/>',
+  'motorcycle-towing': '<circle cx="5.5" cy="16.5" r="3"/><circle cx="18.5" cy="16.5" r="3"/><path d="M5.5 16.5 10 9h4l-2 4h6.5"/><path d="M13 6h3l1.5 3"/>',
+  'heavy-duty-towing': '<path d="M2 16V7h11v9"/><path d="M13 10h5l4 4v2h-4"/><circle cx="6" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/>',
+  'accident-recovery': '<path d="M12 21c-5-2.4-8-6-8-11V5l8-2.5L20 5v5c0 5-3 8.6-8 11z"/><path d="m9 12 2 2 4-4.5"/>',
+  'long-distance-towing': '<path d="M4 20 20 4"/><path d="M14 4h6v6"/><path d="M4 12v8h8"/>',
+  'ev-towing': '<rect x="4" y="9" width="13" height="8" rx="1.5"/><path d="M17 11h2l2 2v3a1 1 0 0 1-1 1"/><circle cx="8" cy="18.5" r="1.5"/><circle cx="15" cy="18.5" r="1.5"/><path d="M10 4 7.5 8h3L8 12"/>',
+  'impound-retrieval': '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9l6 6M15 9l-6 6"/>'
 };
 ---
+
 <Base
-  title="209 Restoration | Water Damage Restoration Stockton & Modesto | 24/7"
-  description="Emergency water damage restoration across the 209: Stockton, Modesto, Lodi, Tracy, Manteca. Flood, sewage, and burst pipe cleanup. Open now, crews answer 24/7. Call (209) 980-2782."
-  schema={[faqSchema]}
+  title="Solano Towing | 24/7 Towing in Fairfield, Suisun City & Vacaville, CA"
+  description="24/7 towing and roadside assistance in Fairfield, Suisun City, Vacaville and the Cordelia Junction. Local trucks, ~25 minute response, up-front pricing. Call (707) 356-7623."
+  path="/"
 >
-  <section class="hero">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- HERO -->
+  <section class="s-ink hero">
     <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow"><span class="open-dot" aria-hidden="true"></span>&nbsp; Open now &middot; 24/7 &middot; San Joaquin + Stanislaus</p>
-        <h1>Water in your house.<br /><span class="accent">Crews in the 209.</span></h1>
-        <p class="hero-sub">Burst pipe, flooded floor, sewage backup, storm leak. One call reaches a live dispatcher who sends a licensed local restoration crew, any hour, any night, anywhere from Stockton to Turlock.</p>
-        <div class="hero-actions">
-          <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
-          <a class="btn-ghost" href="/services/">See services</a>
+      <div class="hero-copy">
+        <p class="eyebrow">Solano County · I-80 Corridor</p>
+        <h1>When the road<br />leaves you stranded.</h1>
+        <p class="lead">
+          24/7 towing and roadside dispatch for Fairfield, Suisun City, and Vacaville.
+          Local licensed operators, one firm price before the truck rolls, and a line
+          that always gets answered.
+        </p>
+        <div class="hero-cta">
+          <a class="btn-call" href={`tel:${SITE.phone}`}>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            {SITE.phoneDisplay}
+          </a>
+          <a class="btn-ghost" href="/#services">See services</a>
         </div>
-        <ul class="hero-proof mono">
-          <li>Licensed &amp; insured crews</li>
-          <li>Insurance direct billing</li>
-          <li>Truck-mounted extraction</li>
-        </ul>
+        <dl class="hero-stats">
+          <div><dt>~25 min</dt><dd>avg response</dd></div>
+          <div><dt>24/7</dt><dd>live dispatch</dd></div>
+          <div><dt>Up front</dt><dd>firm quoted price</dd></div>
+        </dl>
       </div>
-      <HeroScene />
+
+      <figure class="hero-scene" aria-hidden="true">
+        <svg viewBox="0 0 440 460" role="presentation">
+          <defs>
+            <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16273c"/><stop offset="0.6" stop-color="#132033"/><stop offset="1" stop-color="#0d1826"/></linearGradient>
+            <linearGradient id="hglow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8a33d" stop-opacity="0.5"/><stop offset="1" stop-color="#e8a33d" stop-opacity="0"/></linearGradient>
+            <linearGradient id="hroad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22344b"/><stop offset="1" stop-color="#101c2c"/></linearGradient>
+          </defs>
+          <rect width="440" height="460" rx="20" fill="url(#hsky)"/>
+          <ellipse cx="220" cy="250" rx="210" ry="60" fill="url(#hglow)" opacity="0.55"/>
+          <g fill="#cdd6e4" opacity="0.5">
+            <circle cx="60" cy="54" r="1.2"/><circle cx="150" cy="36" r="1"/><circle cx="250" cy="60" r="1.3"/><circle cx="330" cy="40" r="1"/><circle cx="390" cy="72" r="1.2"/><circle cx="96" cy="100" r="0.9"/><circle cx="360" cy="120" r="1"/><circle cx="200" cy="110" r="0.8"/>
+          </g>
+          <path d="M0 250 Q90 222 180 244 T440 238 V280 H0 Z" fill="#152437"/>
+          <g stroke="#3a5068" stroke-width="2" stroke-linecap="round">
+            <path d="M100 244V210 M100 210l-12-8M100 210l13-6M100 210l-2 15"/>
+            <path d="M338 240V212 M338 212l-11-7M338 212l12-5M338 212l-2 13"/>
+          </g>
+          <path d="M158 460 L206 250 L234 250 L282 460 Z" fill="url(#hroad)"/>
+          <g stroke="#e8a33d" stroke-linecap="round" opacity="0.9">
+            <path d="M220 272v16" stroke-width="2.6"/>
+            <path d="M220 306v22" stroke-width="3.4"/>
+            <path d="M220 348v30" stroke-width="4.4"/>
+            <path d="M220 398v40" stroke-width="5.6"/>
+          </g>
+          <path d="M160 458 L207 252" stroke="#40566f" stroke-width="2"/>
+          <path d="M280 458 L233 252" stroke="#40566f" stroke-width="2"/>
+          <circle cx="214" cy="264" r="2.6" fill="#fff0d0"/>
+          <circle cx="226" cy="264" r="2.6" fill="#fff0d0"/>
+          <g transform="translate(322 286)">
+            <rect x="-2" y="14" width="4" height="52" fill="#3a5068"/>
+            <path d="M-22 -10 h44 a7 7 0 0 1 7 7 v9 a15 15 0 0 1 -29 9 a15 15 0 0 1 -29 -9 v-9 a7 7 0 0 1 7 -7z" fill="#1c2c40" stroke="#3a5068" stroke-width="2"/>
+            <text x="0" y="10" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="18" fill="#e6ddcb">80</text>
+          </g>
+          <g transform="translate(120 330)">
+            <rect x="-30" y="12" width="60" height="18" rx="4" fill="#22344b" stroke="#3a5068"/>
+            <rect x="-22" y="-2" width="44" height="16" rx="3" fill="#182636" stroke="#3a5068"/>
+            <rect x="-8" y="-10" width="16" height="8" rx="2" fill="#e8a33d"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></rect>
+            <ellipse cx="0" cy="-6" rx="40" ry="14" fill="#e8a33d" opacity="0.16"><animate attributeName="opacity" values="0.22;0.06;0.22" dur="1.8s" repeatCount="indefinite"/></ellipse>
+          </g>
+        </svg>
+        <figcaption class="scene-cap">Staged near the Cordelia Junction, our home turf.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <div class="waterline" aria-hidden="true">
-    <svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0 12 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="var(--cyan)" stroke-width="2" opacity="0.5"/></svg>
-  </div>
-
-  <section class="section-deep">
+  <!-- SERVICES (paper) -->
+  <section id="services" class="s-paper">
     <div class="wrap">
-      <span class="eyebrow">Every kind of water problem</span>
-      <h2>Restoration services</h2>
-      <p class="section-sub">Each service has its own page with what the crew does, what it costs your insurance instead of you, and what to do before they arrive.</p>
-      <div class="card-grid">
+      <p class="eyebrow">What we handle</p>
+      <h2>Every roadside call, one number.</h2>
+      <div class="grid c3" style="margin-top:2rem;">
         {SERVICES.map((s) => (
           <a class="card" href={`/services/${s.slug}/`}>
-            <ServiceIcon icon={s.icon} />
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={ICONS[s.slug]} /></span>
+            <span class="go" aria-hidden="true">↗</span>
             <h3>{s.name}</h3>
             <p>{s.short}</p>
-            <span class="card-cta">Details &rarr;</span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <CtaBand />
-
-  <section>
-    <div class="wrap how-grid">
-      <div>
-        <span class="eyebrow">What happens when you call</span>
-        <h2>From flooded to dry</h2>
-        <ol class="steps">
-          <li>
-            <h3>You call, a person answers</h3>
-            <p>No voicemail, no callback queue. Describe what is happening and the dispatcher tells you what to shut off while a crew is assigned.</p>
-          </li>
-          <li>
-            <h3>A local crew rolls</h3>
-            <p>Licensed, insured restoration techs from your side of the Valley, with truck-mounted extraction and drying equipment on board.</p>
-          </li>
-          <li>
-            <h3>Water out, damage stopped</h3>
-            <p>Extraction, moisture mapping, and controlled demo of what cannot be saved, with photos and readings documented for your claim.</p>
-          </li>
-          <li>
-            <h3>Dry, verified, done</h3>
-            <p>Air movers and dehumidifiers run until meter readings hit dry standard, checked daily. Then rebuild can start on a clean slate.</p>
-          </li>
-        </ol>
-      </div>
-      <DryScene />
-    </div>
-  </section>
-
-  <section class="section-deep">
+  <!-- COVERAGE (ink) -->
+  <section id="areas" class="s-ink">
     <div class="wrap">
-      <span class="eyebrow">Local crews, local knowledge</span>
-      <h2>Serving the 209</h2>
-      <p class="section-sub">Delta water tables, Tuolumne floodplains, hard-water slab leaks, same-age tract plumbing. Every city here has its own way of getting wet, and every one has its own page.</p>
-      <div class="card-grid areas-grid">
-        {CITIES.map((c) => (
-          <a class="card" href={`/areas/${c.slug}/`}>
-            <h3>{c.name}</h3>
-            <p class="mono county">{c.county.toUpperCase()}</p>
-            <p>{c.short}</p>
-            <span class="card-cta">Local page &rarr;</span>
-          </a>
+      <div class="split">
+        <div>
+          <p class="eyebrow">Coverage</p>
+          <h2>Built around the busiest junction in the county.</h2>
+        </div>
+        <p class="muted split-lead">
+          Our dispatch area follows where breakdowns actually happen: the I-80 corridor from
+          the Vallejo line to the Vacaville grade, the I-680 approach, and Highway 12 through
+          Suisun toward Rio Vista.
+        </p>
+      </div>
+      <div class="grid c3" style="margin-top:2.2rem;">
+        <a class="card" href="/areas/fairfield/"><span class="go" aria-hidden="true">↗</span><h3>Fairfield</h3><p>I-80, Solano Town Center, Travis Boulevard, North Texas Street.</p></a>
+        <a class="card" href="/areas/cordelia/"><span class="go" aria-hidden="true">↗</span><h3>Cordelia &amp; Green Valley</h3><p>The I-80/I-680/Hwy 12 interchange and Central Way truck stops.</p></a>
+        {AREAS.filter((a) => a.slug !== 'cordelia' && a.slug !== 'fairfield').map((a) => (
+          <a class="card" href={`/areas/${a.slug}/`}><span class="go" aria-hidden="true">↗</span><h3>{a.name}</h3><p>{a.landmarks.slice(0,3).join(', ')} and nearby.</p></a>
+        ))}
+      </div>
+      <p class="coverage-meta">{SITE.zips.join('  ·  ')}  ·  Travis AFB adjacent areas covered to the gate.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (ink-2) -->
+  <section class="s-ink-2">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>One call, one price, one truck.</h2>
+      <div class="steps">
+        <div class="step"><span class="step-n">01</span><h3>Call dispatch</h3><p>Tell us what happened, where you are, and what you drive.</p></div>
+        <div class="step"><span class="step-n">02</span><h3>Get a firm price</h3><p>Hook fee plus mileage, quoted before anything is dispatched.</p></div>
+        <div class="step"><span class="step-n">03</span><h3>A local truck rolls</h3><p>Licensed, insured, and based right here in Solano County.</p></div>
+      </div>
+      <a class="btn-call" href={`tel:${SITE.phone}`}>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        {SITE.phoneDisplay}
+      </a>
+    </div>
+  </section>
+
+  <!-- TRUST + REVIEWS (paper) -->
+  <section class="s-paper">
+    <div class="wrap">
+      <p class="eyebrow">Why call us</p>
+      <h2>The difference on a bad night.</h2>
+      <div class="grid c4" style="margin-top:2rem;">
+        {TRUST.map((t) => (<div class="card"><h3>{t.label}</h3><p>{t.text}</p></div>))}
+      </div>
+
+      <div class="reviews">
+        {REVIEWS.map((r) => (
+          <figure class="review">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>{r.quote}</blockquote>
+            <figcaption>{r.name} <span>· {r.place}</span></figcaption>
+          </figure>
         ))}
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="wrap testi-wrap">
-      <span class="eyebrow">From the call log</span>
-      <h2>Neighbors we picked up for</h2>
-      <div class="testi-grid">
-        <blockquote>
-          <p>&ldquo;Water heater let go in the garage at 11pm and was under two bedroom walls by the time we found it. Called, got a human, crew was extracting before 1am. They handled the insurance photos too.&rdquo;</p>
-          <cite class="mono">D.R. &middot; MANTECA</cite>
-        </blockquote>
-        <blockquote>
-          <p>&ldquo;Sewage backup in a rental on the east side. Crew contained it, gutted what had to go, and it did not smell like anything happened a week later. Tenants stayed.&rdquo;</p>
-          <cite class="mono">M.G. &middot; LODI</cite>
-        </blockquote>
-        <blockquote>
-          <p>&ldquo;Slab leak ran under our floors for who knows how long. They mapped the moisture before cutting anything, which saved most of the hallway. Adjuster accepted their scope as written.&rdquo;</p>
-          <cite class="mono">K.P. &middot; TRACY</cite>
-        </blockquote>
+  <!-- FAQ (ink) -->
+  <section class="s-ink">
+    <div class="wrap">
+      <p class="eyebrow">Straight answers</p>
+      <h2>Frequently asked.</h2>
+      <div class="faq-wrap">
+        {homeFaq.map((f) => (<div class="faq-item"><h3>{f.q}</h3><p>{f.a}</p></div>))}
       </div>
     </div>
   </section>
-
-  <section class="section-deep">
-    <div class="wrap trust-wrap">
-      <span class="eyebrow">Why call here first</span>
-      <h2>The 2am math</h2>
-      <div class="trust-grid">
-        <div>
-          <h3>Franchise 800 number</h3>
-          <p>Call center out of state, crew assigned from wherever has capacity, response measured in tomorrow. Water keeps soaking the whole time.</p>
-        </div>
-        <div>
-          <h3>Waiting until morning</h3>
-          <p>Eight more hours of wicking into drywall and pad. The 48-hour mold clock does not care that it was late. Small losses become demo jobs overnight.</p>
-        </div>
-        <div class="trust-us">
-          <h3>209 Restoration</h3>
-          <p>Local dispatch, local crews, answer in seconds at any hour. Extraction tonight, drying verified with meters, documentation your adjuster accepts.</p>
-          <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap faq-wrap">
-      <span class="eyebrow">Straight answers</span>
-      <h2>Questions people ask at 2am</h2>
-      <div class="faq-list">
-        {faq.map((f) => (
-          <details>
-            <summary>{f.q}</summary>
-            <p>{f.a}</p>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <CtaBand heading="Do not wait on wet walls." sub="Every hour of soak time adds to the demo list. The call is free and a dispatcher answers right now." />
 </Base>
 
 <style>
-  .hero {
-    position: relative;
-    padding-top: 4.5rem;
-    padding-bottom: 5.5rem;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(720px 420px at 78% -10%, rgba(13, 148, 168, 0.13), transparent 65%),
-      radial-gradient(560px 380px at 5% 100%, rgba(103, 211, 224, 0.1), transparent 60%);
-    pointer-events: none;
-  }
-  .hero-grid {
-    position: relative;
-    display: grid; grid-template-columns: 1.05fr 1fr; gap: 3.5rem; align-items: center;
-  }
-  .accent {
-    background: linear-gradient(115deg, var(--primary) 20%, #2f7fb8 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .hero-sub { margin: 1.4rem 0 2rem; font-size: 1.13rem; max-width: 52ch; line-height: 1.75; }
-  .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center; }
-  .hero-proof {
-    display: flex; gap: 1.5rem; flex-wrap: wrap; list-style: none;
-    margin-top: 2.2rem; font-size: 0.78rem; font-weight: 500;
-    letter-spacing: 0.02em; text-transform: none; color: var(--silt);
-  }
-  .hero-proof li { display: flex; align-items: center; gap: 0.45rem; }
-  .hero-proof li::before {
-    content: '';
-    width: 17px; height: 17px; flex-shrink: 0;
-    border-radius: 50%;
-    background: var(--tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a7486' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 9px no-repeat;
-  }
+  .hero { padding-top: clamp(3rem, 7vw, 5rem); overflow: hidden; }
+  .hero-grid { display: grid; gap: 3rem; align-items: center; }
+  @media (min-width: 940px) { .hero-grid { grid-template-columns: 1.08fr 0.92fr; } }
+  .hero h1 { margin-top: 0.2rem; }
+  .hero .lead { margin-top: 1.5rem; color: var(--slate); }
+  .hero-cta { display: flex; align-items: center; flex-wrap: wrap; }
+  .hero-stats { display: flex; flex-wrap: wrap; gap: 1.6rem 2.4rem; margin: 2.6rem 0 0; padding-top: 1.8rem; border-top: 1px solid var(--ink-line); }
+  .hero-stats div dt { font-family: var(--display); font-weight: 600; font-size: 1.9rem; color: var(--ivory); }
+  .hero-stats div dd { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--slate-deep); margin-top: 0.2rem; }
+  .hero-scene svg { width: 100%; height: auto; display: block; border-radius: 20px; border: 1px solid var(--ink-line); box-shadow: var(--shadow-lg); }
+  .scene-cap { margin-top: 0.8rem; text-align: center; font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.03em; color: var(--slate-deep); }
 
-  .section-sub { max-width: 60ch; margin-top: 1rem; font-size: 1.05rem; }
+  .split { display: grid; gap: 1.2rem; }
+  @media (min-width: 860px) { .split { grid-template-columns: 1.3fr 1fr; align-items: end; } }
+  .split-lead { font-size: 1.05rem; }
+  .coverage-meta { margin-top: 1.6rem; font-family: var(--mono); font-size: 0.82rem; color: var(--slate-deep); }
 
-  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
-  .steps { list-style: none; counter-reset: step; margin-top: 2.4rem; }
-  .steps li {
-    counter-increment: step; position: relative;
-    padding: 0 0 1.9rem 3.6rem;
-    border-left: 1px solid var(--line); margin-left: 1.25rem;
-  }
-  .steps li:last-child { padding-bottom: 0; border-left-color: transparent; }
-  .steps li::before {
-    content: counter(step);
-    position: absolute; left: -1.3rem; top: -0.2rem;
-    width: 2.5rem; height: 2.5rem; border-radius: 13px;
-    background: var(--tint); border: 1px solid rgba(13, 148, 168, 0.25);
-    color: var(--primary-deep); font-family: var(--font-display); font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .steps h3 { font-size: 1.05rem; }
-  .steps p { margin-top: 0.35rem; font-size: 0.94rem; }
+  .steps { display: grid; gap: 1.1rem; margin: 2rem 0; }
+  @media (min-width: 820px) { .steps { grid-template-columns: repeat(3,1fr); } }
+  .step { padding: 1.7rem 1.5rem; background: var(--ink-panel); border: 1px solid var(--ink-line); border-radius: var(--r); }
+  .step-n { font-family: var(--mono); font-weight: 600; font-size: 0.85rem; color: var(--brass); letter-spacing: 0.1em; }
+  .step h3 { margin: 0.8rem 0 0.3rem; }
+  .step p { color: var(--slate); font-size: 0.96rem; }
 
-  .county { font-size: 0.68rem; margin-top: -0.35rem; color: #8aa0ab; letter-spacing: 0.08em; }
+  .reviews { display: grid; gap: 1.1rem; margin-top: 2.4rem; }
+  @media (min-width: 900px) { .reviews { grid-template-columns: repeat(3,1fr); } }
+  .review { margin: 0; padding: 1.7rem 1.5rem; background: #fff; border: 1px solid var(--paper-line); border-radius: var(--r); box-shadow: var(--shadow-sm); }
+  .review .stars { color: var(--brass); letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 0.8rem; }
+  .review blockquote { margin: 0; font-family: var(--display); font-weight: 500; font-size: 1.06rem; line-height: 1.5; color: var(--ink); }
+  .review figcaption { margin-top: 1rem; font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+  .review figcaption span { color: var(--slate-deep); font-weight: 500; }
 
-  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.8rem; }
-  .testi-grid blockquote {
-    background: #ffffff; border: 1px solid var(--line); border-radius: 16px;
-    padding: 1.8rem 1.6rem; display: flex; flex-direction: column; gap: 1.1rem;
-    box-shadow: var(--shadow-sm);
-  }
-  .testi-grid blockquote::before {
-    content: 'C';
-    font-family: var(--font-display); font-weight: 800;
-    font-size: 2.6rem; line-height: 0.5;
-    color: var(--primary); opacity: 0.55;
-    margin-bottom: -0.4rem;
-  }
-  .testi-grid p { font-size: 0.94rem; line-height: 1.65; }
-  .testi-grid cite { font-style: normal; font-size: 0.72rem; }
-
-  .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.8rem; }
-  .trust-grid > div {
-    background: #ffffff;
-    border: 1px solid var(--line); border-radius: 16px; padding: 1.8rem 1.6rem;
-    box-shadow: var(--shadow-sm);
-  }
-  .trust-grid p { margin-top: 0.6rem; font-size: 0.94rem; }
-  .trust-us {
-    background: linear-gradient(160deg, var(--tint), #ffffff 70%) !important;
-    border-color: rgba(13, 148, 168, 0.35) !important;
-  }
-  .trust-us .btn-call { margin-top: 1.3rem; font-size: 0.95rem; padding: 0.8rem 1.5rem; }
-
-  .faq-list { margin-top: 2.4rem; max-width: 780px; }
-  details {
-    border: 1px solid var(--line); border-radius: 14px;
-    padding: 1.1rem 1.35rem; margin-bottom: 0.75rem; background: #ffffff;
-    box-shadow: var(--shadow-sm);
-  }
-  summary {
-    cursor: pointer; font-family: var(--font-display); font-weight: 600;
-    color: var(--paper); list-style: none;
-    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary::after {
-    content: '+'; color: var(--primary);
-    font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; line-height: 1;
-  }
-  details[open] summary::after { content: '2'; }
-  details p { margin-top: 0.8rem; font-size: 0.95rem; }
-
-  @media (max-width: 900px) {
-    .hero-grid, .how-grid { grid-template-columns: 1fr; gap: 2.4rem; }
-    .testi-grid, .trust-grid { grid-template-columns: 1fr; }
-  }
+  .faq-wrap { max-width: 48em; margin-top: 2rem; }
 </style>

@@ -1,52 +1,54 @@
 ---
 import Base from '../../layouts/Base.astro';
-import CtaBand from '../../components/CtaBand.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 ---
+
 <Base
-  title="209 Restoration | Water Damage Guides"
-  description="Plain-language guides for Central Valley homeowners: what to do in the first hour of a water emergency, how insurance actually works, and more."
+  title="Roadside Guides for Solano County Drivers | Solano Towing"
+  description="Local guides on breakdowns, towing costs, and roadside safety for Fairfield, Suisun City and Vacaville drivers."
+  path="/blog/"
 >
-  <section>
+  <section class="s-paper">
     <div class="wrap">
-      <span class="eyebrow">Guides</span>
-      <h1>Read now or read wet</h1>
-      <p class="lede">Plain-language answers for Valley homeowners. Best read before you need them, still useful after.</p>
+      <p class="eyebrow">Local knowledge</p>
+      <h1>Roadside guides</h1>
+      <p class="muted" style="max-width:42em; margin-top:1em;">
+        Written for this corridor specifically: the Cordelia Junction, Highway 12, and the I-80 grade,
+        not generic advice recycled for every city in America.
+      </p>
       <div class="post-list">
-        {posts.map((post) => (
-          <a class="post-card" href={`/blog/${post.slug}/`}>
-            <p class="mono post-date">{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase()}</p>
-            <h2>{post.data.title}</h2>
-            <p>{post.data.description}</p>
-            <span class="card-cta mono">Read guide &rarr;</span>
+        {posts.map((p) => (
+          <a class="post-card" href={`/blog/${p.id.replace(/\.md$/, '')}/`}>
+            <div class="post-meta">
+              {p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </div>
+            <h2>{p.data.title}</h2>
+            <p>{p.data.description}</p>
+            <span class="post-read">Read guide →</span>
           </a>
         ))}
       </div>
     </div>
   </section>
-  <CtaBand />
 </Base>
 
 <style>
-  .lede { max-width: 58ch; margin-top: 1rem; font-size: 1.1rem; }
-  .post-list { margin-top: 2.5rem; display: grid; gap: 1rem; max-width: 780px; }
+  .post-list { display: grid; gap: 1.2rem; margin-top: 2.5rem; }
+  @media (min-width: 760px) { .post-list { grid-template-columns: 1fr 1fr; } }
   .post-card {
-    border: 1px solid var(--line); border-radius: 16px; background: #ffffff;
-    padding: 1.8rem; text-decoration: none; display: block;
-    box-shadow: var(--shadow-sm);
+    display: block; padding: 1.8rem 1.6rem;
+    background: #fff; border: 1px solid var(--paper-line);
+    border-radius: 16px; color: var(--ink);
+    box-shadow: 0 1px 3px rgba(20,30,45,0.05);
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
   }
-  .post-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(13, 148, 168, 0.35);
-  }
-  .post-card h2 { font-size: 1.4rem; color: var(--paper); margin: 0.4rem 0 0.6rem; }
-  .post-card p { font-size: 0.97rem; color: #43555f; }
-  .post-date { font-size: 0.65rem; }
-  .post-card .card-cta { display: inline-block; margin-top: 1rem; font-size: 0.72rem; letter-spacing: 0.01em; text-transform: none; font-weight: 600; color: var(--cyan); }
+  .post-card:hover { transform: translateY(-3px); border-color: var(--brass); box-shadow: 0 12px 30px -10px rgba(20,30,45,0.14); }
+  .post-meta { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-deep); margin-bottom: 0.8rem; }
+  .post-card h2 { font-size: 1.35rem; margin-bottom: 0.6rem; line-height: 1.2; }
+  .post-card p { color: var(--slate-deep); font-size: 0.97rem; line-height: 1.55; }
+  .post-read { display: inline-block; margin-top: 1.1rem; font-weight: 700; font-size: 0.92rem; color: var(--brass-deep); }
 </style>

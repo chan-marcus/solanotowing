@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="Three steps to get a car out of impound: get the release from the agency, pay the storage yard, then tow the vehicle to your own shop">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e8a33d"/>
+    </marker>
+  </defs>
+  <rect width="720" height="240" rx="18" fill="#0f1722"/>
+  <text x="360" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">Getting your car back, in order</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="36" y="72" width="192" height="112" rx="14" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="132" y="102" text-anchor="middle" font-size="12" letter-spacing="2" fill="#e8a33d" font-weight="bold">STEP 1</text>
+    <text x="132" y="126" text-anchor="middle" font-size="15" fill="#f6f2ea" font-weight="bold">Get the release</text>
+    <text x="132" y="147" text-anchor="middle" font-size="12" fill="#94a3b8">from CHP or the police</text>
+    <text x="132" y="164" text-anchor="middle" font-size="12" fill="#94a3b8">department that ordered it</text>
+
+    <rect x="264" y="72" width="192" height="112" rx="14" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="360" y="102" text-anchor="middle" font-size="12" letter-spacing="2" fill="#e8a33d" font-weight="bold">STEP 2</text>
+    <text x="360" y="126" text-anchor="middle" font-size="15" fill="#f6f2ea" font-weight="bold">Pay the yard</text>
+    <text x="360" y="147" text-anchor="middle" font-size="12" fill="#94a3b8">tow fee + daily storage,</text>
+    <text x="360" y="164" text-anchor="middle" font-size="12" fill="#94a3b8">itemized invoice required</text>
+
+    <rect x="492" y="72" width="192" height="112" rx="14" fill="#17263a" stroke="#e8a33d"/>
+    <text x="588" y="102" text-anchor="middle" font-size="12" letter-spacing="2" fill="#e8a33d" font-weight="bold">STEP 3</text>
+    <text x="588" y="126" text-anchor="middle" font-size="15" fill="#f6f2ea" font-weight="bold">Tow it out same day</text>
+    <text x="588" y="147" text-anchor="middle" font-size="12" fill="#94a3b8">to your shop or driveway,</text>
+    <text x="588" y="164" text-anchor="middle" font-size="12" fill="#94a3b8">stops the storage clock</text>
+
+    <line x1="228" y1="128" x2="258" y2="128" stroke="#e8a33d" stroke-width="2.5" marker-end="url(#arr)"/>
+    <line x1="456" y1="128" x2="486" y2="128" stroke="#e8a33d" stroke-width="2.5" marker-end="url(#arr)"/>
+  </g>
+  <text x="360" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Storage is charged per day. The sooner the car leaves the yard, the less you pay.</text>
+</svg>

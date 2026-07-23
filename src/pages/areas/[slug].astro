@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import MapEmbed from '../../components/MapEmbed.astro';
 import { SITE } from '../../config/site';
 import { AREAS } from '../../data/cities';
 import { SERVICES } from '../../data/services';
@@ -33,19 +32,6 @@ const breadcrumbSchema = {
       <p class="muted" style="margin-top:1.2rem; font-size:0.95rem;">
         Covering {a.landmarks.join(', ')} · ZIP {a.zips.join(', ')}
       </p>
-    </div>
-  </section>
-
-  <section class="s-ink-2">
-    <div class="wrap">
-      <p class="eyebrow">Coverage map</p>
-      <h2 style="margin-bottom:1.6rem;">Where we run in {a.name}</h2>
-      <MapEmbed
-        lat={a.mapLat}
-        lng={a.mapLng}
-        title={`Map of the Solano Towing service area in ${a.name}, CA`}
-        caption={`24/7 dispatch across ${a.name} · ZIP ${a.zips.join(', ')}`}
-      />
     </div>
   </section>
 

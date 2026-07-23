@@ -20,36 +20,14 @@ const posts = (await getCollection('blog')).sort(
         Written for this corridor specifically: the Cordelia Junction, Highway 12, and the I-80 grade,
         not generic advice recycled for every city in America.
       </p>
-      <div class="grid c2" style="margin-top:2rem;">
+      <div class="grid c4" style="margin-top:2rem;">
         {posts.map((p) => (
-          <a class="card post-card" href={`/blog/${p.id.replace(/\.md$/, '')}/`}>
-            {p.data.hero && (
-              <span class="post-card-media">
-                <img src={p.data.hero} alt={p.data.heroAlt ?? ''} width="1200" height="480" loading="lazy" />
-              </span>
-            )}
-            <span class="post-card-body">
-              <h3>{p.data.title}</h3>
-              <p>{p.data.description}</p>
-              <span class="post-card-go">Read the guide <span aria-hidden="true">→</span></span>
-            </span>
+          <a class="card" href={`/blog/${p.id.replace(/\.md$/, '')}/`}>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
           </a>
         ))}
       </div>
     </div>
   </section>
 </Base>
-
-<style>
-  .post-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
-  .post-card-media { display: block; border-bottom: 1px solid var(--ink-line); background: var(--ink-2); }
-  .post-card-media img { display: block; width: 100%; height: auto; }
-  .post-card-body { display: block; padding: 1.5rem 1.5rem 1.6rem; }
-  .post-card-go {
-    display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem;
-    font-family: var(--mono); font-weight: 600; font-size: 0.78rem;
-    text-transform: uppercase; letter-spacing: 0.1em; color: var(--brass);
-    transition: gap 0.15s ease;
-  }
-  .post-card:hover .post-card-go { gap: 0.7rem; }
-</style>

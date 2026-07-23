@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="Diagram of I-80 through Fairfield showing safe places to exit after a collision: Green Valley Road, Suisun Valley Road, Travis Boulevard, and Air Base Parkway, with the Cordelia Junction marked">
+  <rect width="720" height="260" rx="18" fill="#0f1722"/>
+  <text x="360" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">Safe places to pull off I-80 in Fairfield</text>
+
+  <rect x="40" y="118" width="640" height="34" rx="6" fill="#22344b"/>
+  <line x1="52" y1="135" x2="668" y2="135" stroke="#e8a33d" stroke-width="3" stroke-dasharray="16 14" opacity="0.85"/>
+  <text x="52" y="110" font-family="Arial, sans-serif" font-size="12" fill="#64748b">← Vallejo</text>
+  <text x="668" y="110" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Vacaville →</text>
+
+  <g font-family="Arial, sans-serif" font-size="12.5" fill="#f6f2ea">
+    <g>
+      <circle cx="150" cy="135" r="7" fill="#e8a33d"/>
+      <line x1="150" y1="152" x2="150" y2="176" stroke="#3a5068" stroke-width="2"/>
+      <text x="150" y="196" text-anchor="middle">Green Valley Rd</text>
+    </g>
+    <g>
+      <circle cx="290" cy="135" r="7" fill="#e8a33d"/>
+      <line x1="290" y1="152" x2="290" y2="176" stroke="#3a5068" stroke-width="2"/>
+      <text x="290" y="196" text-anchor="middle">Suisun Valley Rd</text>
+    </g>
+    <g>
+      <circle cx="450" cy="135" r="7" fill="#e8a33d"/>
+      <line x1="450" y1="152" x2="450" y2="176" stroke="#3a5068" stroke-width="2"/>
+      <text x="450" y="196" text-anchor="middle">Travis Blvd</text>
+    </g>
+    <g>
+      <circle cx="590" cy="135" r="7" fill="#e8a33d"/>
+      <line x1="590" y1="152" x2="590" y2="176" stroke="#3a5068" stroke-width="2"/>
+      <text x="590" y="196" text-anchor="middle">Air Base Pkwy</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <line x1="205" y1="118" x2="205" y2="86" stroke="#3a5068" stroke-width="2"/>
+    <rect x="146" y="60" width="118" height="26" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.14)"/>
+    <text x="205" y="77" text-anchor="middle" font-size="12" fill="#e8a33d" font-weight="bold">Cordelia Junction</text>
+  </g>
+
+  <text x="360" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Drivable after a minor collision? Exit the freeway entirely before stopping. Shoulders are a last resort.</text>
+</svg>

@@ -2,8 +2,6 @@
 title: "Broke Down at the Cordelia Junction? Here's Exactly What to Do"
 description: "A local's step-by-step guide for a breakdown at the I-80/I-680/Highway 12 interchange in Fairfield: where to stop, what to tell dispatch, and how long help takes."
 date: 2026-07-08
-hero: "/img/blog/cordelia-junction.svg"
-heroAlt: "Night view of the I-80, I-680 and Highway 12 interchange at the Cordelia Junction, with a stalled car on the shoulder"
 ---
 
 The Cordelia Junction, where I-80, I-680, and Highway 12 come together on the west edge of Fairfield, strands more drivers than any other stretch of road in Solano County. Merging traffic from three directions, sudden slowdowns near the truck scales, and strong wind off the Suisun Marsh all pile up in one interchange. If your car just died there, here's the local playbook.

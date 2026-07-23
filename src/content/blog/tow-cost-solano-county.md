@@ -2,8 +2,6 @@
 title: "How Much Does a Tow Cost in Solano County? (2026 Local Guide)"
 description: "Real-world towing prices in Fairfield, Suisun City and Vacaville: hook fees, per-mile rates, what changes the price, and the red flags of a tow scam."
 date: 2026-07-01
-hero: "/img/blog/tow-cost.svg"
-heroAlt: "An itemized towing receipt showing a hook fee plus mileage adding up to one firm price"
 ---
 
 Towing prices in Solano County confuse people because two numbers get mixed together: the **hook fee** (the flat cost of the truck coming out and loading your car) and the **mileage rate** (per mile from pickup to drop-off). Every honest quote is those two combined into one firm number before the truck rolls.

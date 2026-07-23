@@ -26,8 +26,4 @@ export const SITE = {
   hoursLine: 'Open 24 hours, 7 days a week',
 
   gtag: '' // TODO: GA4 / call tracking snippet id
-
-  // Google Maps key comes from the PUBLIC_GOOGLE_MAPS_API_KEY environment
-  // variable (set in Cloudflare Pages / a local .env), not from this file.
-  // See src/components/MapEmbed.astro.
 };

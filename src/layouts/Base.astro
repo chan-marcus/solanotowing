@@ -9,6 +9,24 @@ interface Props {
 const { title, description, path = '/' } = Astro.props;
 const canonical = new URL(path, SITE.url).href;
 
+// The site-name label Google prints above the result. It reads this (plus
+// og:site_name) from the HOMEPAGE; with neither it falls back to the bare
+// domain, which is what "solanotowing.com" in the SERP was.
+//
+// Deliberately the plain brand, not a keyword string: Google's site-name
+// guidance expects the name the site is actually known by, and treats
+// promotional or stuffed values as untrustworthy — in which case it discards
+// them and prints the domain again. Keywords belong in <title>, which already
+// carries "24/7 Towing in Fairfield, Suisun City & Vacaville, CA".
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.brand,
+  alternateName: SITE.brandAlt,
+  url: SITE.url,
+  publisher: { '@type': 'AutomotiveBusiness', name: SITE.brand, url: SITE.url }
+};
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'AutomotiveBusiness',
@@ -57,6 +75,7 @@ const schema = {
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500;600&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>

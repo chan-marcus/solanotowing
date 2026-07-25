@@ -5,6 +5,9 @@
 
 export const SITE = {
   brand: 'Solano Towing',
+  // A real variant people search for — not a keyword string. Google treats a
+  // stuffed alternateName as untrustworthy and falls back to the bare domain.
+  brandAlt: 'Solano County Towing',
   legalLine:
     'Solano Towing is a local dispatch and referral service. Towing and roadside services are performed by licensed independent operators in Solano County.',
   domain: 'solanotowing.com',

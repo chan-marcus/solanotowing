@@ -1,6 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import MapEmbed from '../components/MapEmbed.astro';
 import { SITE } from '../config/site';
+import { AREAS } from '../data/cities';
+
+const coveragePoints = AREAS.map((a) => ({ name: a.name, lat: a.mapLat, lng: a.mapLng }));
 ---
 
 <Base
@@ -29,6 +33,21 @@ import { SITE } from '../config/site';
       <p class="muted" style="font-size:0.95rem;">
         Service area: {SITE.serviceAreaLine} · ZIPs {SITE.zips.join(', ')}
       </p>
+    </div>
+  </section>
+
+  <section class="s-ink-2">
+    <div class="wrap">
+      <p class="eyebrow">Service area</p>
+      <h2 style="margin-bottom:1.6rem;">Every town we cover</h2>
+      <MapEmbed
+        lat={38.2494}
+        lng={-122.04}
+        zoom={10}
+        points={coveragePoints}
+        title="Map highlighting the Solano Towing service area across Solano County, CA"
+        caption={SITE.serviceAreaLine}
+      />
     </div>
   </section>
 </Base>

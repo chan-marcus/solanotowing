@@ -7,6 +7,8 @@ export interface Area {
   intro: string[];
   landmarks: string[];
   zips: string[];
+  mapLat: number; // center latitude for the coverage map
+  mapLng: number; // center longitude
 }
 
 export const AREAS: Area[] = [
@@ -22,7 +24,9 @@ export const AREAS: Area[] = [
       'Because we cover Fairfield around the clock, the calls that stump other shops (a 2am breakdown, a holiday lockout, an AWD that needs a flatbed) get answered here. You get a firm price and an honest ETA on the phone before a truck is ever dispatched.'
     ],
     landmarks: ['I-80 corridor', 'Solano Town Center', 'Travis Boulevard', 'West Texas Street', 'North Texas Street', 'Air Base Parkway'],
-    zips: ['94533', '94534', '94535']
+    zips: ['94533', '94534', '94535'],
+    mapLat: 38.2494,
+    mapLng: -122.04
   },
   {
     slug: 'suisun-city',
@@ -36,7 +40,9 @@ export const AREAS: Area[] = [
       'Highway 12 between Suisun and Rio Vista is one of the busiest breakdown stretches in the county: long, exposed, and hot in the summer. If you\u2019re on the shoulder out there, stay in the vehicle with your belt on, and tell dispatch your nearest mile marker or cross road.'
     ],
     landmarks: ['Suisun Waterfront', 'Highway 12', 'Sunset Avenue', 'Amtrak Depot', 'Lawler Ranch'],
-    zips: ['94585']
+    zips: ['94585'],
+    mapLat: 38.2382,
+    mapLng: -122.0402
   },
   {
     slug: 'vacaville',
@@ -50,7 +56,9 @@ export const AREAS: Area[] = [
       'Outlet-mall lockouts, commuter-lot dead batteries, and I-80 shoulder tows make up most Vacaville calls. Whatever it is, you\u2019ll get an ETA and a firm price on the phone before a truck is dispatched.'
     ],
     landmarks: ['Vacaville Premium Outlets', 'Nut Tree', 'I-80 & I-505 interchange', 'Alamo Drive', 'Peabody Road'],
-    zips: ['95687', '95688']
+    zips: ['95687', '95688'],
+    mapLat: 38.3566,
+    mapLng: -121.9877
   },
   {
     slug: 'cordelia',
@@ -64,7 +72,9 @@ export const AREAS: Area[] = [
       'Trucks stage close to the junction because the volume justifies it, which is why Cordelia, Green Valley, and the truck stops along Central Way often see the fastest response times in our whole service area. Tell dispatch which direction you\u2019re traveling and the nearest exit; on this interchange, that detail saves ten minutes.'
     ],
     landmarks: ['I-80/I-680 interchange', 'Highway 12 West', 'Green Valley', 'Central Way truck stops', 'Rodriguez High School area'],
-    zips: ['94534']
+    zips: ['94534'],
+    mapLat: 38.2172,
+    mapLng: -122.135
   },
   {
     slug: 'dixon',
@@ -78,7 +88,9 @@ export const AREAS: Area[] = [
       'Because Dixon is on the same freeway we cover all day, response times are competitive even though it sits at the edge of the county. Call with your nearest exit or cross street and you\u2019ll get a firm price and an honest ETA before a truck rolls.'
     ],
     landmarks: ['I-80 corridor', 'Pedrick Road', 'Pitt School Road', 'Downtown Dixon', 'West A Street'],
-    zips: ['95620']
+    zips: ['95620'],
+    mapLat: 38.4455,
+    mapLng: -121.8233
   },
   {
     slug: 'rio-vista',
@@ -92,6 +104,8 @@ export const AREAS: Area[] = [
       'Whether you\u2019re stuck near the Sacramento River bridge, along River Road, or in town, tell dispatch your nearest landmark or mile marker on Highway 12 and we\u2019ll route the closest operator to you.'
     ],
     landmarks: ['Highway 12', 'Rio Vista Bridge', 'River Road', 'Downtown Rio Vista', 'Sandy Beach'],
-    zips: ['94571']
+    zips: ['94571'],
+    mapLat: 38.1557,
+    mapLng: -121.6913
   }
 ];

@@ -20,14 +20,36 @@ interface Props {
 }
 const { lat, lng, zoom = 12, title, caption, points } = Astro.props;
 
-const apiKey =
-  import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
-  process.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
-  process.env.GOOGLE_MAPS_API_KEY ||
-  process.env.MAPS_API_KEY ||
-  '';
+// Resolve the key without depending on one exact variable name. A name mismatch
+// between the Cloudflare secret and the code fails silently as a blank map, so
+// try the conventional names first, then scan for anything map-key shaped.
+function resolveApiKey(): { key: string; source: string } {
+  const named: Record<string, unknown> = {
+    'import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY': import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY,
+    PUBLIC_GOOGLE_MAPS_API_KEY: process.env.PUBLIC_GOOGLE_MAPS_API_KEY,
+    GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+    MAPS_API_KEY: process.env.MAPS_API_KEY,
+    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY
+  };
+  for (const [source, value] of Object.entries(named)) {
+    if (typeof value === 'string' && value.trim()) return { key: value.trim(), source };
+  }
+  for (const [name, value] of Object.entries(process.env)) {
+    if (typeof value !== 'string' || !value.trim()) continue;
+    const n = name.toUpperCase();
+    if (n.includes('KEY') && (n.includes('MAP') || n.includes('GOOGLE'))) {
+      return { key: value.trim(), source: name };
+    }
+  }
+  return { key: '', source: '' };
+}
 
-if (!apiKey) {
+const { key: apiKey, source: keySource } = resolveApiKey();
+
+if (apiKey) {
+  // Log the variable NAME only, never the value — build logs are not private.
+  console.log(`[MapEmbed] Using Google Maps key from ${keySource}`);
+} else {
   console.warn(
     '[MapEmbed] No Google Maps API key found. Set PUBLIC_GOOGLE_MAPS_API_KEY in the build environment.'
   );

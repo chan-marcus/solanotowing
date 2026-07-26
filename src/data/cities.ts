@@ -9,6 +9,8 @@ export interface Area {
   zips: string[];
   mapLat: number; // center latitude for the coverage map
   mapLng: number; // center longitude
+  body?: { h: string; p: string[] }[]; // long-form local copy
+  faq?: { q: string; a: string }[];    // feeds FAQPage schema on the area page
 }
 
 export const AREAS: Area[] = [
@@ -26,7 +28,52 @@ export const AREAS: Area[] = [
     landmarks: ['I-80 corridor', 'Solano Town Center', 'Travis Boulevard', 'West Texas Street', 'North Texas Street', 'Air Base Parkway'],
     zips: ['94533', '94534', '94535'],
     mapLat: 38.2494,
-    mapLng: -122.04
+    mapLng: -122.04,
+    body: [
+      {
+        h: 'Where Fairfield breakdowns actually happen',
+        p: [
+          'Most of our Fairfield calls come off a short list of places. The I-80 stretch through town is the biggest by far, especially the westbound climb toward the Cordelia Junction where three freeways merge and traffic stacks up without warning. After that it\u2019s the surface arterials: Travis Boulevard at shift change, North and West Texas Street, and the Air Base Parkway ramps that back up whenever the base lets out.',
+          'Parking lots produce more calls than people expect. The Solano Town Center structure, the commuter lot at the Fairfield Transportation Center, and the big-box lots off Gateway Boulevard are where drivers come back to a car that will not start. Those are the easy ones, since a service truck can pull right alongside and often fix it without a tow at all.'
+        ]
+      },
+      {
+        h: 'Fog season and heat season: the two Fairfield call spikes',
+        p: [
+          'Fairfield gets a version of winter that surprises people who did not grow up here. Tule fog rolls off the Suisun Marsh from about December through February and can drop visibility on I-80 to almost nothing in minutes. When it does, the collision and shoulder-tow calls come in clusters rather than one at a time. If you are driving the corridor in dense fog, slow well below the limit, use low beams instead of brights, and if you must stop, get fully off the pavement and keep your seatbelt on.',
+          'Summer is the opposite problem. A run of 100-degree days cooks marginal batteries and pushes tired cooling systems over the edge, so July and August bring jump starts, overheating, and blown hoses. A battery more than three years old that has been cranking slowly is usually the one that quits first on the hottest morning of the year.'
+        ]
+      },
+      {
+        h: 'What a tow costs in Fairfield',
+        p: [
+          'A local Fairfield tow is a hook fee plus mileage, and any honest operator will give you those as one firm number before the truck leaves. Short in-town moves, say a lot on North Texas Street to a shop off Beck Avenue, sit at the low end because the mileage barely registers. Longer hauls toward Sacramento or the Bay Area are priced per mile, so distance is the whole story.',
+          'Time of day should not change the number. Plenty of good local operators charge the same at 3am as at 3pm, so a large after-hours surcharge is a reason to call someone else. The other thing worth asking is where the car is going: if it lands in a storage yard rather than your shop, daily fees start immediately, and that is where post-accident bills quietly balloon.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        q: 'How much does a tow truck cost in Fairfield?',
+        a: 'A local Fairfield tow is a hook fee plus a per-mile rate, quoted as one firm number on the phone before the truck is dispatched. Short in-town tows are the cheapest; longer runs toward Sacramento or the Bay Area are priced by distance. There is no after-hours surcharge.'
+      },
+      {
+        q: 'How fast can a tow truck get to me in Fairfield?',
+        a: 'Most calls inside Fairfield see a truck in about 20 to 30 minutes. The Cordelia Junction end of town is often quicker because trucks stage near the interchange, while heavy I-80 congestion or dense tule fog can add time.'
+      },
+      {
+        q: 'Do you offer roadside assistance in Fairfield, or only towing?',
+        a: 'Both. Flat tire changes, jump starts, fuel delivery, and lockouts are handled on the spot for a flat call-out fee. If the problem turns out to be bigger than roadside tools can fix, the operator already on scene escalates straight to a tow.'
+      },
+      {
+        q: 'Can you tow from Travis AFB or the base housing areas?',
+        a: 'We cover Travis Air Force Base and the surrounding Fairfield neighborhoods. Access on base depends on current gate and escort rules, so mention it when you call and dispatch will tell you what the operator needs to reach you.'
+      },
+      {
+        q: 'Are you open 24 hours in Fairfield?',
+        a: 'Yes, dispatch answers around the clock every day of the year. A large share of Fairfield calls come between 10pm and 4am, which is exactly when many local yards stop picking up the phone.'
+      }
+    ]
   },
   {
     slug: 'suisun-city',
@@ -58,7 +105,52 @@ export const AREAS: Area[] = [
     landmarks: ['Vacaville Premium Outlets', 'Nut Tree', 'I-80 & I-505 interchange', 'Alamo Drive', 'Peabody Road'],
     zips: ['95687', '95688'],
     mapLat: 38.3566,
-    mapLng: -121.9877
+    mapLng: -121.9877,
+    body: [
+      {
+        h: 'The Vacaville calls we run most',
+        p: [
+          'Vacaville breaks down in predictable places. The Premium Outlets and the Nut Tree draw traffic from well outside the county, which means a steady stream of lockouts and dead batteries from people who parked, shopped for three hours, and came back to a car that will not wake up. Those lots are straightforward work: a service truck gets alongside the vehicle and most of them never need a tow.',
+          'The freeway side is the I-80 run through town and the I-80/I-505 interchange at the north end, where traffic splitting toward Winters and Woodland creates the same merge problems the Cordelia Junction does at the other end of the county. In the neighborhoods, Alamo Drive, Peabody Road, and the Browns Valley streets are the usual addresses for a car that will not start in the driveway.'
+        ]
+      },
+      {
+        h: 'The Vaca grade is where cooling systems give up',
+        p: [
+          'The climb between Vacaville and Fairfield is the piece of road that generates the calls people do not anticipate. It is a sustained grade in a place that runs well past 100 degrees in July and August, and that combination finds every weak radiator hose, tired water pump, and low coolant level in the county. A car that has been running slightly hot around town will pick the middle of that grade to boil over.',
+          'If your temperature gauge climbs on the grade, turn the air conditioning off and the heater on full, which pulls heat off the engine, and get to the next exit rather than pushing over the top. Do not open a hot radiator cap. Once it has actually overheated, driving it further is how a cheap hose turns into a head gasket, and a tow at that point is the least expensive thing you will do all day.'
+        ]
+      },
+      {
+        h: 'Getting a tow in Vacaville without the wait',
+        p: [
+          'Operators run Vacaville and Fairfield as one service area, so a truck working one town is usually minutes from the other, and Vacaville response times track closely with Fairfield at roughly 20 to 30 minutes. Dixon and the I-505 side add a little drive time but stay well inside our range.',
+          'The single thing that speeds up a Vacaville call is location detail. "The outlets" covers an enormous parking area, so give a store name or the row you are in. On the freeway, name the direction you are travelling and the last exit you passed, since I-80 through Vacaville has exits close enough together that a mile in the wrong direction costs ten minutes.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        q: 'How much does a tow cost in Vacaville?',
+        a: 'The same structure as the rest of the county: a hook fee plus a per-mile rate, quoted as one firm number before the truck rolls. A Vacaville-to-Vacaville tow is at the low end; runs down to Fairfield or out toward Sacramento are priced by distance.'
+      },
+      {
+        q: 'How long does a tow truck take in Vacaville?',
+        a: 'Usually 20 to 30 minutes, since operators work Vacaville and Fairfield as a single area and a truck is often already nearby. Give a precise location, particularly at the outlets, and it tends to be at the faster end of that range.'
+      },
+      {
+        q: 'Do you tow from the Vacaville Premium Outlets and the Nut Tree?',
+        a: 'Regularly. Those lots are among our most common Vacaville calls, mostly lockouts and dead batteries. Name the nearest store or parking row when you call so the operator is not circling a very large lot looking for you.'
+      },
+      {
+        q: 'My car overheated on the grade toward Fairfield. Can I keep driving?',
+        a: 'Once it has genuinely overheated, no. Continuing risks turning a hose or thermostat into a warped head or blown head gasket. Pull off, let it cool, and call for a tow. Do not open the radiator cap while the engine is hot.'
+      },
+      {
+        q: 'Do you cover Dixon and the I-505 side of Vacaville?',
+        a: 'Yes. Dixon sits on the same I-80 corridor our trucks already run, and the I-80/I-505 interchange is inside our regular coverage. Response times run slightly longer than central Vacaville but remain competitive.'
+      }
+    ]
   },
   {
     slug: 'cordelia',

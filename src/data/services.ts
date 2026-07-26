@@ -15,7 +15,7 @@ export const SERVICES: Service[] = [
     slug: 'emergency-towing',
     name: 'Emergency Towing',
     short: 'Broken down or in an accident? A truck is dispatched the moment you call, day or night.',
-    metaTitle: '24/7 Emergency Towing in Fairfield, CA | Solano Towing',
+    metaTitle: '24 Hour Emergency Tow Truck Service in Fairfield, CA | Solano Towing',
     metaDesc:
       'Emergency towing in Fairfield, Suisun City & Vacaville. 24/7 dispatch, average 25-minute response on the I-80 corridor. Call (707) 356-7623.',
     h1: 'Emergency Towing in Fairfield, CA',
@@ -75,7 +75,7 @@ export const SERVICES: Service[] = [
     slug: 'jump-start',
     name: 'Jump Starts',
     short: 'Dead battery in a driveway, parking garage, or the Solano Town Center lot. Usually under 30 minutes.',
-    metaTitle: 'Car Jump Start Service in Fairfield, CA | Solano Towing',
+    metaTitle: 'Jump Starts in Fairfield, CA | Car Battery Jump Start | Solano Towing',
     metaDesc:
       'Dead battery? Mobile jump start service in Fairfield, Suisun City & Vacaville, 24/7. Call (707) 356-7623 and get moving in about 25 minutes.',
     h1: 'Jump Start Service in Fairfield, CA',
@@ -311,10 +311,10 @@ export const SERVICES: Service[] = [
     slug: 'impound-retrieval',
     name: 'Impound & Storage Tows',
     short: 'Get your car out of a storage yard and to your shop before daily fees pile up.',
-    metaTitle: 'Impound & Storage Yard Towing in Solano County | Solano Towing',
+    metaTitle: 'Tow Yard & Impound Retrieval in Fairfield, CA | Solano Towing',
     metaDesc:
       'Move your vehicle out of an impound or storage yard in Fairfield & Solano County to your shop or home. Stop daily fees. Call (707) 356-7623.',
-    h1: 'Impound & Storage Yard Tows',
+    h1: 'Tow Yard & Impound Retrieval in Fairfield',
     intro: [
       'After an accident or a CHP rotation tow, your car often ends up in a storage yard charging daily fees that climb fast. Once you\u2019ve cleared the release paperwork, we\u2019ll pick the vehicle up from the yard and deliver it to your body shop, mechanic, or home, which stops the storage clock as soon as possible.',
       'This is one of the most overlooked ways to save money after a collision in Solano County. A short second tow from the yard to your chosen shop almost always costs less than the storage fees it prevents from stacking up.'

@@ -1,6 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import MapEmbed from '../components/MapEmbed.astro';
 import { SITE } from '../config/site';
+import { AREAS } from '../data/cities';
+
+const coveragePoints = AREAS.map((a) => ({ name: a.name, lat: a.mapLat, lng: a.mapLng }));
 ---
 
 <Base
@@ -39,6 +43,21 @@ import { SITE } from '../config/site';
         <li><strong>Licensed & insured operators</strong><span>Every truck in the network carries commercial coverage.</span></li>
         <li><strong>Local only</strong><span>Solano County trucks for Solano County calls.</span></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="s-ink-2">
+    <div class="wrap">
+      <p class="eyebrow">Where we work</p>
+      <h2 style="margin-bottom:1.6rem;">Our Solano County service area</h2>
+      <MapEmbed
+        lat={38.2494}
+        lng={-122.04}
+        zoom={10}
+        points={coveragePoints}
+        title={`Map highlighting the ${SITE.brand} service area across Solano County, CA`}
+        caption={SITE.serviceAreaLine}
+      />
     </div>
   </section>
 </Base>

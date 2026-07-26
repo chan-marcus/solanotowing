@@ -1,9 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import MapEmbed from '../components/MapEmbed.astro';
 import { SITE } from '../config/site';
 import { SERVICES } from '../data/services';
 import { AREAS } from '../data/cities';
 import { TRUST, REVIEWS } from '../data/trust';
+
+const coveragePoints = AREAS.map((a) => ({ name: a.name, lat: a.mapLat, lng: a.mapLng }));
 
 const homeFaq = [
   { q: 'How fast can you get to me?', a: 'Most calls in Fairfield, Suisun City, Cordelia, and Vacaville see a truck in 20 to 30 minutes. The I-80/I-680 junction often runs faster because trucks stage nearby.' },
@@ -141,6 +144,16 @@ const ICONS: Record<string, string> = {
           the Vallejo line to the Vacaville grade, the I-680 approach, and Highway 12 through
           Suisun toward Rio Vista.
         </p>
+      </div>
+      <div style="margin-top:2.2rem;">
+        <MapEmbed
+          lat={38.2494}
+          lng={-122.04}
+          zoom={10}
+          points={coveragePoints}
+          title={`Map highlighting the ${SITE.brand} service area across Solano County, CA`}
+          caption={SITE.serviceAreaLine}
+        />
       </div>
       <div class="grid c3" style="margin-top:2.2rem;">
         <a class="card" href="/areas/fairfield/"><span class="go" aria-hidden="true">↗</span><h3>Fairfield</h3><p>I-80, Solano Town Center, Travis Boulevard, North Texas Street.</p></a>

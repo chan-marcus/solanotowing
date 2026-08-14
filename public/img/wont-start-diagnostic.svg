@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Diagnostic chart matching what your car does when you turn the key to the likely cause: rapid clicking means a dead battery, one loud click means the starter, cranking without firing means fuel or spark, and dimming lights while driving means the alternator">
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e8a33d"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="380" rx="18" fill="#0f1722"/>
+  <text x="360" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">What the car does when you turn the key</text>
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#94a3b8">The sound narrows it down before anyone opens the hood</text>
+
+  <g font-family="Arial, sans-serif">
+    <!-- Row 1: rapid clicking -->
+    <rect x="30" y="86" width="300" height="86" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="48" y="112" font-size="11" letter-spacing="1.8" fill="#e8a33d" font-weight="bold">YOU HEAR</text>
+    <text x="48" y="136" font-size="15.5" fill="#f6f2ea" font-weight="bold">Rapid clicking</text>
+    <text x="48" y="157" font-size="12" fill="#94a3b8">Dash lights dim or flicker</text>
+
+    <line x1="330" y1="129" x2="382" y2="129" stroke="#e8a33d" stroke-width="2.5" marker-end="url(#arw)"/>
+
+    <rect x="390" y="86" width="300" height="86" rx="13" fill="#17263a" stroke="#e8a33d"/>
+    <text x="408" y="112" font-size="11" letter-spacing="1.8" fill="#e8a33d" font-weight="bold">USUALLY</text>
+    <text x="408" y="136" font-size="15.5" fill="#f6f2ea" font-weight="bold">Dead battery</text>
+    <text x="408" y="157" font-size="12" fill="#56d364">A jump start normally fixes it</text>
+
+    <!-- Row 2: one loud click -->
+    <rect x="30" y="184" width="300" height="86" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="48" y="210" font-size="11" letter-spacing="1.8" fill="#e8a33d" font-weight="bold">YOU HEAR</text>
+    <text x="48" y="234" font-size="15.5" fill="#f6f2ea" font-weight="bold">One loud clunk, then nothing</text>
+    <text x="48" y="255" font-size="12" fill="#94a3b8">Lights stay bright</text>
+
+    <line x1="330" y1="227" x2="382" y2="227" stroke="#e8a33d" stroke-width="2.5" marker-end="url(#arw)"/>
+
+    <rect x="390" y="184" width="300" height="86" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="408" y="210" font-size="11" letter-spacing="1.8" fill="#e8a33d" font-weight="bold">USUALLY</text>
+    <text x="408" y="234" font-size="15.5" fill="#f6f2ea" font-weight="bold">Starter, not battery</text>
+    <text x="408" y="255" font-size="12" fill="#f0a868">A jump will not help — needs a shop</text>
+
+    <!-- Row 3: cranks but won't fire -->
+    <rect x="30" y="282" width="300" height="72" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="48" y="308" font-size="15.5" fill="#f6f2ea" font-weight="bold">Cranks normally, never fires</text>
+    <text x="48" y="330" font-size="12" fill="#94a3b8">Strong turnover, no catch</text>
+
+    <line x1="330" y1="318" x2="382" y2="318" stroke="#e8a33d" stroke-width="2.5" marker-end="url(#arw)"/>
+
+    <rect x="390" y="282" width="300" height="72" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="408" y="308" font-size="15.5" fill="#f6f2ea" font-weight="bold">Fuel or spark</text>
+    <text x="408" y="330" font-size="12" fill="#f0a868">Battery is fine — tow to a shop</text>
+  </g>
+</svg>

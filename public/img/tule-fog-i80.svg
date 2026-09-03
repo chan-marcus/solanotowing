@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="Tule fog visibility guide for I-80 in Solano County: at 500 feet of visibility you have about five seconds to react at 65 mph, at 200 feet about two seconds, and under 100 feet you should leave the freeway at the next exit rather than stopping on the shoulder">
+  <defs>
+    <linearGradient id="fogA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dfe3ee" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#dfe3ee" stop-opacity="0.30"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="320" rx="18" fill="#0f1722"/>
+  <text x="360" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">Tule fog on I-80: how much road you actually get</text>
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#94a3b8">At 65 mph you cover roughly 95 feet every second</text>
+
+  <rect x="30" y="86" width="660" height="70" rx="12" fill="url(#fogA)"/>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="30" y="176" width="206" height="118" rx="13" fill="#17263a" stroke="#56d364" stroke-opacity="0.45"/>
+    <text x="133" y="204" text-anchor="middle" font-size="11" letter-spacing="1.8" fill="#56d364" font-weight="bold">500 FT VISIBILITY</text>
+    <text x="133" y="234" text-anchor="middle" font-size="24" fill="#f6f2ea" font-weight="bold">~5 sec</text>
+    <text x="133" y="258" text-anchor="middle" font-size="12" fill="#94a3b8">to see, decide, and brake</text>
+    <text x="133" y="278" text-anchor="middle" font-size="12" fill="#94a3b8">Slow down, low beams on</text>
+
+    <rect x="257" y="176" width="206" height="118" rx="13" fill="#17263a" stroke="#e8a33d" stroke-opacity="0.6"/>
+    <text x="360" y="204" text-anchor="middle" font-size="11" letter-spacing="1.8" fill="#e8a33d" font-weight="bold">200 FT VISIBILITY</text>
+    <text x="360" y="234" text-anchor="middle" font-size="24" fill="#f6f2ea" font-weight="bold">~2 sec</text>
+    <text x="360" y="258" text-anchor="middle" font-size="12" fill="#94a3b8">less than one car length</text>
+    <text x="360" y="278" text-anchor="middle" font-size="12" fill="#94a3b8">of warning at speed</text>
+
+    <rect x="484" y="176" width="206" height="118" rx="13" fill="#17263a" stroke="#f0705a" stroke-opacity="0.6"/>
+    <text x="587" y="204" text-anchor="middle" font-size="11" letter-spacing="1.8" fill="#f0705a" font-weight="bold">UNDER 100 FT</text>
+    <text x="587" y="234" text-anchor="middle" font-size="24" fill="#f6f2ea" font-weight="bold">Exit</text>
+    <text x="587" y="258" text-anchor="middle" font-size="12" fill="#94a3b8">Leave at the next off-ramp.</text>
+    <text x="587" y="278" text-anchor="middle" font-size="12" fill="#f0a868">Never stop on the shoulder.</text>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">
+    <text x="46" y="112">Clear</text>
+    <text x="640" y="112">Dense</text>
+  </g>
+  <text x="360" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#dfe3ee">Cordelia Junction &#183; Suisun Marsh &#183; the Dixon flats &#8212; the worst of it, December to February</text>
+</svg>

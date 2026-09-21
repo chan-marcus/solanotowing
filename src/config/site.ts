@@ -5,7 +5,7 @@
 
 export const SITE = {
   brand: 'Solano Towing',
-  // A real variant people search for — not a keyword string. Google treats a
+  // A real variant people search for, not a keyword string. Google treats a
   // stuffed alternateName as untrustworthy and falls back to the bare domain.
   brandAlt: 'Solano County Towing',
   legalLine:

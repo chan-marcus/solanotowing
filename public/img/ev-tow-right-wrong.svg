@@ -6,7 +6,7 @@
     <rect x="30" y="86" width="316" height="190" rx="14" fill="#17263a" stroke="#56d364" stroke-opacity="0.5"/>
     <circle cx="56" cy="114" r="9" fill="#56d364" fill-opacity="0.18" stroke="#56d364"/>
     <path d="M51.5 114 l3.2 3.4 l6-6.6" fill="none" stroke="#56d364" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="76" y="119" font-size="14.5" fill="#f6f2ea" font-weight="bold">Flatbed &#8212; all four wheels up</text>
+    <text x="76" y="119" font-size="14.5" fill="#f6f2ea" font-weight="bold">Flatbed: all four wheels up</text>
     <!-- flatbed drawing -->
     <rect x="60" y="176" width="240" height="10" rx="2" fill="#3a5068"/>
     <path d="M110 176 L124 158 L214 156 L236 172 L250 176 Z" fill="#31394b" stroke="#454e63" stroke-width="2"/>

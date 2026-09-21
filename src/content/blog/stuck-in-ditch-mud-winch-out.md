@@ -18,7 +18,7 @@ damaged car.
 ## First: get safe
 
 A car in a ditch is often sitting at an angle, partly in the path of traffic, on a rural
-road where nobody expects to find a stopped vehicle — frequently in rain and low light.
+road where nobody expects to find a stopped vehicle, frequently in rain and low light.
 
 Put your hazards on. If it's safe to get out, do so on the side away from traffic and move
 well clear of the car and the roadway. Don't stand downhill of a car on a slope; soft
@@ -29,7 +29,7 @@ ground can let it shift. If you can't get out safely, stay belted in and call.
 Every instinct says to give it gas and power out. On soft ground, that's what makes a
 simple recovery difficult.
 
-Spinning tires don't find grip in mud — they dig. Each second of wheelspin carves a deeper
+Spinning tires don't find grip in mud. They dig. Each second of wheelspin carves a deeper
 rut, lowers the car further onto its underside, and packs mud around the wheels. A car that
 was sitting on its tires becomes a car sitting on its frame, and that's a much harder,
 slower, more expensive pull.
@@ -69,8 +69,7 @@ A photo helps enormously if you can send one.
 ## How a winch-out actually works
 
 The operator positions the truck on firm ground, assesses the angle and the footing, and
-runs a winch line to the vehicle's recovery points. The pull is controlled and steady —
-nothing like the jerk of a strap — and done in line with the car so it comes out the way
+runs a winch line to the vehicle's recovery points. The pull is controlled and steady, nothing like the jerk of a strap, and done in line with the car so it comes out the way
 it went in.
 
 For a car close to the pavement and sitting level, it's often quick. Deeper situations take
@@ -78,8 +77,7 @@ more: a car down a steep bank or sunk to the frame may need a snatch block to ch
 angle of pull, or a second anchor point, and more time to set up properly.
 
 Once it's back on solid ground, the operator checks the tires, wheels, suspension, and
-underside. If it's drivable, you're on your way. If something got damaged on the way in —
-a bent wheel, a torn tire, a cracked oil pan — the same truck can tow it, quoted as one job.
+underside. If it's drivable, you're on your way. If something got damaged on the way in (a bent wheel, a torn tire, a cracked oil pan), the same truck can tow it, quoted as one job.
 
 ## After you're out
 
@@ -87,13 +85,13 @@ Even if the car drives fine, it's worth a few checks over the next day:
 
 - **Pulling to one side or a new vibration** can mean bent steering or suspension parts.
 - **Warning lights** after a hard hit underneath deserve attention.
-- **Mud packed in the wheels** can cause a vibration at speed — a car wash usually fixes it.
+- **Mud packed in the wheels** can cause a vibration at speed. A car wash usually fixes it.
 - **Fluid spots** in your driveway the next morning suggest something got damaged underneath.
 
 ## What it costs
 
 A simple pull near the pavement is usually a flat fee. Longer pulls, steep banks, or deep
-mud are quoted after a quick description on the phone — always before the truck rolls, so
+mud are quoted after a quick description on the phone, always before the truck rolls, so
 the number doesn't change once the job starts.
 
 Stuck right now? Solano Towing dispatch answers 24/7 at (707) 356-ROAD.

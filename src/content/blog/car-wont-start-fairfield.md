@@ -14,8 +14,7 @@ three parts. Here's how to read it.
 ## Rapid clicking: almost always the battery
 
 That fast machine-gun clicking is the starter solenoid trying to engage and
-falling short on voltage. Look at your dash lights while you turn the key — if
-they dim noticeably or flicker in time with the clicking, the battery doesn't
+falling short on voltage. Look at your dash lights while you turn the key. If they dim noticeably or flicker in time with the clicking, the battery doesn't
 have enough left to spin the engine.
 
 This is the good outcome. A jump start gets you running in a couple of minutes,
@@ -31,11 +30,11 @@ or its solenoid failing to turn the engine over.
 
 The important part: **a jump start will not fix this.** If someone jumps you and
 it fires up, it was the battery after all. If a jump changes nothing, stop
-spending time on it — the car needs a shop, and that means a tow.
+spending time on it. The car needs a shop, and that means a tow.
 
 ## Cranks strongly but never catches: fuel or spark
 
-If the engine turns over at normal speed — that healthy *rurr-rurr-rurr* — but
+If the engine turns over at normal speed (that healthy *rurr-rurr-rurr*) but
 never fires, your electrical system is doing its job. The problem is on the fuel
 or ignition side: a failed fuel pump, a clogged filter, a crank sensor, or a
 no-spark condition.
@@ -47,23 +46,21 @@ attempts is plenty before you call.
 ## The alternator: the one that strands you twice
 
 The alternator recharges the battery while you drive. When it fails, the car runs
-off battery alone until there's nothing left, then dies — often miles from where
+off battery alone until there's nothing left, then dies, often miles from where
 it started.
 
 The tell is what happened *before* it quit: headlights dimming at idle and
 brightening when you rev, a battery warning light, or the radio and dash
 flickering. If you jump a car with a failing alternator, it will start and then
 strand you again a few miles down the road. That's why our operators check that
-the alternator is actually charging before they leave, and say so plainly if it
-isn't — a tow to a shop now is cheaper than a second call-out from the shoulder
+the alternator is actually charging before they leave, and say so plainly if it isn't. A tow to a shop now is cheaper than a second call-out from the shoulder
 of I-80 tonight.
 
 ## Why Solano County is hard on batteries
 
 Batteries here get squeezed from both ends of the calendar. Vacaville and
 Fairfield summers run well past 100 degrees for stretches, and that heat
-evaporates electrolyte and shortens a battery's life from the inside — the damage
-is done in July but doesn't show up until later. Then the first cold, damp
+evaporates electrolyte and shortens a battery's life from the inside. The damage is done in July but doesn't show up until later. Then the first cold, damp
 mornings off the Suisun Marsh in December demand the most cranking amps of the
 year from a battery that summer already weakened.
 
@@ -87,10 +84,10 @@ it's telling you what's coming.
 A jump start in Fairfield, Suisun City, or Vacaville is a flat service-call fee,
 quoted before anyone is dispatched, and it's the same rate at 3am as at 3pm. If
 the battery won't hold or the alternator isn't charging, you'll get the tow price
-before the truck hooks up — hook fee plus mileage as one number.
+before the truck hooks up: hook fee plus mileage as one number.
 
 When you call, have your location (a cross street or the parking row), the year,
-make and model, and — most usefully — **what it does when you turn the key**.
+make and model, and, most usefully, **what it does when you turn the key**.
 That last detail is what tells dispatch whether to send a service truck or a tow
 truck, and getting it right the first time saves you a second wait.
 

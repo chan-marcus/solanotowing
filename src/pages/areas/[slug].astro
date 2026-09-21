@@ -20,7 +20,7 @@ const breadcrumbSchema = {
   ]
 };
 
-// Only emit FAQPage where the questions are actually rendered on the page —
+// Only emit FAQPage where the questions are actually rendered on the page:
 // marking up invisible content is a structured-data violation.
 const faqSchema = a.faq?.length
   ? {

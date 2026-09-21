@@ -7,8 +7,8 @@ date: 2026-08-27
 A motorcycle is the vehicle most often damaged in transit, and almost never by
 the breakdown itself. It has no parking brake to hold it, nothing to strap over,
 and one badly chosen tie-down point can crack a fairing or bend a set of forks.
-If you ride around here — Highway 12 toward Rio Vista, the roads past Rockville,
-or just the daily I-80 slog — it is worth knowing what a correct load looks like
+If you ride around here, whether it's Highway 12 toward Rio Vista, the roads past Rockville,
+or just the daily I-80 slog, it is worth knowing what a correct load looks like
 before you are standing on a shoulder watching someone do it.
 
 ![Diagram showing correct motorcycle tie-down: front wheel locked in a chock, soft-loop straps at the lower triple clamp and the frame, suspension compressed only part way, and never strapping by the handlebars or over painted bodywork](/img/motorcycle-tiedown.svg)
@@ -17,7 +17,7 @@ before you are standing on a shoulder watching someone do it.
 
 A bike belongs on a flatbed with a wheel chock. Full stop. Towing a motorcycle
 behind a wheel-lift means it is being dragged on one wheel with nothing holding
-it upright except straps under tension the whole way — and every bump changes
+it upright except straps under tension the whole way, and every bump changes
 that tension.
 
 The chock is what makes the difference. It captures the front wheel and holds the
@@ -28,7 +28,7 @@ that will arrive the way it left.
 ## Where the straps actually go
 
 The front pair goes on **soft loops around the lower triple clamp**, or around
-the fork tubes above the axle on some bikes. Soft loops are fabric — they wrap
+the fork tubes above the axle on some bikes. Soft loops are fabric. They wrap
 the hard point and give the metal hook something to grab that is not your
 paintwork.
 
@@ -43,7 +43,7 @@ should be looking at yours rather than working from habit.
 
 ## Compressed, but not bottomed out
 
-The forks should be compressed part of the way — enough to preload the straps so
+The forks should be compressed part of the way: enough to preload the straps so
 they cannot go slack over a bump, but not cranked down until the suspension is
 fully bottomed.
 
@@ -55,7 +55,7 @@ half of available travel is the working range most operators aim for.
 ## Bikes that will not roll
 
 A seized wheel, a dropped bike with a bent rotor, or a chain that has come off
-and locked the rear — none of these roll up a ramp. That is fine, but it changes
+and locked the rear: none of these roll up a ramp. That is fine, but it changes
 the equipment: the operator needs skates, a winch, or extra hands.
 
 Say so when you call. The difference between "my bike broke down" and "my bike
@@ -66,8 +66,7 @@ arrives, and getting it wrong means waiting twice.
 
 Two things matter before it gets loaded.
 
-**Fluids.** A bike on its side leaks fuel and oil. If it is still leaking, say so
-— it changes how the bike is handled and where it can be set down.
+**Fluids.** A bike on its side leaks fuel and oil. If it is still leaking, say so, because it changes how the bike is handled and where it can be set down.
 
 **Do not straighten anything.** The instinct is to bend a lever or a peg back
 into place. Leave it. If there is an insurance claim, the damage should be
@@ -87,7 +86,7 @@ It takes fifteen seconds and it is entirely reasonable to ask:
 4. Is the suspension compressed but not slammed?
 5. Would the bike stand up if the straps came off?
 
-If the answer to the last one is no, it is not secured — it is suspended, and
+If the answer to the last one is no, it is not secured. It is suspended, and
 that is the arrangement that fails.
 
 ## Trikes, trailers, and touring bikes
@@ -102,8 +101,7 @@ up.
 
 Motorcycle towing in Fairfield, Suisun City, and Vacaville is priced the same way
 as anything else we move: a hook fee plus a per-mile rate, quoted as one firm
-number before the truck is dispatched. It is not a premium service with a premium
-price — the flatbed and chock are simply the correct equipment.
+number before the truck is dispatched. It is not a premium service with a premium price. The flatbed and chock are simply the correct equipment.
 
 Longer runs to a dealer or a specialist shop in Sacramento or the Bay Area are
 priced by distance, so have the destination ready when you call.

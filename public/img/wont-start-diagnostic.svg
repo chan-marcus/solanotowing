@@ -34,7 +34,7 @@
     <rect x="390" y="184" width="300" height="86" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
     <text x="408" y="210" font-size="11" letter-spacing="1.8" fill="#e8a33d" font-weight="bold">USUALLY</text>
     <text x="408" y="234" font-size="15.5" fill="#f6f2ea" font-weight="bold">Starter, not battery</text>
-    <text x="408" y="255" font-size="12" fill="#f0a868">A jump will not help — needs a shop</text>
+    <text x="408" y="255" font-size="12" fill="#f0a868">A jump will not help: needs a shop</text>
 
     <!-- Row 3: cranks but won't fire -->
     <rect x="30" y="282" width="300" height="72" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
@@ -45,6 +45,6 @@
 
     <rect x="390" y="282" width="300" height="72" rx="13" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
     <text x="408" y="308" font-size="15.5" fill="#f6f2ea" font-weight="bold">Fuel or spark</text>
-    <text x="408" y="330" font-size="12" fill="#f0a868">Battery is fine — tow to a shop</text>
+    <text x="408" y="330" font-size="12" fill="#f0a868">Battery is fine: tow to a shop</text>
   </g>
 </svg>

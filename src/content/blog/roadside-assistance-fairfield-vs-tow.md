@@ -1,6 +1,6 @@
 ---
 title: "Roadside Assistance in Fairfield: Fix or Tow?"
-description: "What roadside assistance fixes on the spot in Fairfield — flat tires, jump starts, fuel, lockouts — and when you need a tow instead. Call (707) 356-7623."
+description: "What roadside assistance fixes on the spot in Fairfield (flat tires, jump starts, fuel, lockouts) and when you need a tow instead. Call (707) 356-7623."
 date: 2026-08-13
 ---
 
@@ -9,13 +9,12 @@ Fairfield end with the driver going on their way twenty minutes later, having
 paid a flat call-out fee and never seen a hook. Knowing which side of that line
 you're on saves you money and, on the I-80 shoulder, keeps you safer.
 
-![Comparison of what roadside assistance fixes on the spot — flat tire, dead battery, empty tank, keys locked in the car — versus what needs a tow: no spare, shredded tire, engine that will not start after a jump, overheating, collision damage, and a car stuck off the pavement](/img/roadside-vs-tow.svg)
+![Comparison of what roadside assistance fixes on the spot (flat tire, dead battery, empty tank, keys locked in the car) versus what needs a tow: no spare, shredded tire, engine that will not start after a jump, overheating, collision damage, and a car stuck off the pavement](/img/roadside-vs-tow.svg)
 
 ## What gets fixed where you're parked
 
 **Flat tire.** If you have a serviceable spare, an operator swaps it on the spot.
-This is the one people most often try themselves and most often shouldn't — more
-on that below.
+This is the one people most often try themselves and most often shouldn't. More on that below.
 
 **Dead battery.** A professional jump pack, plus a check that the alternator is
 actually charging before the truck leaves. That check matters: a jump on a failed
@@ -26,8 +25,7 @@ happens more than you'd think on the stretch between the Cordelia Junction and
 the Central Way pumps, where drivers gamble on one more exit.
 
 **Keys locked in.** Wedge-and-reach tools open the car without drilling the lock
-or breaking glass. If a child or pet is inside, say so immediately — call 911
-first, because Fairfield PD and Suisun Fire will break a window when seconds
+or breaking glass. If a child or pet is inside, say so immediately, but call 911 first, because Fairfield PD and Suisun Fire will break a window when seconds
 matter, and that is the right call.
 
 **A loose or corroded battery terminal.** Unglamorous, and it perfectly imitates
@@ -64,8 +62,7 @@ If you're stopped on the freeway:
    four different places, and that ambiguity costs ten minutes.
 
 Operators do this work with the truck positioned as a shield and amber warning
-lights running. That's the actual product you're buying on a freeway call — not
-just the tire.
+lights running. That's the actual product you're buying on a freeway call, not just the tire.
 
 ## Roadside assistance vs. your auto club
 
@@ -86,18 +83,17 @@ Roadside calls are a **flat call-out fee**, quoted before dispatch, and it's the
 same rate at 3am as at 3pm. If you're quoted a big after-hours surcharge, keep
 calling.
 
-If the job turns out to need a tow after all, the operator already on scene
-escalates — you get the tow price up front, and you don't go back to the end of
+If the job turns out to need a tow after all, the operator already on scene escalates: you get the tow price up front, and you don't go back to the end of
 the queue. One call covers both the attempt and the fallback.
 
 ## Before you dial
 
 Have these ready and the whole thing goes faster:
 
-- **Where you are** — cross street, parking row, or direction plus last exit
-- **What you drive** — year, make, model, and mention AWD or an EV
-- **What happened** — "flat rear passenger, no spare" beats "car trouble"
-- **Where it's going**, if it needs a tow — shop, home, or dealer
+- **Where you are:** cross street, parking row, or direction plus last exit
+- **What you drive:** year, make, model, and mention AWD or an EV
+- **What happened:** "flat rear passenger, no spare" beats "car trouble"
+- **Where it's going**, if it needs a tow: shop, home, or dealer
 
 Stuck in Fairfield, Suisun City, or Vacaville right now? Solano Towing dispatch
 answers 24/7 at (707) 356-ROAD, and you'll get a firm price before anyone rolls.

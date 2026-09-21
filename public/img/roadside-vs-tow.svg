@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Comparison of what roadside assistance fixes on the spot — flat tire, dead battery, empty tank, keys locked in the car — versus what needs a tow: no spare, shredded tire, engine that will not start after a jump, overheating, collision damage, and a car stuck off the pavement">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Comparison of what roadside assistance fixes on the spot (flat tire, dead battery, empty tank, keys locked in the car) versus what needs a tow: no spare, shredded tire, engine that will not start after a jump, overheating, collision damage, and a car stuck off the pavement">
   <rect width="720" height="330" rx="18" fill="#0f1722"/>
   <text x="360" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">Roadside fix, or does it need a tow?</text>
   <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#94a3b8">Most Fairfield calls land on the left. The right side is when the truck hooks up.</text>
@@ -31,7 +31,7 @@
       <text x="396" y="198">Won&#8217;t stay running after a jump</text>
       <text x="396" y="224">Overheated, or a coolant leak</text>
       <text x="396" y="250">Collision damage, won&#8217;t roll or steer</text>
-      <text x="396" y="276">Off the pavement — needs a winch</text>
+      <text x="396" y="276">Off the pavement: needs a winch</text>
     </g>
   </g>
 </svg>

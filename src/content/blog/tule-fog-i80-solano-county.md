@@ -19,7 +19,7 @@ At 65 mph you cover roughly 95 feet every second. That single number explains
 why fog pileups happen here.
 
 With 500 feet of visibility you get about five seconds between seeing something
-and reaching it — enough to react if you are paying attention. At 200 feet you
+and reaching it, enough to react if you are paying attention. At 200 feet you
 are down to roughly two seconds, which is less than the time it takes most
 drivers to move their foot from the accelerator to the brake and have the car
 begin slowing. Below 100 feet you are effectively driving blind at freeway speed.
@@ -32,7 +32,7 @@ collision is the small one. The pile behind it is the problem.
 
 The instinct in heavy fog is to switch on the high beams, and it is exactly
 wrong. Fog is suspended water droplets, and high beams scatter light off them
-straight back at you — a wall of white glare that makes visibility worse, not
+straight back at you: a wall of white glare that makes visibility worse, not
 better.
 
 Use low beams, and fog lights if the car has them. If you have automatic
@@ -49,7 +49,7 @@ and it keeps you positioned without drifting.
 
 Watching the centre line instead pulls you toward oncoming or passing traffic,
 and following the tail lights of the car ahead is the classic way people end up
-in a pile — you inherit their spacing and their mistakes, and you have no idea
+in a pile. You inherit their spacing and their mistakes, and you have no idea
 what is in front of them.
 
 ## Do not stop on the shoulder
@@ -61,12 +61,12 @@ navigating by whatever lights they can see, and a stationary car on the edge of
 the road reads as a moving car in the lane. People steer toward it.
 
 If the fog gets worse than you can safely handle, **take the next exit** and stop
-somewhere off the freeway entirely — a lit parking lot, a side street. Around
+somewhere off the freeway entirely, like a lit parking lot or a side street. Around
 here that means Green Valley Road, Suisun Valley Road, Central Way, Travis
 Boulevard, or the Air Base Parkway exits. Getting off the freeway is worth a
 twenty-minute delay.
 
-If you genuinely cannot move the car — a breakdown, not a choice — get it as far
+If you genuinely cannot move the car (a breakdown, not a choice), get it as far
 right as it will roll, hazards on, stay belted inside, and call for help
 immediately. Tell dispatch it is a fog situation and give your direction of
 travel plus the last exit you passed. Operators approach a fog call differently:
@@ -95,7 +95,7 @@ someone comes in hot from behind.
 
 If a collision has already happened ahead and you are stopped in the lane,
 getting people out of the vehicle and behind a barrier is usually safer than
-sitting in a stopped car in a live fog lane — but only if there is somewhere
+sitting in a stopped car in a live fog lane, but only if there is somewhere
 genuinely safe to go. Call 911, then stay aware of what is coming up behind you.
 
 ## When it clears

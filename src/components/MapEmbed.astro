@@ -1,6 +1,6 @@
 ---
 // Interactive Google map via the Maps JavaScript API, themed to match the site.
-// NOTE: this loads client-side JS (the Google Maps SDK) — a deliberate exception
+// NOTE: this loads client-side JS (the Google Maps SDK), a deliberate exception
 // to the site's otherwise zero-JS build.
 //
 // The API key is read at build time from the environment (set as
@@ -47,7 +47,7 @@ function resolveApiKey(): { key: string; source: string } {
 const { key: apiKey, source: keySource } = resolveApiKey();
 
 if (apiKey) {
-  // Log the variable NAME only, never the value — build logs are not private.
+  // Log the variable NAME only, never the value. Build logs are not private.
   console.log(`[MapEmbed] Using Google Maps key from ${keySource}`);
 } else {
   console.warn(

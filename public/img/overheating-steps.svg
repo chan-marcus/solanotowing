@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="Four steps when your car overheats: turn the air conditioning off and the heater on full, pull off at the next exit, shut the engine off and never open a hot radiator cap, then call for a tow if it overheated rather than driving on">
+  <defs>
+    <marker id="oa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e8a33d"/>
+    </marker>
+  </defs>
+  <rect width="720" height="280" rx="18" fill="#0f1722"/>
+  <text x="360" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">Temperature gauge climbing? In this order</text>
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#94a3b8">The first minute decides whether it&#8217;s a hose or a head gasket</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="24" y="88" width="152" height="160" rx="14" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="100" y="116" text-anchor="middle" font-size="11" letter-spacing="2" fill="#e8a33d" font-weight="bold">STEP 1</text>
+    <text x="100" y="142" text-anchor="middle" font-size="14.5" fill="#f6f2ea" font-weight="bold">A/C off,</text>
+    <text x="100" y="161" text-anchor="middle" font-size="14.5" fill="#f6f2ea" font-weight="bold">heater on full</text>
+    <text x="100" y="188" text-anchor="middle" font-size="12" fill="#94a3b8">Pulls heat off the</text>
+    <text x="100" y="205" text-anchor="middle" font-size="12" fill="#94a3b8">engine through the</text>
+    <text x="100" y="222" text-anchor="middle" font-size="12" fill="#94a3b8">heater core</text>
+    <line x1="176" y1="168" x2="194" y2="168" stroke="#e8a33d" stroke-width="2.5" marker-end="url(#oa)"/>
+
+    <rect x="200" y="88" width="152" height="160" rx="14" fill="#17263a" stroke="rgba(255,255,255,0.12)"/>
+    <text x="276" y="116" text-anchor="middle" font-size="11" letter-spacing="2" fill="#e8a33d" font-weight="bold">STEP 2</text>
+    <text x="276" y="142" text-anchor="middle" font-size="14.5" fill="#f6f2ea" font-weight="bold">Take the</text>
+    <text x="276" y="161" text-anchor="middle" font-size="14.5" fill="#f6f2ea" font-weight="bold">next exit</text>
+    <text x="276" y="188" text-anchor="middle" font-size="12" fill="#94a3b8">Don&#8217;t push over the</text>
+    <text x="276" y="205" text-anchor="middle" font-size="12" fill="#94a3b8">top of the grade to</text>
+    <text x="276" y="222" text-anchor="middle" font-size="12" fill="#94a3b8">a better spot</text>
+    <line x1="352" y1="168" x2="370" y2="168" stroke="#e8a33d" stroke-width="2.5" marker-end="url(#oa)"/>
+
+    <rect x="376" y="88" width="152" height="160" rx="14" fill="#17263a" stroke="#f0705a" stroke-opacity="0.6"/>
+    <text x="452" y="116" text-anchor="middle" font-size="11" letter-spacing="2" fill="#f0705a" font-weight="bold">STEP 3</text>
+    <text x="452" y="142" text-anchor="middle" font-size="14.5" fill="#f6f2ea" font-weight="bold">Engine off.</text>
+    <text x="452" y="161" text-anchor="middle" font-size="14.5" fill="#f6f2ea" font-weight="bold">Cap stays on.</text>
+    <text x="452" y="188" text-anchor="middle" font-size="12" fill="#f0a868">A hot radiator cap</text>
+    <text x="452" y="205" text-anchor="middle" font-size="12" fill="#f0a868">sprays boiling</text>
+    <text x="452" y="222" text-anchor="middle" font-size="12" fill="#f0a868">coolant</text>
+    <line x1="528" y1="168" x2="546" y2="168" stroke="#e8a33d" stroke-width="2.5" marker-end="url(#oa)"/>
+
+    <rect x="552" y="88" width="152" height="160" rx="14" fill="#17263a" stroke="#e8a33d"/>
+    <text x="628" y="116" text-anchor="middle" font-size="11" letter-spacing="2" fill="#e8a33d" font-weight="bold">STEP 4</text>
+    <text x="628" y="142" text-anchor="middle" font-size="14.5" fill="#f6f2ea" font-weight="bold">Tow it,</text>
+    <text x="628" y="161" text-anchor="middle" font-size="14.5" fill="#f6f2ea" font-weight="bold">don&#8217;t drive it</text>
+    <text x="628" y="188" text-anchor="middle" font-size="12" fill="#56d364">A tow now is the</text>
+    <text x="628" y="205" text-anchor="middle" font-size="12" fill="#56d364">cheapest thing you</text>
+    <text x="628" y="222" text-anchor="middle" font-size="12" fill="#56d364">do all day</text>
+  </g>
+</svg>

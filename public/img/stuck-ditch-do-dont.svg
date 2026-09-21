@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="What to do when a car slides into a ditch or gets stuck in mud: do stay off the roadway, note your mile marker or cross road, and call for a winch-out; do not spin the tires, rock it with a passenger pushing, or tow it out with a friend's strap">
+  <rect width="720" height="300" rx="18" fill="#0f1722"/>
+  <text x="360" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">Slid off into soft ground? Before you touch the gas</text>
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#94a3b8">Most winch-out damage happens in the ten minutes before anyone calls</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="30" y="86" width="316" height="190" rx="14" fill="#17263a" stroke="#56d364" stroke-opacity="0.5"/>
+    <circle cx="56" cy="114" r="9" fill="#56d364" fill-opacity="0.18" stroke="#56d364"/>
+    <path d="M51.5 114 l3.2 3.4 l6-6.6" fill="none" stroke="#56d364" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="76" y="119" font-size="14.5" fill="#f6f2ea" font-weight="bold">Do</text>
+    <g font-size="13" fill="#dfe3ee">
+      <text x="52" y="152">Hazards on, get clear of the road</text>
+      <text x="52" y="178">Note the cross road or mile marker</text>
+      <text x="52" y="204">Photograph where the car sits</text>
+      <text x="52" y="230">Say how deep and how steep</text>
+      <text x="52" y="256">Call for a winch-out</text>
+    </g>
+    <rect x="374" y="86" width="316" height="190" rx="14" fill="#17263a" stroke="#f0705a" stroke-opacity="0.55"/>
+    <circle cx="400" cy="114" r="9" fill="#f0705a" fill-opacity="0.18" stroke="#f0705a"/>
+    <path d="M396.5 110.5 l7 7 M403.5 110.5 l-7 7" stroke="#f0705a" stroke-width="2" stroke-linecap="round"/>
+    <text x="420" y="119" font-size="14.5" fill="#f6f2ea" font-weight="bold">Don&#8217;t</text>
+    <g font-size="13" fill="#dfe3ee">
+      <text x="396" y="152">Floor it &#8212; spinning digs you deeper</text>
+      <text x="396" y="178">Rock it with someone pushing</text>
+      <text x="396" y="204">Stand downhill of the car</text>
+      <text x="396" y="230">Yank it out with a borrowed strap</text>
+      <text x="396" y="256">Hook to a bumper or axle</text>
+    </g>
+  </g>
+</svg>

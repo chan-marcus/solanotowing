@@ -8,6 +8,20 @@ import { TRUST, REVIEWS } from '../data/trust';
 
 const coveragePoints = AREAS.map((a) => ({ name: a.name, lat: a.mapLat, lng: a.mapLng }));
 
+// Coverage grid order: home base first, then the junction, then the rest by size.
+// Keep the count a multiple of four so the grid ends on a full row.
+const CARD_ORDER = ['fairfield', 'cordelia', 'vallejo', 'vacaville', 'benicia', 'suisun-city', 'dixon', 'rio-vista'];
+const CARD_NAMES: Record<string, string> = { cordelia: 'Cordelia Junction' };
+const areaCards = CARD_ORDER.map((slug) => {
+  const a = AREAS.find((x) => x.slug === slug)!;
+  return {
+    slug: a.slug,
+    cardName: CARD_NAMES[a.slug] ?? a.name,
+    // Split out route numbers so a narrow card cannot break "I-505" at its hyphen.
+    cardParts: (a.cardLine ?? `${a.landmarks.slice(0, 2).join(', ')} and nearby.`).split(/(I-\d+)/g)
+  };
+});
+
 const homeFaq = [
   { q: 'How fast can you get to me?', a: 'Most calls in Fairfield, Suisun City, Cordelia, and Vacaville see a truck in 20 to 30 minutes. The I-80/I-680 junction often runs faster because trucks stage nearby.' },
   { q: 'How much does a tow cost in Solano County?', a: 'Local tows are a hook fee plus mileage, quoted as one firm number on the phone before dispatch. No after-hours surcharge, no surprise line items at drop-off.' },
@@ -51,8 +65,8 @@ const ICONS: Record<string, string> = {
         <!-- nowrap keeps the hyphen in "I-80" from breaking across lines -->
         <h1>Stranded on <span style="white-space:nowrap;">I-80</span>?<br />We&rsquo;re already close.</h1>
         <p class="lead">
-          24/7 tow truck service and roadside assistance across Fairfield, Suisun City,
-          Vacaville, and the Cordelia Junction. Local licensed operators, a truck
+          24/7 tow truck service and roadside assistance across Fairfield, Vallejo,
+          Vacaville, Benicia and the I-80 corridor. Local licensed operators, a truck
           usually 20&ndash;30 minutes out, and one firm price before it rolls.
         </p>
         <div class="hero-cta">
@@ -142,8 +156,8 @@ const ICONS: Record<string, string> = {
         </div>
         <p class="muted split-lead">
           Our dispatch area follows where breakdowns actually happen: the I-80 corridor from
-          the Vallejo line to the Vacaville grade, the I-680 approach, and Highway 12 through
-          Suisun toward Rio Vista.
+          the Carquinez Bridge in Vallejo up to the Vacaville grade, the I-680 crossing at
+          Benicia, and Highway 12 through Suisun out toward Rio Vista.
         </p>
       </div>
       <div style="margin-top:2.2rem;">
@@ -156,11 +170,18 @@ const ICONS: Record<string, string> = {
           caption={SITE.serviceAreaLine}
         />
       </div>
-      <div class="grid c3" style="margin-top:2.2rem;">
-        <a class="card" href="/areas/fairfield/"><span class="go" aria-hidden="true">↗</span><h3>Fairfield</h3><p>I-80, Solano Town Center, Travis Boulevard, North Texas Street.</p></a>
-        <a class="card" href="/areas/cordelia/"><span class="go" aria-hidden="true">↗</span><h3>Cordelia &amp; Green Valley</h3><p>The I-80/I-680/Hwy 12 interchange and Central Way truck stops.</p></a>
-        {AREAS.filter((a) => a.slug !== 'cordelia' && a.slug !== 'fairfield').map((a) => (
-          <a class="card" href={`/areas/${a.slug}/`}><span class="go" aria-hidden="true">↗</span><h3>{a.name}</h3><p>{a.landmarks.slice(0,3).join(', ')} and nearby.</p></a>
+      {/* c4 so eight areas fill two complete rows; see the areaCards order below. */}
+      <div class="grid c4" style="margin-top:2.2rem;">
+        {areaCards.map((a) => (
+          <a class="card" href={`/areas/${a.slug}/`}>
+            <span class="go" aria-hidden="true">↗</span>
+            <h3>{a.cardName}</h3>
+            <p>
+              {a.cardParts.map((part) =>
+                /^I-\d+$/.test(part) ? <span style="white-space:nowrap;">{part}</span> : part
+              )}
+            </p>
+          </a>
         ))}
       </div>
       <p class="coverage-meta">{SITE.zips.join('  ·  ')}  ·  Travis AFB adjacent areas covered to the gate.</p>
@@ -218,6 +239,12 @@ const ICONS: Record<string, string> = {
 </Base>
 
 <style>
+  /* Coverage grid: eight areas, so 2 up or 4 up only. Between the c3 breakpoint
+     and 1140px a quarter column is too narrow for the card lines, so pair them. */
+  @media (min-width: 980px) and (max-width: 1139px) {
+    #areas .grid.c4 { grid-template-columns: 1fr 1fr; }
+  }
+
   .hero { padding-top: clamp(3rem, 7vw, 5rem); overflow: hidden; }
   .hero-grid { display: grid; gap: 3rem; align-items: center; }
   @media (min-width: 940px) { .hero-grid { grid-template-columns: 1.08fr 0.92fr; } }

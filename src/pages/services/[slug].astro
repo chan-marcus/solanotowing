@@ -25,7 +25,10 @@ const serviceSchema = {
   name: s.name,
   serviceType: s.name,
   provider: { '@type': 'AutomotiveBusiness', name: SITE.brand, telephone: SITE.phone },
-  areaServed: ['Fairfield CA', 'Suisun City CA', 'Vacaville CA', 'Cordelia CA', 'Dixon CA', 'Rio Vista CA'],
+  areaServed: [
+    'Vallejo CA', 'Benicia CA', 'Fairfield CA', 'Suisun City CA', 'Vacaville CA',
+    'Cordelia CA', 'Dixon CA', 'Rio Vista CA'
+  ],
   availableChannel: { '@type': 'ServiceChannel', servicePhone: SITE.phone }
 };
 

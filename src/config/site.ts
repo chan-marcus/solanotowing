@@ -21,8 +21,12 @@ export const SITE = {
   city: 'Fairfield',
   county: 'Solano County',
   state: 'CA',
-  serviceAreaLine: 'Fairfield, Suisun City, Vacaville, Cordelia, Dixon, Rio Vista & Travis AFB',
-  zips: ['94533', '94534', '94535', '94585', '95687', '95688', '95620', '94571'],
+  serviceAreaLine:
+    'Vallejo, Benicia, Fairfield, Suisun City, Vacaville, Cordelia, Dixon, Rio Vista & Travis AFB',
+  zips: [
+    '94589', '94590', '94591', '94592', '94510', '94533', '94534', '94535',
+    '94585', '95687', '95688', '95620', '94571'
+  ],
   corridors: ['I-80', 'I-680', 'Highway 12', 'the Cordelia Junction'],
 
   etaLine: 'Average 25-minute response across the I-80 corridor',

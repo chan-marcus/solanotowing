@@ -34,8 +34,11 @@ const schema = {
   url: SITE.url,
   telephone: SITE.phone,
   description:
-    '24/7 towing and roadside assistance dispatch serving Fairfield, Suisun City, Vacaville and the I-80 corridor in Solano County, CA.',
-  areaServed: ['Fairfield CA', 'Suisun City CA', 'Vacaville CA', 'Cordelia CA', 'Dixon CA', 'Rio Vista CA'],
+    '24/7 towing and roadside assistance dispatch serving Vallejo, Fairfield, Vacaville, Benicia and the I-80 corridor in Solano County, CA.',
+  areaServed: [
+    'Vallejo CA', 'Benicia CA', 'Fairfield CA', 'Suisun City CA', 'Vacaville CA',
+    'Cordelia CA', 'Dixon CA', 'Rio Vista CA'
+  ],
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -233,6 +236,10 @@ const schema = {
   a:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 3px; }
 
   h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; }
+  /* Fill each line and keep a lone word off the last one. Headings balance
+     instead, which is only safe on short display text. */
+  p, li, figcaption, dd { text-wrap: pretty; }
+  h1, h2, h3, .eyebrow { text-wrap: balance; }
   h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); font-weight: 600; }
   h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
   h3 { font-size: 1.28rem; font-weight: 600; }

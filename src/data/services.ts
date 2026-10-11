@@ -7,6 +7,7 @@ export interface Service {
   h1: string;
   intro: string[]; // paragraphs, locally written
   bullets: { label: string; text: string }[];
+  body?: { h: string; p: string[] }[]; // long-form local copy, same shape as areas
   faq: { q: string; a: string }[];
 }
 
@@ -27,6 +28,29 @@ export const SERVICES: Service[] = [
       { label: '24/7 dispatch', text: 'Nights, weekends, holidays. Someone always answers.' },
       { label: 'Local trucks', text: 'Operators based in Fairfield and Vacaville, not routed from Sacramento.' },
       { label: 'Up-front pricing', text: 'Hook fee and per-mile rate quoted on the phone before dispatch.' }
+    ],
+    body: [
+      {
+        h: 'The first five minutes after a breakdown in Fairfield',
+        p: [
+          'If anyone is hurt, or your car is stopped in a live lane of I-80, call 911 before anything else. CHP handles freeway incidents in Solano County, and on a busy stretch like the Cordelia Junction they can slow traffic behind you in a way no tow truck can.',
+          'If everyone is fine and the car is off the road, turn on your hazards, set the parking brake, and get out on the side away from traffic if you can do it safely. On the freeway, the safest place to wait is usually behind the guardrail or well up the embankment, not in the car and never between your car and the lane.'
+        ]
+      },
+      {
+        h: 'What to tell dispatch so the right truck shows up',
+        p: [
+          'Four details save the most time: where you are, which direction you were heading, what you drive, and where the car needs to go. On I-80, the last exit you passed (Air Base Parkway, Travis Boulevard, West Texas Street, Green Valley Road) pins you down faster than a street address, and eastbound or westbound matters because crossing the median is not an option.',
+          'Mention anything that changes the equipment: all-wheel drive, an EV, a lowered car, a wheel that will not turn, or a car that will not go into neutral. Those calls need a flatbed or skates, and knowing up front means one truck does the job instead of two.'
+        ]
+      },
+      {
+        h: 'Where your car goes after an emergency tow',
+        p: [
+          'You choose the destination: your driveway, your regular shop, a dealer, or a body shop your insurer recommends. If it is the middle of the night and the shop is closed, ask whether the car can be dropped after hours or held until morning, and get any storage charge in that same quote.',
+          'After a collision, call your insurance company early. Many policies cover the tow, and some will point you to a shop that bills them directly. A car that sits in a storage yard collects a fee every day, so moving it to its final stop quickly is the simplest way to keep an accident from getting more expensive.'
+        ]
+      }
     ],
     faq: [
       {
@@ -88,6 +112,29 @@ export const SERVICES: Service[] = [
       { label: 'System check', text: 'Quick verify that the alternator is charging before we leave.' },
       { label: 'Plan B included', text: 'If a jump won\u2019t hold, we quote a tow on the spot.' }
     ],
+    body: [
+      {
+        h: 'Why batteries quit in Fairfield and Suisun City',
+        p: [
+          'Heat does more damage to a car battery than cold. A string of 100-degree days in July and August speeds up the chemistry that wears a battery out, and the damage often shows up weeks later, on the first cool morning when the engine needs extra cranking power. That is why jump start calls spike twice a year here: late summer and the first cold snap.',
+          'Short trips make it worse. A car that only runs from home to the base gate at Travis, or a few miles down Travis Boulevard and back, never runs long enough for the alternator to fully recharge what the starter used, so the battery slowly drains a little more each day.'
+        ]
+      },
+      {
+        h: 'Jump start or new battery?',
+        p: [
+          'A rapid clicking sound with dim dash lights almost always means a flat battery, and a jump will usually get you going. A single loud click with bright lights points more toward the starter, which a jump will not fix. If the car starts on a jump and dies again within a day or two, the battery or the charging system needs testing.',
+          'Age is the other clue. Most batteries in this climate last about three to five years. If yours is older than that and has needed a jump once, plan on replacing it soon, before the next failure happens somewhere less convenient than your driveway.'
+        ]
+      },
+      {
+        h: 'Hybrids, EVs and push-button cars',
+        p: [
+          'Hybrids and electric cars still have a small 12-volt battery that powers the computers and the door locks, and when it goes flat the car will not wake up even if the main battery is full. Those cars can be jumped, but only from the jump points the manufacturer specifies, which are often under the hood rather than at the battery itself.',
+          'Push-button cars with a dead fob are a different problem. If the dash says no key detected but the lights are bright, try holding the fob right against the start button, since many cars can read a weak fob from there. Mention your exact model when you call so the operator brings the right connectors.'
+        ]
+      }
+    ],
     faq: [
       {
         q: 'How much does a jump start cost in Fairfield?',
@@ -115,6 +162,29 @@ export const SERVICES: Service[] = [
       { label: 'Damage-free entry', text: 'Wedge and long-reach tools, no drilled locks.' },
       { label: 'All makes', text: 'Domestic, import, and most modern keyless vehicles.' },
       { label: 'Priority for kids & pets', text: 'These calls move to the front of the line.' }
+    ],
+    body: [
+      {
+        h: 'Locked in, lost, or a dead fob: three different problems',
+        p: [
+          'Keys visible on the seat or in the ignition is the simplest case. The car gets opened with wedge and long-reach tools, you grab your keys, and you are on your way. Most modern cars, including keyless ones, open this way without any damage to the door, the seal or the window.',
+          'Lost keys are different. Opening the door does not help if there is no key to start the car, so you need either a spare from home, a dealer, or an automotive locksmith who can cut and program a new key. If the fob simply died, the hidden physical key inside it will usually open the driver door, and holding the fob against the start button often starts the car anyway.'
+        ]
+      },
+      {
+        h: 'What to have ready when the operator arrives',
+        p: [
+          'Expect to be asked for proof that the car is yours before it is opened. A photo ID with an address that matches the registration is the usual standard, and the registration or insurance card itself can be checked once the door is open. It is a quick step, and it protects you as much as anyone.',
+          'Tell dispatch the exact spot. "The Solano Town Center garage, level two, near the elevators" or "the gas station at North Texas Street and Air Base Parkway" saves the operator from circling a big lot looking for one car.'
+        ]
+      },
+      {
+        h: 'When a child or pet is inside',
+        p: [
+          'On a warm Fairfield afternoon the inside of a closed car can reach dangerous temperatures in minutes. If a child or an animal is locked in and showing any sign of distress, call 911 right away. Police and fire crews will break a window when that is the fastest way in, and a window is cheap compared to the alternative.',
+          'If the situation is not urgent, say so on the call and the job moves to the front of the line. Stay with the car, keep the windows shaded if you can, and keep talking to a child inside so they stay calm until the door is open.'
+        ]
+      }
     ],
     faq: [
       {
@@ -171,6 +241,29 @@ export const SERVICES: Service[] = [
       { label: 'Tire changes', text: 'Your spare installed safely, away from traffic.' },
       { label: 'Fuel delivery', text: 'Enough gas or diesel to reach the nearest station.' },
       { label: 'One call escalation', text: 'If it needs a tow after all, the truck is already moving.' }
+    ],
+    body: [
+      {
+        h: 'What roadside assistance covers in Fairfield',
+        p: [
+          'Roadside assistance is everything that gets a car moving again without loading it on a truck: changing a flat onto your spare, delivering enough gas or diesel to reach a station, jump starting a dead battery, and opening a locked car. Most of these jobs take 15 to 30 minutes once the service truck is beside you.',
+          'Where you are matters as much as what broke. A flat in the Solano Town Center lot or a driveway off Travis Boulevard is a quick, calm job. The same flat on the I-80 shoulder near the Air Base Parkway exit is a safety job first, and the operator may move the car to a ramp or a wider shoulder before touching a lug nut.'
+        ]
+      },
+      {
+        h: 'Waiting safely on the I-80 and Highway 12 shoulders',
+        p: [
+          'Pull as far right as the shoulder allows, turn the wheels away from traffic, and put the hazards on. If there is a guardrail, the safest place to wait is behind it. If there is none, stand well up the embankment and away from the car, because the most common roadside injury is a passing vehicle striking someone standing next to a stopped one.',
+          'Highway 12 between Fairfield and Rio Vista has narrow shoulders and soft dirt in winter, so if you can roll to a turnout or a side road before stopping, do it. In tule fog, keep your lights on, stay out of the car if you can do so safely, and give dispatch the nearest mile marker or cross road.'
+        ]
+      },
+      {
+        h: 'When a roadside call turns into a tow',
+        p: [
+          'Some problems are bigger than roadside tools. A tire with a torn sidewall and no usable spare, an engine that is overheating or smoking, a battery that will not hold a jump, or a fuel problem in a car that was not simply empty all end in a tow. Many newer cars ship with an inflator kit instead of a spare, and those kits cannot fix a blowout.',
+          'The useful thing is that you do not have to start over. The operator already on scene can tell you within a few minutes whether the car can be fixed in place, and if not, can quote the tow on the spot and take it to your shop, a tire store, or home.'
+        ]
+      }
     ],
     faq: [
       {

@@ -76,6 +76,21 @@ const others = SERVICES.filter((x) => x.slug !== s.slug).slice(0, 3);
     </div>
   </section>
 
+  {s.body && s.body.length > 0 && (
+    <section class="s-paper">
+      <div class="wrap">
+        <div style="max-width:46em;">
+          {s.body.map((sec) => (
+            <div style="margin-top:2.4rem;">
+              <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);">{sec.h}</h2>
+              {sec.p.map((para) => <p style="margin-top:0.9rem;">{para}</p>)}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="s-ink-2">
     <div class="wrap">
       <p class="eyebrow">Why call us</p>
@@ -119,7 +134,8 @@ const others = SERVICES.filter((x) => x.slug !== s.slug).slice(0, 3);
       </div>
       <p class="muted" style="margin-top:1.3rem;">
         Serving {SITE.serviceAreaLine}. See coverage for
-        <a href="/areas/fairfield/">Fairfield</a>, <a href="/areas/vacaville/">Vacaville</a>,
+        <a href="/areas/fairfield/">Fairfield</a>, <a href="/areas/vallejo/">Vallejo</a>,
+        <a href="/areas/vacaville/">Vacaville</a>, <a href="/areas/benicia/">Benicia</a>,
         <a href="/areas/suisun-city/">Suisun City</a>, and <a href="/areas/cordelia/">the Cordelia Junction</a>.
       </p>
     </div>

@@ -91,7 +91,7 @@ situations where you cannot:
 **It is not drivable.** A car towed with a flat, a dead battery, or existing
 damage still has that problem sitting in the yard.
 
-**Your licence or registration is a problem.** Some yards will not release a
+**Your license or registration is a problem.** Some yards will not release a
 vehicle to someone who cannot legally drive it off the lot.
 
 In both cases you need a tow from the yard to your shop or your driveway, and that second short tow is very often cheaper than another two or three days of

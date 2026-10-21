@@ -19,7 +19,9 @@ export const NAMES = [
   'Nut Tree', 'Vacaville Premium Outlets', 'Premium Outlets',
   'Fairfield Transportation Center', 'Browns Valley', 'Lawler Ranch',
   'Amtrak Depot', 'Sacramento River', 'Napa River', 'Sears Point',
-  'American Canyon', 'Google Maps', 'Class A', 'Class C'
+  'American Canyon', 'Google Maps', 'Class A', 'Class C',
+  'Jameson Canyon', 'Montezuma Hills', 'Birds Landing', 'Grizzly Island',
+  'Solano Town Center', 'Premium Outlets', 'California Highway Patrol'
 ];
 
 const STREET = '(?:Road|Lane|Avenue|Boulevard|Street|Parkway|Way|Drive|Freeway|Bypass|Causeway)';

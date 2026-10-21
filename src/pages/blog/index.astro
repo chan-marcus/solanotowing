@@ -24,7 +24,7 @@ const posts = (await getCollection('blog')).sort(
         {posts.map((p) => (
           <a class="post-card" href={`/blog/${p.id.replace(/\.md$/, '')}/`}>
             <div class="post-meta">
-              {p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {p.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
             </div>
             <h2>{p.data.title}</h2>
             <p>{p.data.description}</p>

@@ -1,6 +1,6 @@
 ---
-title: "Broke Down at the Cordelia Junction? Here's Exactly What to Do"
-description: "A local's step-by-step guide for a breakdown at the I-80/I-680/Highway 12 interchange in Fairfield: where to stop, what to tell dispatch, and how long help takes."
+title: "Broke Down at the Cordelia Junction?"
+description: "A local's guide to a breakdown at the I-80, I-680 and Highway 12 interchange: where to stop, what to tell dispatch, and how long help really takes."
 date: 2026-07-08
 ---
 

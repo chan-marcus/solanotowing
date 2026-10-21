@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="What to do if your car stops on a bridge: switch the hazards on and keep rolling to the far end if the car still moves, stay belted inside if it does not, call 911 rather than walking for help, never get out and walk on the span, and expect to be moved clear of the structure before a tow truck hooks up">
+  <rect width="720" height="330" rx="18" fill="#0f1722"/>
+  <text x="360" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">Stopped on a span: there is no shoulder here</text>
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#94a3b8">Carquinez Bridge, Benicia-Martinez Bridge, and the Rio Vista lift span</text>
+
+  <g>
+    <rect x="30" y="92" width="660" height="92" rx="12" fill="#17263a" stroke="#2c3f57"/>
+    <path d="M60 160 h600" stroke="#22344b" stroke-width="22" stroke-linecap="round"/>
+    <path d="M60 160 h600" stroke="#3a5068" stroke-width="2" stroke-dasharray="14 12"/>
+    <g stroke="#3a5068" stroke-width="2" fill="none">
+      <path d="M90 160 l40 -44 l40 44"/>
+      <path d="M290 160 l40 -44 l40 44"/>
+      <path d="M490 160 l40 -44 l40 44"/>
+    </g>
+    <rect x="236" y="148" width="34" height="16" rx="4" fill="#e8a33d"/>
+    <circle cx="245" cy="168" r="4" fill="#201404"/>
+    <circle cx="261" cy="168" r="4" fill="#201404"/>
+    <path d="M253 138 v-12" stroke="#f0705a" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="253" cy="120" r="5" fill="#f0705a" fill-opacity="0.35" stroke="#f0705a"/>
+    <text x="290" y="130" font-family="Arial, sans-serif" font-size="12" fill="#f0705a">Hazards on</text>
+    <text x="600" y="130" font-family="Arial, sans-serif" font-size="12" fill="#56d364" text-anchor="end">Coast to the far end if it still rolls</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="26" y="202" width="212" height="100" rx="14" fill="#17263a" stroke="#56d364" stroke-opacity="0.5"/>
+    <text x="48" y="228" font-size="13.5" fill="#f6f2ea" font-weight="bold">Do</text>
+    <g font-size="12.5" fill="#dfe3ee">
+      <text x="48" y="252">Stay belted inside</text>
+      <text x="48" y="274">Call 911 before anyone else</text>
+      <text x="48" y="294">Say which bridge and direction</text>
+    </g>
+
+    <rect x="254" y="202" width="212" height="100" rx="14" fill="#17263a" stroke="#f0705a" stroke-opacity="0.55"/>
+    <text x="276" y="228" font-size="13.5" fill="#f6f2ea" font-weight="bold">Don&#8217;t</text>
+    <g font-size="12.5" fill="#dfe3ee">
+      <text x="276" y="252">Get out and walk the span</text>
+      <text x="276" y="274">Stand behind the car to wave</text>
+      <text x="276" y="294">Push it, or accept a push</text>
+    </g>
+
+    <rect x="482" y="202" width="212" height="100" rx="14" fill="#17263a" stroke="#e8a33d" stroke-opacity="0.5"/>
+    <text x="504" y="228" font-size="13.5" fill="#f6f2ea" font-weight="bold">Then expect</text>
+    <g font-size="12.5" fill="#dfe3ee">
+      <text x="504" y="252">The car moved clear first</text>
+      <text x="504" y="274">Hookup past the end of the span</text>
+      <text x="504" y="294">A firm price for the run from there</text>
+    </g>
+  </g>
+</svg>

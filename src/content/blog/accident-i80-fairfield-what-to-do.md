@@ -1,6 +1,6 @@
 ---
-title: "Just Had an Accident on I-80 in Fairfield? Do These 7 Things"
-description: "A step-by-step local guide for the minutes after a collision on I-80, I-680, or Highway 12 in Solano County: where to stop, who to call, your towing rights, and the DMV report most drivers forget."
+title: "Accident on I-80 in Fairfield? Do This"
+description: "The minutes after a collision on I-80 or Highway 12 in Solano County: where to stop, who to call, your towing rights, and the DMV report drivers forget."
 date: 2026-07-12
 ---
 

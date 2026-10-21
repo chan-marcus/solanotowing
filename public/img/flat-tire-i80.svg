@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="When to change a flat tire yourself and when to call: change it only on a wide right shoulder or off the freeway entirely, never on the left shoulder or in a lane; a donut spare is limited to about 50 mph and a short distance; call for a tow instead when the sidewall is shredded, there is no spare, the locking lug nut key is missing, or the wheel is damaged">
+  <rect width="720" height="330" rx="18" fill="#0f1722"/>
+  <text x="360" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#f6f2ea">Flat on I-80: the shoulder decides, not the tire</text>
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#94a3b8">Look at where the car is sitting before you open the trunk</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="26" y="86" width="330" height="118" rx="14" fill="#17263a" stroke="#56d364" stroke-opacity="0.5"/>
+    <text x="48" y="112" font-size="14.5" fill="#f6f2ea" font-weight="bold">Changing it is reasonable when</text>
+    <g font-size="12.5" fill="#dfe3ee">
+      <text x="48" y="138">You are off the freeway, or the right</text>
+      <text x="48" y="158">shoulder is wide with no barrier</text>
+      <text x="48" y="182">You have a real spare, the jack and the lug key</text>
+    </g>
+
+    <rect x="364" y="86" width="330" height="118" rx="14" fill="#17263a" stroke="#f0705a" stroke-opacity="0.55"/>
+    <text x="386" y="112" font-size="14.5" fill="#f6f2ea" font-weight="bold">Call instead when</text>
+    <g font-size="12.5" fill="#dfe3ee">
+      <text x="386" y="138">Sidewall shredded, or no spare at all</text>
+      <text x="386" y="158">The wheel is bent, or a stud has sheared</text>
+      <text x="386" y="182">Narrow shoulder, a barrier, or the left side</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="26" y="218" width="668" height="86" rx="14" fill="#17263a" stroke="#e8a33d" stroke-opacity="0.45"/>
+    <text x="48" y="244" font-size="13.5" fill="#e8a33d" font-weight="bold">What a donut spare is actually rated for</text>
+    <circle cx="86" cy="278" r="17" fill="none" stroke="#e8a33d" stroke-width="5"/>
+    <circle cx="86" cy="278" r="5" fill="#e8a33d"/>
+    <g font-size="12.5" fill="#dfe3ee">
+      <text x="120" y="274">About 50 mph</text>
+      <text x="120" y="292">and a short run, often quoted as 70 miles</text>
+      <text x="400" y="274">Read the sticker on the spare itself</text>
+      <text x="400" y="292">Braking and handling are worse until it is off</text>
+    </g>
+  </g>
+  <text x="360" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" fill="#94a3b8">Many cars built in the last fifteen years carry sealant and a pump instead of a spare, which cannot fix a blowout</text>
+</svg>

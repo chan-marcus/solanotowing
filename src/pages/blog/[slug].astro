@@ -57,7 +57,7 @@ const crumbSchema = {
       <div class="post-layout">
         <aside class="post-aside">
           <p class="aside-date">
-            {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
           </p>
           <div class="aside-dispatch">
             <p class="aside-label">Need a tow now?</p>

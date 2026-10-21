@@ -1,6 +1,6 @@
 ---
-title: "Towed by CHP in Solano County? How to Get Your Car Back"
-description: "A local guide to getting your vehicle out of impound or storage in Fairfield and Solano County: who to call first, what paperwork you need, and how to stop daily storage fees fast."
+title: "Towed by the CHP? How to Get It Back"
+description: "Getting your vehicle out of impound in Fairfield and Solano County: who to call first, the paperwork you need, and how to stop daily storage fees fast."
 date: 2026-07-14
 ---
 

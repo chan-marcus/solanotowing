@@ -1,6 +1,6 @@
 ---
-title: "Motorcycle Towing: How Your Bike Should Ride"
-description: "How a motorcycle should be loaded and strapped on a flatbed, what to check before it leaves, and what motorcycle towing costs in Fairfield and Solano County."
+title: "Motorcycle Towing: How a Bike Rides"
+description: "How a motorcycle should be loaded and strapped on a flatbed, what to check before it leaves, and what bike towing costs in Fairfield and Solano County."
 date: 2026-08-27
 ---
 

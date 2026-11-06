@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { SITE } from '../../config/site';
 import { SERVICES } from '../../data/services';
 import { TRUST } from '../../data/trust';
+import { sentences } from '../../lib/text';
 
 export function getStaticPaths() {
   return SERVICES.map((s) => ({ params: { slug: s.slug }, props: { s } }));
@@ -112,7 +113,7 @@ const others = SERVICES.filter((x) => x.slug !== s.slug).slice(0, 3);
       <div style="max-width:46em; margin-top:1.4rem;">
         {s.faq.map((f) => (
           <div class="faq-item">
-            <h3>{f.q}</h3>
+            <h3>{sentences(f.q).map((x) => <span class="sent">{x}</span>)}</h3>
             <p>{f.a}</p>
           </div>
         ))}

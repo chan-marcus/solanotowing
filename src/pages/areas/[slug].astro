@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { SITE } from '../../config/site';
 import { AREAS } from '../../data/cities';
 import { SERVICES } from '../../data/services';
+import { sentences } from '../../lib/text';
 
 export function getStaticPaths() {
   return AREAS.map((a) => ({ params: { slug: a.slug }, props: { a } }));
@@ -72,7 +73,7 @@ const faqSchema = a.faq?.length
         <h2>Towing in {a.name}</h2>
         <div style="max-width:46em; margin-top:1.4rem;">
           {a.faq.map((f) => (
-            <div class="faq-item"><h3>{f.q}</h3><p>{f.a}</p></div>
+            <div class="faq-item"><h3>{sentences(f.q).map((x) => <span class="sent">{x}</span>)}</h3><p>{f.a}</p></div>
           ))}
         </div>
         <a class="btn-call" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a>

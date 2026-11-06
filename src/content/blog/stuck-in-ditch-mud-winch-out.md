@@ -57,7 +57,7 @@ The details that get the right truck out the first time:
 
 - **Where you are.** On rural roads that means a cross road, a nearby address, a winery
   or farm stand name, or a mile marker on Highway 12. "Somewhere on Suisun Valley Road"
-  covers a lot of road.
+  leaves a driver searching miles of road.
 - **How the car is sitting.** Level, or tipped at an angle? Nose-down in a ditch, or
   sideways on a bank?
 - **How deep.** Just one tire off the pavement, or sunk past the axles?

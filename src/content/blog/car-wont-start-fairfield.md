@@ -72,8 +72,8 @@ it's telling you what's coming.
 
 1. **Check the terminals.** A loose or corroded connection mimics a dead battery
    exactly. If you can wiggle a cable clamp by hand, tighten it and try again.
-2. **Turn everything off.** Headlights, climate, radio, phone chargers. Give
-   every remaining amp to the starter.
+2. **Turn everything off:** headlights, climate, radio and phone chargers, so
+   every remaining amp goes to the starter.
 3. **On an automatic, try neutral.** A worn safety switch sometimes won't let the
    car start in park but will in neutral.
 4. **Don't keep cranking.** More than a few attempts overheats the starter and

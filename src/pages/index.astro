@@ -5,6 +5,7 @@ import { SITE } from '../config/site';
 import { SERVICES } from '../data/services';
 import { AREAS } from '../data/cities';
 import { TRUST, REVIEWS } from '../data/trust';
+import { sentences } from '../lib/text';
 
 const coveragePoints = AREAS.map((a) => ({ name: a.name, lat: a.mapLat, lng: a.mapLng }));
 
@@ -232,7 +233,7 @@ const ICONS: Record<string, string> = {
       <p class="eyebrow">Straight answers</p>
       <h2>Frequently asked.</h2>
       <div class="faq-wrap">
-        {homeFaq.map((f) => (<div class="faq-item"><h3>{f.q}</h3><p>{f.a}</p></div>))}
+        {homeFaq.map((f) => (<div class="faq-item"><h3>{sentences(f.q).map((x) => <span class="sent">{x}</span>)}</h3><p>{f.a}</p></div>))}
       </div>
     </div>
   </section>
